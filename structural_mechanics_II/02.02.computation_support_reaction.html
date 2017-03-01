@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../javascripts/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="../javascripts/login.js"></script>
+    <script type="text/javascript" src="../javascripts/quiz.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="../stylesheets/stylesheet.css">
+    <title>Computation of support reaction</title>
+</head>
+
+<body oncontextmenu='return false' onselectstart='return false' ondragstart='return false'>
+
+    <!-- HEADER -->
+    <div class="header_wrapper">
+        <a class="header_octocat" href="https://pages.github.com" target="_blank"></a>
+        <h1 class="header_title">지점반력의 계산</h1>
+        <span class="header_span_login"></span>
+        <a class="header_login"></a>
+        <a class="header_email" href="mailto:ironbell@kyungnam.ac.kr"></a>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="content_wrapper">
+
+        <!--########## PRE VIEW ##########-->
+        <div id="pre_view" hidden>
+            <h3><a name="pre_veiw"></a>교재 학습 범위</h3>
+            <ul>
+                <li>교재 48쪽~51쪽의 예제 2-9, 2-10, 2-11, 2-12의 풀이</li>
+            </ul>
+        </div>
+        <div class="separator"></div>
+
+        <!--########## MAIN VIEW ##########-->
+        <div id="main_view" hidden>
+            <h3><a name="FBS"></a><font color="MediumVioletRed">자유물체도(free body diagram, FBD)</font></h3>
+            <ul>
+                <li>
+                    자유물체도는 <font color="MediumVioletRed">대상이 되는 구조물</font>과 그에 가해지는 <font color="MediumVioletRed">모든 힘</font>을 표시한 것으로서, 구조적 거동을 이해하기 위해서 반드시 필요하다.
+                </li>
+                <li>
+                    자유물체도 작성 절차는 다음과 같다.
+                    <font color="MediumVioletRed">
+                        <ol>
+                            <li>목적에 따라 구조물의 전체 또는 일부분을 대상으로 설정한다.</li>
+                            <li>지점을 제외하고 대상으로 설정된 구조물만 표시한다.</li>
+                            <li>대상 구조물에 작용하는 외력을 표시한다.</li>
+                            <li>지점의 종류에 맞게 지점반력을 미지수로 표시한다.</li>
+                        </ol>
+                    </font>
+                </li>
+                <li>
+                    예 : 아래 구조물의 자유물체도를 작성하시오.
+                    <p><img src="images\02.02.01.png" width="372" height="115"></p>
+                    <ol>
+                        <li>구조물 전체를 대상으로 설정한다.</li>
+                        <li>
+                            지점을 제외하고 대상으로 설정된 구조물만 표시한다. 여기에 x축과 y축을 설정한다.
+                            <p><img src="images\02.02.02.png" width="407" height="73"></p>
+                        </li>
+                        <li>
+                            대상 구조물에 작용하는 외력을 표시한다. 외력이 기울어져 있으므로 x축과 y축방향으로 분해하여 그 분력을 표시한다.
+                            <p><img src="images\02.02.03.png" width="407" height="77"></p>
+                        </li>
+                        <li>
+                            지점의 종류에 맞게 지점반력을 미지수로 표시한다. 왼쪽 지점은 회전단이므로 x방향의 지점반력 \(H_A\)와 y방향의 지점반력 \(V_A\)를, 오른쪽 지점은 이동단이므로 이동방향에 수직인 y방향의 지점반력 \(V_B\)를 표시한다. 각 지점반력은 양의방향으로 가정한다.
+                            <p><img src="images\02.02.04.png" width="460" height="111"></p>
+                        </li>
+                    </ol>
+                </li>
+            </ul>
+            <h3><a name="procedure"></a><font color="MediumVioletRed">지점반력 계산 절차</font></h3>
+            <font color="MediumVioletRed">
+                <ol>
+                    <li>
+                        자유물체도를 작성한다.
+                    </li>
+                    <li>
+                        평형조건식을 적용한다.
+                    </li>
+                </ol>
+            </font>
+            <h3><a name="example"></a>지점반력의 계산 예</h3>
+            <ul>
+                <li>
+                    아래 구조물의 지점반력을 구하시오.
+                    <p><img src="images\02.02.05.png" width="372" height="131"></p>
+                    <ol>
+                        <li>
+                            자유물체도를 작성한다.
+                            <p><img src="images\02.02.06.png" width="460" height="113"></p>
+                        </li>
+                        <li>
+                            평형조건식을 적용한다. xy평면이므로 \(\sum F_x=0, \, \sum F_y=0, \, \sum M_z=0 \) 평형조건식을 적용한다.
+                            <p>
+                                \(\sum F_x=H_A-3\sqrt2=0 \quad \therefore H_A=3\sqrt2kN \\
+                                \sum M_A=-3\sqrt2 \times 2 + V_B \times 6=0 \quad \therefore V_B=\sqrt2kN \\
+                                \sum F_y=V_A-3\sqrt2+V_B=0 \quad \therefore V_A=2\sqrt2kN \)
+                            </p>
+                        </li>
+                    </ol>
+                </li>
+            </ul>
+        </div>
+        <div class="separator"></div>
+
+        <!--########## RE VIEW ##########-->
+        <div id="re_view_quiz" hidden>
+            <h3><a name="re_view_quiz"></a>복습 퀴즈</h3>
+            <ol class="ol_quiz">
+                <li>다음에서 지점반력 \(V_A\)를 계산하시오.<br><img src="images\quiz.02.02.01.png" width="301" height="93"><br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(kN\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="3">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 1에서 지점반력 \(M_A\)를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(kN \cdot m\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="6">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>다음에서 지점반력 \(V_A\)를 계산하시오.<br><img src="images\quiz.02.02.03.png" width="283" height="181"><br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(kN\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="2.5">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 3에서 지점반력 \(V_B\)를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(kN\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="2.5">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>다음에서 지점반력 \(V_A\)를 계산하시오.<br><img src="images\quiz.02.02.05.png" width="324" height="270"><br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(kN\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="3.75">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 5에서 지점반력 \(V_D\)를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(kN\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="1.25">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 5에서 지점반력 \(H_C\)를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(kN\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="-3">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>다음에서 지점반력 \(V_B\)를 계산하시오.<br><img src="images\quiz.02.02.08.png" width="343" height="142"><br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(kN\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="3">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 8에서 지점반력 \(R_A\)를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(kN\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="4.2426">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 9에서 지점반력 \(H_B\)를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(kN\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="-3">
+                    <span class="span_quiz"></span>
+                </li>
+            </ol><br />
+            <input type="submit" class="submit_eval" value="복습 퀴즈 평가" /><br />
+            <span class="span_eval"></span>
+        </div>
+    </div>
+
+</body>
+</html>
