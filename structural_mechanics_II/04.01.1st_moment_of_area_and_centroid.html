@@ -1,0 +1,248 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <!--<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script> // "async" causes runtime error --> 
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../javascripts/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="../javascripts/login.js"></script>
+    <script type="text/javascript" src="../javascripts/quiz.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="../stylesheets/stylesheet.css">
+    <title>The 1st moment of area and centroid</title>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div class="header_wrapper">
+        <a class="header_octocat" href="https://pages.github.com" target="_blank"></a>
+        <h1 class="header_title">단면 1차모멘트(the 1st moment of area)와 도심(centroid)</h1>
+        <span class="header_span_login"></span>
+        <a class="header_login"></a>
+        <a class="header_email" href="mailto:ironbell@kyungnam.ac.kr"></a>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="content_wrapper">
+
+        <!--########## PRE VIEW ##########-->
+        <div id="pre_view" hidden>
+            <h3><a name="pre_veiw"></a>교재 학습 범위</h3>
+            <ul>
+                <li>교재 144쪽의 "4.1.1 단면 1차모멘트"에서 [1] 좌표축의 평행이동 전까지</li>
+                <li>교재 146쪽~149쪽의 [3] 도심과 중심, 예제 4-2까지</li>
+            </ul>
+        </div>
+        <div class="separator"></div>
+
+        <!--########## MAIN VIEW ##########-->
+        <div id="main_view" hidden>
+            <!--inline script for left-align of MathJax equation-->
+            <script>
+                if (MathJax) {
+                    MathJax.Hub.Config({ displayAlign: "left" });
+                    MathJax.Hub.Rerender();
+                }
+            </script>
+            <!--script for left-align of MathJax equation-->
+            <h3><a name="1st_moment_area_definition"></a>단면 1차모멘트의 정의</h3>
+            <ul>
+                <li>
+                    단면 1차모멘트는 단면이 <em>기준축</em>에 대해 일으키는 모멘트로서, 단면적에 <em>기준축까지의 수직거리</em>를 곱한 값이다. 단위는 면적에 길이를 곱했으므로 \(mm^3, \, m^3\)이다.
+                </li>
+                <li>
+                    아래 그림과 같은 임의의 형태를 갖는 단면에서, 단면의 아주 작은 부분 \(dA\)의 \(x, \, y\)축에 대한 단면 1차모멘트 \(dG_x ,\, dG_y\)는 각각 단면적 \(dA\)와 수직거리 \(y, \, x\)의 곱, 즉 \(dG_x = y\,dA , \, dG_y = x\,dA\)이다.
+                    <p><img src="images\04.01.01.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    따라서, 임의의 형태를 갖는 단면 전체의 \(x, \, y\)축에 대한 단면 1차모멘트 \(G_x , \, G_y\)는 단면의 아주 작은 부분 \(dA\)의 \(x, \, y\)축에 대한 단면 1차모멘트 \(dG_x ,\, dG_y\)를 면적 \(A\)에 대해서 적분한 값으로 다음과 같다.
+                    <p>$$ G_x = \int dG_x = \int y \, dA \qquad G_y = \int dG_y = \int x \, dA $$</p>
+                </li>
+                <li>
+                    단면의 면적과 그 중심의 위치를 아는 경우에는, 위의 적분식을 사용하지 않고 다음과 같이 단면의 면적 \(A\)와 <em>단면의 중심에서 \(x, \, y\)축까지의 수직거리 \(\bar y, \, \bar x\)</em>를 곱해서 간편하게 단면 1차모멘트를 구할 수 있다.
+                    <p><em>$$ G_x = \bar y A \qquad G_y = \bar x A $$</em></p>
+                </li>
+                <li>
+                    단면이 아래 그림과 같이 직사각형일 경우, \(x, \, y\)축에 대한 단면 1차모멘트 \(G_x , \, G_y\)는 단면의 면적 \(A\)와 단면의 중심 \(C\)에서 \(x, \, y\)축 까지의 수직거리 \(\bar y, \, \bar x\)를 곱한 \(G_x = \bar y \times bh, \, G_y = \bar x \times bh\)이다.<br />
+                    <p><img src="images\04.01.02.png" onload="this.width/=2;"></p>
+                </li>
+                <li><a href="" class="li_test">확인 질문</a>
+                    <div hidden>다음에서 \(G_x\)를 계산하시오.<br />
+                        <p><img class="top_margin" src="images\test.04.01.01.png" onload="this.width/=2;"></p>
+                        <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm^3\)
+                        <input type="submit" class="submit_quiz" value="확인" answer="6000.00">
+                        <span class="span_quiz"></span>
+                    </div>
+                </li>
+            </ul>
+            <h3><a name="centroid_definition"></a>단면의 도심(centroid)의 정의</h3>
+            <ul>
+                <li>
+                    단면 1차모멘트는 면적에 기준축까지의 수직거리를 곱한 값이므로, 단면이 동일하더라도 <em>기준축의 위치</em>에 따라 값이 달라진다.
+                </li>
+                <li>
+                    따라서, 다음 그림과 같이 동일한 단면에서 단면의 중심 \(C\)부터 기준축인 \(x\)축까지의 거리가 각각 \(\bar y=h/2+y, \, \bar y=h/2, \, \bar y=0\)이며, 
+                    단면 1차모멘트는 \(G_x = (h/2+y) \times bh, \, G_x = bh \times h/2 = bh^2 /2, \, G_x = bh \times 0 = 0\)이 된다.
+                    <p><img class="top_margin" src="images\04.01.03.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    위 그림에서 오른쪽과 같이 <em>단면 1차모멘트가 \(0\)이 되는</em> 기준축을 도심축(centroid axis)이라 하고, 이러한 도심축들이 교차하는 점을 <em>도심(centroid)</em>이라 한다.
+                </li>
+                <li>
+                    즉, <em>도심을 지나는 모든 축에 대한 단면 1차모멘트는 항상 \(0\)</em>이며, 재료가 균질할 경우 <em>단면의 중심과 일치</em>한다.
+                </li>
+                <li>
+                    아래 그림은 직사각형, 원, 삼각형에서 단면 1차모멘트가 \(0\)이 되는 도심의 위치를 표시한 것이다.
+                    <p><img src="images\04.01.04.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    <a href="" class="li_test">확인 질문</a>
+                    <div hidden>다음에서 \(x\)축으로부터 도심 \(C\)까지의 수직거리를 계산하시오.<br />
+                        <img class="top_margin" src="images\test.04.01.02.png" onload="this.width/=2;"><br />
+                        <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm\)
+                        <input type="submit" class="submit_quiz" value="확인" answer="50.00">
+                        <span class="span_quiz"></span>
+                    </div>
+                </li>
+            </ul>
+            <h3><a name="1st_moment_area_computation"></a>단면 1차모멘트의 계산</h3>
+            <ul>
+                <li>
+                    단면의 형상이 복잡하여 도심의 위치를 알 수 없을 경우에는, <em>단면을 도심의 위치를 아는 직사각형, 원, 삼각형 등으로 구분</em>한 후 각각에서 계산한 단면 1차모멘트를 합하여 전체의 단면 1차모멘트를 계산한다.
+                </li>
+                <li>
+                    아래와 같은 경우, 단면을 왼쪽의 직사각형과 오른쪽의 삼각형으로 구분하고 각각에서 계산한 단면 1차모멘트 \(G_1, \, G_2\)를 합하여 전체의 단면 1차모멘트 \(G = G_1 + G_2\)를 구한다.
+                    <p><img src="images\04.01.05.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    다음은 위 단면의 \(x, \, y\)축에 대한 단면 1차모멘트를 계산한 결과이다.
+                    <p><img src="images\04.01.06.png" onload="this.width/=2;"></p>
+                    $$ \begin{align}
+                        & G_{1x} = A_1 \times y_1 = (40 \times 30) \times 30/2 = 18,000 \\
+                        & G_{2x} = A_2 \times y_2 = (30 \times 30 / 2) \times 30/3 = 4,500 \\
+                        & \therefore G_x = G_{1x} + G_{2x} = 22,500 mm^3
+                    \end{align} $$
+
+                    $$ \begin{align}
+                        & G_{1y} = A_1 \times x_1 = (40 \times 30) \times 40/2 = 24,000 \\
+                        & G_{2y} = A_1 \times x_2 = (30 \times 30 / 2) \times (40 + 30/3) = 22,500 \\
+                        & \therefore G_y = G_{1y} + G_{2y} = 46,500 mm^3
+                    \end{align} $$
+                </li>
+                <li>
+                    <a href="" class="li_test">확인 질문</a>
+                    <div hidden>다음에서 \(x\)축에 대한 단면 1차모멘트를 계산하시오.<br />
+                        <img src="images\test.04.01.03.png" onload="this.width/=2;"><br />
+                        <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm^3\)
+                        <input type="submit" class="submit_quiz" value="확인" answer="240000.00">
+                        <span class="span_quiz"></span>
+                    </div>
+                </li>
+            </ul>
+            <h3><a name="centroid_computation"></a>도심의 계산</h3>
+            <ul>
+                <li>
+                    단면 1차모멘트 계산식으로부터 도심을 계산하는 식을 다음과 같이 유도할 수 있다.
+                    <em>$$ G_x = \bar y \ A \Rightarrow \bar y = \frac{G_x}{A} \qquad G_y = \bar x \ A \Rightarrow \bar x = \frac{G_y}{A} $$</em>
+                </li>
+                <li>
+                    형상이 복잡한 단면의 경우에는 <em>단면을 직사각형, 원, 삼각형 등으로 구분</em>하여 계산한 단면 1차모멘트를 이용하면 위의 식으로 전체 단면의 도심을 계산할 수 있다.
+                </li>
+                <li>
+                    다음 그림에서 전체 단면의 도심을 계산하면 다음과 같다.
+                    <p><img src="images\04.01.07.png" onload="this.width/=2;"></p>
+                    $$ A = A_1 + A_2 = (40 \times 30) + (30 \times 30 / 2) = 1,650mm^2 \\
+                       \bar x = \frac {G_y}{A} = \frac {G_{1y} + G_{2y}}{A} = \frac{24,000 + 22,500}{1,650} = \frac{465,000}{1,650} = 28.18mm \\
+                       \bar y = \frac {G_x}{A} = \frac {G_{1x} + G_{2x}}{A} = \frac{18,000 + 4,500}{1,650} = \frac{22,500}{1,650} = 13.64mm $$
+                </li>
+                <li><a href="" class="li_test">확인 질문</a>
+                    <div hidden>다음에서 \(x\)축으로부터 도심 \(C\)까지의 거리 \(\bar y\)를 계산하시오.<br />
+                        <img class="top_margin" src="images\test.04.01.04.png" onload="this.width/=2;"><br />
+                        <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm\)
+                        <input type="submit" class="submit_quiz" value="확인" answer="35.00">
+                        <span class="span_quiz"></span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="separator"></div>
+
+        <!--########## RE VIEW ##########-->
+        <div id="re_view_quiz" hidden>
+            <h3><a name="re_view_quiz"></a>복습 퀴즈</h3>
+            <ol class="ol_quiz">
+                <li>다음에서 \(x\)축에 대한 단면 1차모멘트를 계산하시오.<br />
+                    <img class="top_margin" src="images\quiz.04.01.01.png" onload="this.width/=2;"><br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm^3\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="2000.00">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>
+                    다음에서 \(x\)축에 대한 단면 1차모멘트를 계산하시오.<br />
+                    <img class="top_margin" src="images\quiz.04.01.02.png" onload="this.width/=2;"><br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm^3\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="23625.00">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>다음에서 \(x\)축(\(C\)는 도심)에 대한 단면 1차 모멘트를 계산하시오.<br>
+                    <img class="top_margin" src="images\quiz.04.01.03.png" onload="this.width/=2;"><br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm^3\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="0.00">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>도심을 지나는 모든 축에 대한 단면 1차모멘트를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm^3\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="0.00">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>다음에서 \(x\)축에 대한 단면 1차모멘트를 계산하시오.<br>
+                    <img class="top_margin" src="images\quiz.04.01.05.png" onload="this.width/=2;"><br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm^3\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="90000.00">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>다음에서 \(A\)부분의 \(x\)축에 대한 단면 1차모멘트를 계산하시오.<br>
+                    <img class="top_margin" src="images\quiz.04.01.06.png" onload="this.width/=2;"><br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm^3\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="3000.00">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>다음에서 \(x\)축으로부터 도심 \(C\)까지의 거리 \(\bar y \)를 계산하시오.<br>
+                    <img src="images\quiz.04.01.07.png" onload="this.width/=2;"><br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="37.50">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>다음에서 \(x\)축으로부터 도심 \(C\)까지의 거리 \(\bar y \)를 계산하시오.<br>
+                    <img src="images\quiz.04.01.08.png" onload="this.width/=2;"><br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="22.50">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>다음에서 \(x\)축으로부터 도심 \(C\)까지의 거리 \(\bar y \)를 계산하시오.<br>
+                    <img src="images\quiz.04.01.09.png" onload="this.width/=2;"><br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="33.67">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 10에서 \(y\)축으로부터 도심 \(C\)까지의 거리 \(\bar x \)를 계산하시오.<br>
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm^3\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="15.67">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>다음에서 \(x\)축으로부터 도심 \(C\)까지의 거리 \(\bar y \)를 계산하시오.<br>
+                    <img src="images\quiz.04.01.11.png" onload="this.width/=2;"><br />
+                    <input type="text" class="input_quiz" placeholder="답을 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm^3\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="h(2a+b)/3(a+b)">
+                    <span class="span_quiz"></span>
+                </li>
+            </ol><br />
+            <input type="submit" class="submit_eval" value="복습 퀴즈 평가" /><br />
+            <span class="span_eval"></span>
+        </div>
+
+    </div>
+</body>
+</html>

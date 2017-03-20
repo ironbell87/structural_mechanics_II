@@ -1,0 +1,219 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../javascripts/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="../javascripts/login.js"></script>
+    <script type="text/javascript" src="../javascripts/quiz.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="../stylesheets/stylesheet.css">
+    <title>Radius of gyration, product and polar moment of intertia</title>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div class="header_wrapper">
+        <a class="header_octocat" href="https://pages.github.com" target="_blank"></a>
+        <h1 class="header_title">단면 회전반지름(radius of gyration), 단면 상승모멘트(product moment of intertia), 단면 극2차모멘트(polar moment of intertia)</h1>
+        <span class="header_span_login"></span>
+        <a class="header_login"></a>
+        <a class="header_email" href="mailto:ironbell@kyungnam.ac.kr"></a>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="content_wrapper">
+
+        <!--########## PRE VIEW ##########-->
+        <div id="pre_view" hidden>
+            <h3><a name="pre_veiw"></a>교재 학습 범위</h3>
+            <ul>
+                <li>교재 160쪽~161쪽의 "4.1.4 단면계수 및 단면 2차반지름"에서 [2] 단면 회전반지름</li>
+                <li>교재 158쪽~159쪽의 "4.1.3 단면 상승모멘트"</li>
+                <li>교재 161쪽의 "4.1.5 단면 극2차모멘트"</li>
+            </ul>
+        </div>
+        <div class="separator"></div>
+
+        <!--########## MAIN VIEW ##########-->
+        <div id="main_view" hidden>
+            <!--inline script for left-align of MathJax equation-->
+            <script>
+                if (MathJax) {
+                    MathJax.Hub.Config({ displayAlign: "left" });
+                    MathJax.Hub.Rerender();
+                }
+            </script>
+            <!--script for left-align of MathJax equation-->
+            <h3><a name="radius_of_gyration"></a>단면 회전반지름(radius of gyration)</h3>
+            <ul>
+                <li>
+                    단면 회전반지름은 단면 2차반경 또는 단면 2차반지름이라고도 하며, <em>도심축에 대한 단면 2차모멘트를 단면적으로 나눈 값의 제곱근</em>이다. 식으로 나타내면 다음과 같으며, 단위는 \(mm, \, m\)이다.
+                    <p>$$ k_x = \sqrt{\frac{I_y}{A}} \qquad k_y = \sqrt{\frac{I_x}{A}} $$</p>
+                </li>
+                <li>
+                    단면 회전반지름을 계산하기 위해서는 반드시 단면의 도심축에 대한 단면 2차모멘트를 구해야 한다.
+                </li>
+                <li>
+                    폭 \(b\), 높이 \(h\)인 직사각형 단면의 폭방향 축에 대한 단면 회전반지름 \(k_y\)를 구하기 위해서는 먼저 단면의 폭방향 도심축에 대한 \(I_x\)와 단면적 \(A\)를 계산해야 한다. 
+                    다음에는 이를 단면적으로 나누고 그 제곱근을 계산한다. 아래는 이를 수식으로 나타낸 것이다. 수식에서 \(x, \, y\)를 주의해야 한다.
+                    <p>$$ I_y = bh^3/12, \, A = bh \\ k_y = \sqrt{\frac{I_x}{A}} = \sqrt{\frac{bh^3/12}{bh}} = h/\sqrt{12} $$</p>
+                </li>
+                <li>
+                    위의 조건에서 높이방향 축에 대한 단면 회전반지름 \(k_x\)도 동일하게 다음과 같이 계산할 수 있다.
+                    <p>$$ I_x = hb^3/12, \, A = bh \\ k_x = \sqrt{\frac{I_y}{A}} = \sqrt{\frac{hb^3/12}{bh}} = b/\sqrt{12} $$</p>
+                </li>
+                <li><a href="" class="li_test">확인 질문</a>
+                    <div hidden>폭 \(30mm\), 높이 \(40mm\)인 직사각형 단면에서 높이방향 축에 대한 단면 회전반지름을 계산하시오.<br />
+                        <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm\)
+                        <input type="submit" class="submit_quiz" value="확인" answer="11.55">
+                        <span class="span_quiz"></span>
+                    </div>
+                </li>
+            </ul>
+            <h3><a name="parallel_axis_theorem"></a>단면 상승모멘트(product moment of intertia)</h3>
+            <ul>
+                <li>
+                    단면 상승모멘트는 단면적에 서로 직각인 두 기준축까지의 수직거리를 곱한 값으로서, 음수가 될 수도 있다. 단위는 면적에 길이를 두번 곱했으므로 \(mm^4, \, m^4\)이다.
+                </li>
+                <li>
+                    아래 그림과 같은 임의의 형태를 갖는 단면에서, 단면의 아주 작은 부분 \(dA\)의 \(x, \, y\)축에 대한 단면 상승모멘트 \(dI_{xy}\)는 단면적 \(dA\)에 수직거리 \(x, \, y\)를 곱한 값, 즉 \(dI_{xy} = xy\,dA\)이다.
+                    <p><img src="images\04.02.01.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    따라서, 임의의 형태를 갖는 단면 전체의 \(x, \, y\)축에 대한 단면 상승모멘트 \(I_{xy}\)는 단면의 아주 작은 부분 \(dA\)의 \(x, \, y\)축에 대한 단면 상승모멘트 \(dI_{xy}\)를 면적 \(A\)에 대해서 적분한 값으로 다음과 같다.
+                    <p>$$ I_{xy} = \int dI_{xy} = \int xy \, dA = \iint xy \, dx\,dy $$</p>
+                </li>
+                <li>
+                    단면의 면적과 그 중심의 위치를 아는 경우에는, 위의 적분식을 사용하지 않고 다음과 같이 단면의 면적 \(A\)와 <em>\(x, \, y\)축에서 단면의 중심까지의 수직거리 \(\bar y, \, \bar x\)</em>를 곱해서 간편하게 단면 상승모멘트를 구할 수 있다. 이때 <em>\(\bar y, \, \bar x\)는 부호</em>가 있다는 점을 유의해야 한다.
+                    <p><em>$$ I_{xy} = \bar x \bar y A $$</em></p>
+                </li>
+                <li>
+                    아래 그림에서 왼쪽 위 단면의 경우, 단면 상승모멘트 \(I_{xy}\)는 단면의 면적 \(A\)와 \(x, \, y\)축에서 도심 \(C\)까지의 수직거리 \(\bar y, \, \bar x\)를 곱한 \(I_{xy} = \bar x \times \bar y \times bh  = \bar x \bar y bh\)이다.
+                    <p><img src="images\04.03.02.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    위 그림에서 오른쪽 위 단면의 경우, \(x, \, y\)축에서 도심 \(C\)까지의 수직거리가 \(\bar y, -\bar x\)이므로, \(I_{xy} = -\bar x \times \bar y \times bh  = -\bar x \bar y bh\)이다.<br />
+                    왼쪽 아래 단면의 경우, 수직거리가 \(-\bar y, \bar x\)이므로, \(I_{xy} = \bar x \times -\bar y \times bh  = -\bar x \bar y bh\)이다.<br />
+                    오른쪽 아래 단면의 경우, 수직거리가 \(-\bar y, -\bar x\)이므로, \(I_{xy} = -\bar x \times -\bar y \times bh  = \bar x \bar y bh\)이다.
+                </li>
+                <li>
+                    복잡한 단면에서는 <em>직사각형, 삼각형, 원으로 단면을 구분</em>하여 각각의 상승모멘트를 계산한 후 이를 합하여 전체 단면의 상승모멘트를 계산한다.
+                </li>
+                <li>
+                    아래 그림에서는 왼쪽의 1번 사각형, 오른쪽 아래의 2번 사각형으로 구분하면 전체 단면의 상승모멘트를 다음과 같이 계산할 수 있다.
+                    <p><img src="images\04.03.03.png" onload="this.width/=2;"></p>
+                    <p>$$ I_{1xy} = -\bar x_1 \times \bar y_1 A_1 = -10 \times 50 \times 20 \times 100 = -1,000,000 mm^4 \\
+                        I_{2xy} = \bar x_2 \times \bar y_2 A_2 = 20 \times 10 \times 40 \times 20 = 160,000 mm^4 \\
+                        I_{xy} = I_{1xy} + I_{2xy} = -1,000,000 + 160,000 = -840,000 mm^4 $$</p>
+                </li>
+                <li><a href="" class="li_test">확인 질문</a>
+                    <div hidden>다음에서 단면 상승모멘트를 계산하시오.<br />
+                        <img src="images\test.04.03.02.png" onload="this.width/=2;"><br />
+                        <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm^4\)
+                        <input type="submit" class="submit_quiz" value="확인" answer="-264960.00">
+                        <span class="span_quiz"></span>
+                    </div>
+                </li>
+            </ul>
+            <h3><a name="section_modulus"></a>단면 극2차모멘트(polar moment of intertia)</h3>
+            <ul>
+                <li>
+                    단면 극2차모멘트는 단면적에 서로 직각인 두 기준축의 교점인 원점까지의 거리 제곱을 곱한 값으로서, 향상 양수이다. 단위는 면적에 거리 제곱을 곱했으므로 \(mm^4, \, m^4\)이다.
+                </li>
+                <li>
+                    아래 그림과 같은 임의의 형태를 갖는 단면에서, 단면의 아주 작은 부분 \(dA\)의 \(x, \, y\)축에 대한 단면 극2차모멘트 \(dI_p\)는 단면적 \(dA\)에 \(x, \, y\)축의 교점인 원점까지의 거리 \(r\)의 제곱을 곱한 값, 즉 \(dI_p = r^2\,dA\)이다.
+                    <p><img src="images\04.03.04.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    그러므로, 임의의 형태를 갖는 단면 전체의 \(x, \, y\)축에 대한 단면 극2차모멘트 \(I_p\)는 단면의 아주 작은 부분 \(dA\)의 \(x, \, y\)축에 대한 단면 극2차모멘트 \(dI_p\)를 면적 \(A\)에 대해서 적분한 값이며, \(r^2 = x^2 + y^2\)을 고려하면 다음과 같다.
+                    <p>$$ I_p = \int dI_p = \int r^2 \, dA = \int (x^2+y^2) \, dA = \int x^2 \, dA + \int y^2 \, dA = I_x + I_y $$</p>
+                </li>
+                <li>
+                    따라서, 단면 극2차모멘트는 <em>서로 직교하는 \(x, \, y\)축에 대한 단면 2차모멘트를 합하여</em> 계산한다.
+                </li>
+                <li>
+                    아래 그림에서 도심을 지나는 \(x, \, y\)축에 대한 단면 극2차모멘트를 계산하면 다음과 같다.<br />
+                    <img class="top_margin" src="images\04.03.05.png" onload="this.width/=2;"><br />
+                    \( I_p = I_x + I_y = (40 \times 70^3)/12 + (70 \times 40^3)/12 = 1,516,666.67 mm^4 \)
+                </li>
+            </ul>
+        </div>
+        <div class="separator"></div>
+
+        <!--########## RE VIEW ##########-->
+        <div id="re_view_quiz" hidden>
+            <h3><a name="re_view_quiz"></a>복습 퀴즈</h3>
+            <ol class="ol_quiz">
+                <li>폭 \(70mm\), 높이 \(120mm\)인 직사각형 단면의 \(x\)축에 대한 단면 회전반지름 \(k_y\)를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="34.64">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 1에서 \(y\)축에 대한 단면 회전반지름 \(k_x\)를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="20.21">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 1에서 도심을 지나는 \(x, \, y\)축에 대한 단면 상승모멘트 \(I_{xy}\)를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm^4\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="0.00">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 1에서 도심을 지나는 \(x, \, y\)축에 대한 단면 극2차모멘트 \(I_p\)를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm^4\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="13510000.00">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>다음에서 도심의 위치 \(\bar x\)를 계산하시오.<br />
+                    <img src="images\quiz.04.03.05.png" onload="this.width/=2;"><br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="31.25">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 5에서 도심의 위치 \(\bar y\)를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="43.75">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 5에서 도심을 지나는 \(x\)축에 대한 단면 2차모멘트 \(I_x\)를 계산하시오.<br>
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm^4\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="7096354.17">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 5에서 도심을 지나는 \(y\)축에 대한 단면 2차모멘트 \(I_y\)를 계산하시오.<br>
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm^4\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="3971354.17">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 5에서 \(x\)축에 대한 단면 회전반지름 \(k_y\)를 계산하시오.<br>
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="37.67">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 5에서 \(y\)축에 대한 단면 회전반지름 \(k_x\)를 계산하시오.<br>
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="28.18">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 5에서 도심을 지나는 \(x, \, y\)축에 대한 단면 상승모멘트 \(I_{xy}\)를 계산하시오.<br>
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm^4\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="-2929687.50">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 5에서 도심을 지나는 \(x, \, y\)축에 대한 단면 극2차모멘트 \(I_p\)를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm^4\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="11067708.33">
+                    <span class="span_quiz"></span>
+                </li>
+            </ol><br />
+            <input type="submit" class="submit_eval" value="복습 퀴즈 평가" /><br />
+            <span class="span_eval"></span>
+        </div>
+
+    </div>
+
+</body>
+</html>

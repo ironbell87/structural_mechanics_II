@@ -1,0 +1,222 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../javascripts/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="../javascripts/login.js"></script>
+    <script type="text/javascript" src="../javascripts/quiz.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="../stylesheets/stylesheet.css">
+    <title>The 2nd moment of area and section modulus</title>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div class="header_wrapper">
+        <a class="header_octocat" href="https://pages.github.com" target="_blank"></a>
+        <h1 class="header_title">단면 2차모멘트(the 2nd moment of area)와 단면계수(section modulus)</h1>
+        <span class="header_span_login"></span>
+        <a class="header_login"></a>
+        <a class="header_email" href="mailto:ironbell@kyungnam.ac.kr"></a>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="content_wrapper">
+
+        <!--########## PRE VIEW ##########-->
+        <div id="pre_view" hidden>
+            <h3><a name="pre_veiw"></a>교재 학습 범위</h3>
+            <ul>
+                <li>교재 153쪽~154쪽의 "4.1.2 단면 2차모멘트"에서 [1] 기본식, [2] 좌표축의 평행이동</li>
+                <li>교재 155쪽~158쪽의 예제 4-5부터 예제 4-7까지</li>
+                <li>교재 159쪽~160쪽의 "4.1.4 단면계수 및 단면 2차반지름"에서 [1] 단면계수</li>
+            </ul>
+        </div>
+        <div class="separator"></div>
+
+        <!--########## MAIN VIEW ##########-->
+        <div id="main_view" hidden>
+            <!--inline script for left-align of MathJax equation-->
+            <script>
+                if (MathJax) {
+                    MathJax.Hub.Config({ displayAlign: "left" });
+                    MathJax.Hub.Rerender();
+                }
+            </script>
+            <!--script for left-align of MathJax equation-->
+            <h3><a name="2nd_moment_area_definition"></a>단면 2차모멘트(the 2nd moment of area, moment of inertia)</h3>
+            <ul>
+                <li>
+                    단면 2차모멘트는 단면적에 <em>기준축까지의 수직거리의 제곱</em>을 곱한 값으로서, 항상 양의 값을 갖는다. 단위는 면적에 길이 제곱을 곱했으므로 \(mm^4, \, m^4\)이다.
+                </li>
+                <li>
+                    아래 그림과 같은 임의의 형태를 갖는 단면에서, 단면의 아주 작은 부분 \(dA\)의 \(x, \, y\)축에 대한 단면 2차모멘트 \(dI_x ,\, dI_y\)는 각각 단면적 \(dA\)와 수직거리 \(x, \, y\)의 제곱의 곱, 즉 \(dI_x = y^2\,dA , \, dI_y = x^2\,dA\)이다.
+                    <p><img src="images\04.02.01.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    따라서, 임의의 형태를 갖는 단면 전체의 \(x, \, y\)축에 대한 단면 2차모멘트 \(I_x , \, I_y\)는 단면의 아주 작은 부분 \(dA\)의 \(x, \, y\)축에 대한 단면 2차모멘트 \(dI_x ,\, dI_y\)를 면적 \(A\)에 대해서 적분한 값으로 다음과 같다.
+                    <p>$$ I_x = \int dI_x = \int y^2 \, dA \qquad I_y = \int dI_y = \int x^2 \, dA $$</p>
+                </li>
+                <li>
+                    아래 그림에서, <em>직사각형</em>, 삼각형, 원형 단면의 경우, 위의 적분식에 따라 <em>도심을 지나는 \(x, \, y\)축</em>에 대한 단면 2차모멘트를 계산하면 각각 다음과 같다.<br />
+                    <p><img src="images\04.02.02.png" onload="this.width/=2;"></p>
+                    <!--<em>\( \text{직사각형 : } \, I_x = (bh^3)/12, \, I_y = (hb^3)/12 \qquad \)</em> \( \text{삼각형 : } \, I = (bh^3)/36 \qquad \text{원 : } \, I_y = (\pi r^4)/4 \)-->
+                    <em>직사각형 : \( I_x = (bh^3)/12, \, I_y = (hb^3)/12 \quad \)</em><br />
+                    삼각형 : \( I_x = (bh^3)/36 \quad \) 원 : \(I_x = (\pi r^4)/4 \)
+                </li>
+                <li><a href="" class="li_test">확인 질문</a>
+                    <div hidden>폭 \(30mm\), 높이 \(40mm\)인 직사각형 단면에서 도심을 지나는 폭 방향 축에 대한 단면 2차모멘트를 계산하시오.<br />
+                        <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm^4\)
+                        <input type="submit" class="submit_quiz" value="확인" answer="160000.00">
+                        <span class="span_quiz"></span>
+                    </div>
+                </li>
+            </ul>
+            <h3><a name="parallel_axis_theorem"></a>평행축 정리(parallel axis theorem)</h3>
+            <ul>
+                <li>
+                    아래 그림과 같이 \(x\)축이 도심축(도심 \(C\)를 지나는 축)이 <em>아닐</em> 경우, \(dA\)에서 \(x\)축까지의 거리 \(y\)는 \(dA\)부터 도심축까지의 거리 \(y'\)과 도심축부터 \(x\)축까지의 거리 \(\bar y\)의 합, 즉 \(y = y' + \bar y\)이다.
+                    <p><img src="images\04.02.03.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    그러므로 도심축이 아닌 \(x\)축에 대한 단면 전체의 \(I_x\) 계산식은 다음이 된다.
+                    $$ \begin{align}
+                        I_{x} & = \int y^2dA = \int (y'+\bar y)^2dA \\
+                              & = \int y'^2 dA + 2\bar y \int y' dA + \bar y^2 \int dA \\
+                              & = \bar I_x + 2\bar y \times 0 + \bar y^2 A
+                    \end{align} $$
+                    <!--$$ \begin{align}
+                        I_{x} & = \int dI_x = \int (y'+\bar y)^2dA \\
+                        & = \int y'^2 dA + 2\bar y \int y' dA + \bar y^2 \int dA \\
+                        & = \int y'^2 dA + 2\bar y 0 + \bar y^2 A \\
+                        & = I_{\bar x} + \bar y^2 A
+                    \end{align} $$-->
+                    위 식에서, \(\int y'^2 dA\)는 도심축에 대한 단면 2차모멘트이므로 \(\bar I_x\)로 표시하고, \(\int y' dA\)는 도심축에 대한 단면 1차모멘트이므로 \(0\), \(\int dA = A\)이다.
+                </li>
+                <li>
+                    따라서, <em>도심 \(C\)를 지나지 않는 \(x\)축에 대한 단면 전체의 \(I_x\)</em>는 다음과 같다.
+                    <em>$$ I_x = \bar I_x + \bar y^2 A $$</em>
+                    여기에서 <em>\(\bar I_x\)는 단면의 도심축에 대한 단면 2차모멘트, \(\bar y\)는 단면 2차모멘트를 계산하기 위한 \(x\)축으로부터 단면의 도심축까지의 거리</em>이다.
+                </li>
+                <li>
+                    어떤 단면의 단면 2차모멘트 계산에서는 먼저 <em>기준축과 도심축의 일치 여부를 확인</em>하고, 만약 일치하지 않는다면 평행축 정리를 이용해야 한다.
+                </li>
+                <li>
+                    다음 그림에서 각 단면의 \(1-1\)축에 대한 단면 2차모멘트를 계산하는 경우, \(1-1\)축이 도심축이므로 단면 2차모멘트는 앞에서 이미 기술한 바와 같이 \(I_1 = (bh^3)/12, \, I_1 = (bh^3)/36,  \, I_1 = (\pi r^4)/4\)이다.
+                    <p><img class="top_margin" src="images\04.02.04.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    반면에 위 그림에서 각 단면의 \(2-2\)축에 대한 단면 2차모멘트를 계산하는 경우, <em>\(2-2\)축이 도심축이 아니므로 평행축 정리를 적용</em>해야 하며, 자세한 계산과정과 결과는 다음과 같다.<br />
+                    \( I_2 = I_1 + \bar y^2 A = (bh^3)/12 + (h/2)^2 \times bh = (bh^3)/12 + (bh^3)/4 = (bh^3)/3 \)<br />
+                    \( I_2 = I_1 + \bar y^2 A = (bh^3)/36 + (h/3)^2 \times bh/2 = (bh^3)/36 + (bh^3)/18 = (bh^3)/12 \)<br />
+                    \( I_2 = I_1 + \bar y^2 A = (\pi r^4)/4 + r^2 \times \pi r^2 = (\pi r^4)/4 + \pi r^4 = (5\pi r^4)/4 \)<br />
+                </li>
+                <li><a href="" class="li_test">확인 질문</a>
+                    <div hidden>다음에서 \(x\)축에 대한 단면 2차모멘트를 계산하시오.<br />
+                        <img class="top_margin" src="images\test.04.02.02.png" onload="this.width/=2;"><br />
+                        <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm^4\)
+                        <input type="submit" class="submit_quiz" value="확인" answer="130000.00">
+                        <span class="span_quiz"></span>
+                    </div>
+                </li>
+            </ul>
+            <h3><a name="section_modulus"></a>단면계수(section modulus)</h3>
+            <ul>
+                <li>
+                    단면계수는 단면의 <em>도심축에 대한 단면 2차모멘트를 도심축에서 단면의 끝단까지의 거리로 나눈 값</em>이다. 따라서 2개의 단면계수가 존재하며, 단면이 도심축에 대해서 대칭일 경우 그 크기가 같다. 단위는 단면 2차모멘트를 거리로 나누었기 때문에 \(mm^3, \, m^3\)이다.
+                </li>
+                <li>
+                    도심을 지나는 \(x\)축이 기준축인 다음 그림에서, \(x\)축에 대한 단면 2차모멘트 \(I_x\)를 \(x\)축부터 단면 끝단까지의 거리 \(y_1, y_2\)로 나눈 \(S_1, \, S_2\)가 단면계수이다.
+                    <p><img class="top_margin" src="images\04.02.05.png" onload="this.width/=2;"></p>
+                    $$ S_1 = \frac{I_x}{y_1} \qquad S_2 = \frac{I_x}{y_2} $$
+                </li>
+                <li>
+                    다음의 직사각형 단면에서 \(x, \, y\)축에 대한 단면계수를 계산하면 다음과 같다.
+                    <p><img src="images\04.02.06.png" onload="this.width/=2;"></p>
+                    $$ S_{x1} = \frac{I_x}{y_1} = \frac{bh^3/12}{h/2} = \frac{bh^2}{6} = S_{x2} \quad \because y_1 = y_2 \\
+                    S_{y1} = \frac{I_y}{x_1} = \frac{hb^3/12}{b/2} = \frac{hb^2}{6} = S_{y2} \quad \because x_1 = x_2 $$
+                </li>
+                <li>
+                    <a href="" class="li_test">확인 질문</a>
+                    <div hidden>폭 \(20mm\), 높이 \(40mm\)인 단면의 폭방향 축에 대한 단면계수를 계산하시오.<br />
+                        <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm^3\)
+                        <input type="submit" class="submit_quiz" value="확인" answer="5333.33">
+                        <span class="span_quiz"></span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="separator"></div>
+
+        <!--########## RE VIEW ##########-->
+        <div id="re_view_quiz" hidden>
+            <h3><a name="re_view_quiz"></a>복습 퀴즈</h3>
+            <ol class="ol_quiz">
+                <li>반지름 \(20mm\)인 원형 단면의 도심축에 대한 단면 2차모멘트를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm^4\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="125663.71">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>다음에서 \(x\)축에서 도심축까지의 거리 \(\bar y\)를 계산하시오.<br />
+                    <img src="images\quiz.04.02.02.png" onload="this.width/=2;"><br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="103.75">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>다음에서 \(A\)부분의 폭방향 도심축에 대한 단면 2차모멘트를 계산하시오.<br>
+                    <img src="images\quiz.04.02.03.png" onload="this.width/=2;"><br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm^4\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="66666.67">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>다음에서 \(B\)부분의 폭방향 도심축에 대한 단면 2차모멘트를 계산하시오.<br>
+                    <img src="images\quiz.04.02.04.png" onload="this.width/=2;"><br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm^4\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="1440000.00">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>다음에서 단면 전체의 도심축에 대한 \(A\)부분의 단면 2차모멘트를 계산하시오.<br />
+                    <img src="images\quiz.04.02.05.png" onload="this.width/=2;"><br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm^4\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="2694791.67">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>다음에서 단면 전체의 도심축에 대한 \(B\)부분의 단면 2차모멘트를 계산하시오.<br />
+                    <img src="images\quiz.04.02.06.png" onload="this.width/=2;"><br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm^4\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="3736875.00">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>다음에서 단면 전체의 도심축에 대한 단면 전체의 단면 2차모멘트를 계산하시오.<br />
+                    <img src="images\quiz.04.02.07.png" onload="this.width/=2;"><br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm^4\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="6431666.67">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 7에서 도심축 윗 부분의 단면계수를 계산하시오.<br>
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm^3\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="177425.29">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 7에서 도심축 아래 부분의 단면계수를 계산하시오.<br>
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm^3\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="61991.97">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 7에서 단면 전체의 높이방향 도심축에 대한 단면 전체의 단면 2차모멘트를 계산하시오.<br>
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm^4\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="1676666.67">
+                    <span class="span_quiz"></span>
+                </li>
+            </ol><br />
+            <input type="submit" class="submit_eval" value="복습 퀴즈 평가" /><br />
+            <span class="span_eval"></span>
+        </div>
+
+    </div>
+
+</body>
+</html>

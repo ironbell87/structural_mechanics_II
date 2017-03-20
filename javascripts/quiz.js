@@ -40,7 +40,11 @@ $(document).ready(function () {
         }
 
         // comparison
-        if (compare_value(m_input, m_answer, m_input_val)) { //  in case of exact answer
+        var m_tolerance = m_submit.attr('tolerance');
+        var m_comparison = compare_value(m_input, m_answer, m_input_val, m_tolerance);
+
+        //if (compare_value(m_input, m_answer, m_input_val)) { //  in case of exact answer
+        if (m_comparison) { //  in case of exact answer
             m_input.val(m_answer);
             m_input.prop("disabled", true); // disable input button
             m_input.css("color", "#ff6f6f"); // change the color of input button
@@ -98,9 +102,13 @@ $(document).ready(function () {
     });
 });
 
-function compare_value(p_input, p_ex_ans, p_in_ans) {
+function compare_value(p_input, p_ex_ans, p_in_ans, p_tolerance) {
+    var m_tolerance = g_tolerance;
     if (p_input.prop('type') == "number") { // in case of number
-        if (Math.abs(p_ex_ans - p_in_ans) < g_tolerance) return true;
+        if (p_tolerance != undefined) m_tolerance = parseFloat(p_tolerance); // set tolerance
+        m_ex_ans = parseFloat(p_ex_ans);
+        m_in_ans = Math.round(parseFloat(p_in_ans) / m_tolerance) * m_tolerance; // set decimal place
+        if (Math.abs(m_ex_ans - m_in_ans) < m_tolerance) return true;
         else return false;
     }
     else { // in case of text

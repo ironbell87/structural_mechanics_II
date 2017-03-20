@@ -119,7 +119,7 @@ img.top_margin {
 
 .header_wrapper {
     /*border: 1px solid #73AD21;*/
-    position: fixed; /* absolute; */
+    position: absolute; /* fixed; */
     /*background: url("../images/rrianglified.png");
     background-size: 3840px 180px;
     background-repeat: no-repeat;*/
@@ -175,7 +175,7 @@ img.top_margin {
 
 .header_title { /* for h1 */
     /*border: 1px solid #f00;*/
-    margin-top: 37px;
+    margin-top: 33px;
     text-align: center;
     color: #eee;
     font-size: 30px; /* 1px = 1/16em; */

@@ -1,0 +1,251 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../javascripts/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="../javascripts/login.js"></script>
+    <script type="text/javascript" src="../javascripts/quiz.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="../stylesheets/stylesheet.css">
+    <title>Principal axis</title>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div class="header_wrapper">
+        <a class="header_octocat" href="https://pages.github.com" target="_blank"></a>
+        <h1 class="header_title">단면의 주축(principal axis)과 주단면 2차모멘트(principal moment of intertia)</h1>
+        <span class="header_span_login"></span>
+        <a class="header_login"></a>
+        <a class="header_email" href="mailto:ironbell@kyungnam.ac.kr"></a>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="content_wrapper">
+
+        <!--########## PRE VIEW ##########-->
+        <div id="pre_view" hidden>
+            <h3><a name="pre_veiw"></a>교재 학습 범위</h3>
+            <ul>
+                <li>교재 163쪽~167쪽의 "4.1.6 좌표변환과 단면의 주축</li>
+            </ul>
+        </div>
+        <div class="separator"></div>
+
+        <!--########## MAIN VIEW ##########-->
+        <div id="main_view" hidden>
+            <!--inline script for left-align of MathJax equation-->
+            <script>
+                if (MathJax) {
+                    MathJax.Hub.Config({ displayAlign: "left" });
+                    MathJax.Hub.Rerender();
+                }
+            </script>
+            <!--script for left-align of MathJax equation-->
+            <h3><a name="transformation_of_coordinates"></a>좌표변환(transformation of coordinates)</h3>
+            <ul>
+                <li>
+                    지금까지 하나의 단면에 대해서 기준축, 즉 \(x, \, y\)축의 위치와 방향을 설정하고 이에 따라 단면 2차모멘트와 단면 상승모멘트 등를 계산하였다. 그러므로, 다음 그림과 같이 하나의 단면에 대해서 <em>\(x, \, y\)축까지의 수직거리 \(x, \, y\)</em>가 매우 중요하다.
+                    <p><img src="images\04.04.01.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    하지만, 다음 그림처럼 기준축을 \(\theta\)만큼 회전시켜 \(x', \, y'\)이 기준축이 되면, <em>\(x', \, y'\)축까지의 수직거리 \(x', \, y'\)</em>을 계산해야 한다.
+                    <p><img src="images\04.04.02.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    따라서, 아래 그림을 참고하면 \(x', \, y'\)을 \(x, \, y\)와 \(\theta\)로 다음과 같이 표현할 수 있다.
+                    <p><img src="images\04.04.03.png" onload="this.width/=2;"></p>
+                    <p>\( x' = y \sin \theta + x \cos\theta \qquad y' =  y \cos \theta - x \sin\theta \)</p>
+                </li>
+                <li><a href="" class="li_test">확인 질문</a>
+                    <div hidden>\(x, \, y\)축을 \(60^\circ\) 회전시켰을 때, 점 \((2, \, \sqrt{3})\)의 좌표는 \(x', \, y'\)이 된다. 이 때 \(x'\)을 계산하시오.<br />
+                        <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> 
+                        <input type="submit" class="submit_quiz" value="확인" answer="2.50">
+                        <span class="span_quiz"></span>
+                    </div>
+                </li>
+            </ul>
+            <h3><a name="transformation_of_I"></a>단면 2차모멘트와 단면 상승모멘트의 변환</h3>
+            <ul>
+                <li>
+                    좌표변환의 결과, 즉 \( x' = y \sin \theta + x \cos\theta, \, y' =  y \cos \theta - x \sin\theta \)를 반영하여 다음 그림처럼 \(\theta\)만큼 회전시킨 \(x', \, y'\)축에 대한 단면의 단면 2차모멘트와 단면 상승모멘트를 계산하면 다음과 같다.
+                    <p><img src="images\04.04.02.png" onload="this.width/=2;"></p>
+                    $$\begin{align}
+                        I_{x'} & = \int y'^2 \, dA = \int (y \cos \theta - x \sin\theta )^2 \, dA \\
+                             & = \cos^2 \theta \int y^2 \, dA - 2\sin\theta\cos\theta \int xy \, dA + \sin^2 \theta \int x^2 \, dA \\
+                             & = I_x \cos^2 \theta - 2 I_{xy} \sin\theta\cos\theta + I_y \sin^2 \theta
+                    \end{align}$$
+                    $$\begin{align}
+                        I_{y'} & = \int x'^2 \, dA = \int (y \sin \theta + x \cos \theta )^2 \, dA \\
+                             & = \sin^2 \theta \int y^2 \, dA + 2\sin\theta\cos\theta \int xy \, dA + \cos^2 \theta \int x^2 \, dA \\
+                             & = I_x \sin^2 \theta + 2 I_{xy} \sin\theta\cos\theta + I_y \cos^2 \theta
+                    \end{align}$$
+                    $$\begin{align}
+                        I_{x'y'} & = \int x'y' \, dA = \int (y \sin \theta + x \cos \theta )(y \cos \theta - x \sin\theta ) \, dA \\
+                             & = \sin \theta \cos \theta \int y^2 \, dA - \sin^2 \theta \int xy \, dA + \cos^2 \theta \int xy \, dA - \sin\theta\cos\theta \int x^2 \, dA \\
+                             & = (I_x - I_y) \sin \theta \cos \theta + I_{xy} (\cos^2 \theta - \sin^2 \theta)
+                    \end{align}$$
+                </li>
+                <li>
+                    위의 식에 삼각함수 2배각 공식 \( 2\cos^2 \theta = 1+\cos 2\theta, \, 2\sin^2\theta = 1-\cos 2\theta, \, 2\sin \theta\cos\theta = \sin 2\theta\)를 대입하고 이를 정리하면 다음의 식을 얻을 수 있다.
+                    $$  I_{x'} = \left( \frac{I_x + I_y}{2} \right) + \left( \frac{I_x - I_y}{2} \right)\cos2\theta - I_{xy}\sin 2\theta \\
+                        I_{y'} = \left( \frac{I_x + I_y}{2} \right) - \left( \frac{I_x - I_y}{2} \right)\cos2\theta + I_{xy}\sin 2\theta \\
+                        I_{x'y'} = \left( \frac{I_x - I_y}{2} \right)\sin2\theta + I_{xy}\cos2\theta $$
+                </li>
+                <li>
+                    만약 <em>\(I_x, \, I_y, \, I_{xy}\)를 알고 있다면</em>, 위의 식을 이용해서 임의의 각도 \(\theta\)만큼 회전한 \(x', \, y'\)축에 대한 \(I_{x'}, \, I_{y'}, \, I_{x'y'}\)를 편리하게 계산할 수 있다.
+                    그리고 위 첫번째, 두번째 식을 더하면 <em>\(I_x + I_y = I_{x'} + I_{y'}\), 즉 직각인 2개 축에 대한 단면 2차모멘트의 합은 항상 일정</em>하다는 것도 알 수 있다.
+                </li>
+                <li><a href="" class="li_test">확인 질문</a>
+                    <div hidden>어떤 단면에서 서로 직각인 \(x, \, y\)축에 대한 \(I_x = 200 mm^4, \, I_y=100 mm^4\)이다. 여기에서 \(x, \, y\)축을 \(-52.89^\circ\)만큼 회전시킨 \(x', \, y'\)축에 대한 \(I_{x'}\)과 \(I_{y'}\)의 합을 계산하시오.<br />
+                        <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm^4\)
+                        <input type="submit" class="submit_quiz" value="확인" answer="300.00">
+                        <span class="span_quiz"></span>
+                    </div>
+                </li>
+            </ul>
+            <h3><a name="princiapl_aixs"></a>단면의 주축(principal axis)</h3>
+            <ul>
+                <li>
+                    좌표축의 변환을 이용하여 \(\theta\)를 \(0^\circ\)부터 \(360^\circ\)까지 변화시키면, \(I_{x'}, \, I_{y'}\)의 값이 달라지면서 최대 또는 최소가 되는 각도가 있다.
+                </li>
+                <li>
+                    \(I_{x'}, \, I_{y'}\)이 최대 또는 최소가 되는 각도를 \(\theta_p\)라 하면, \(I_{x'}, \, I_{y'}\)을 \(\theta\)로 미분하여 \(0\)으로 놓고 다음과 같이 계산할 수 있다.
+                    <!--$$  \frac{I_x'}{d\theta} = ( I_y - I_x )\sin2\theta - 2I_{xy}\cos2\theta=0 \\
+                        \therefore \tan2\theta_p=-\frac{2I_{xy}}{I_x - I_y} $$-->
+                    $$  \frac{d I_{x'}}{d\theta} = -( I_x - I_y )\sin2\theta - 2I_{xy}\cos2\theta=0 $$
+                    <em>$$  \therefore \tan2\theta_p=-\frac{2I_{xy}}{I_x - I_y} $$</em>
+                </li>
+                <li>
+                    직교하는 \(x, \, y\)축을 \(\theta_p\)만큼 회전시킨 직교하는 \(x', \, y'\)축을 <em>단면의 주축(principal axis)</em>이라 한다.
+                </li>
+                <li><a href="" class="li_test">확인 질문</a>
+                    <div hidden>어떤 단면에서 \(I_x=1,000 mm^4, \, I_y=500 mm^4, \, I_{xy}=-50 mm^4 \)이다. 이 단면의 주축의 방향 \(\theta_p\)를 계산하시오.<br />
+                        <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(^\circ\)
+                        <input type="submit" class="submit_quiz" value="확인" answer="5.65">
+                        <span class="span_quiz"></span>
+                    </div>
+                </li>
+            </ul>
+            <h3><a name="princiapl_moment_of_inertia"></a>주단면 2차모멘트(principal moment of inertia)</h3>
+            <ul>
+                <li>
+                    앞에서 구한 \(\theta_p\)를 \(I_{x'}, \, I_{y'}\)에 대입하면 그 최대값 \(I_1\)과 최소값 \(I_2\)를 다음과 같이 계산할 수 있다. 이 값을 주축에 대한 단면 2차모멘트, 즉 <em>주단면 2차모멘트(principal moment of inertia)</em>라 한다.
+                    <em>
+                        $$  \max (I_{x'}, \, I_{y'}) = I_1 = \left( \frac{I_x + I_y}{2} \right) + \sqrt{ \left( \frac{I_x - I_y}{2} \right)^2 + I_{xy}^2} \\
+                            \min (I_{x'}, \, I_{y'}) = I_2 = \left( \frac{I_x + I_y}{2} \right) - \sqrt{ \left( \frac{I_x - I_y}{2} \right)^2 + I_{xy}^2} $$
+                    </em>
+                </li>
+                <li>
+                    그리고 \(\theta_p\)를 \(I_{x'y'}\)에 대입하면 단면 상승모멘트 \(I_{x'y'} = 0\)이 된다.
+                </li>
+                <li><a href="" class="li_test">확인 질문</a>
+                    <div hidden>어떤 단면에서 \(I_x=1,000 mm^4,, I_y=500 mm^4, \, I_{xy}=-50 mm^4 \)이다. 여기에서 주단면 2차모멘트의 최대값 \(I_1\)을 계산하시오.<br />
+                        <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(^\circ\)
+                        <input type="submit" class="submit_quiz" value="확인" answer="1004.95">
+                        <span class="span_quiz"></span>
+                    </div>
+                </li>
+            </ul>
+            <h3><a name="example"></a>예제</h3>
+            <ul>
+                <li>
+                    문제 : 다음에서 <em>도심</em>에서의 주축방향과 주단면 2차모멘트를 계산하시오.
+                    <p><img src="images\04.04.04.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    풀이
+                    <ol>
+                        <li>
+                            다음과 같이 1번과 2번 직사각형으로 구분하여 도심의 위치 \(\bar x, \, \bar y\)를 다음과 같이 계산한다.
+                            <p><img src="images\04.04.05.png" onload="this.width/=2;"></p>
+                            $$ \bar x = \frac{G_y}{A} = \frac{20 \times 100 \times 10 + 100 \times 20 \times 50}{20 \times 100 + 100 \times 20} = 30 mm \\
+                               \bar y = \frac{G_x}{A} = \frac{20 \times 100 \times 70 + 100 \times 20 \times 10}{20 \times 100 + 100 \times 20} = 40 mm $$
+                        </li>
+                        <li>
+                            도심축을 지나는 \(x, \, y\)축에 대한 \(I_x, \, I_y, \, I_{xy}\)를 다음과 같이 계산한다.
+                            <p><img src="images\04.04.06.png" onload="this.width/=2;"></p>
+                            $$ I_x = \frac{20 \times 100^3}{12} + (20 \times 100) \times (70-40)^2 + \frac{100 \times 20^3}{12} + (20 \times 100) \times (40-10)^2 = 5,333,333.33 mm^4 \\
+                               I_y = \frac{100 \times 20^3}{12} + (20 \times 100) \times (30-10)^2 + \frac{20 \times 100^3}{12} + (20 \times 100) \times (50-30)^2 = 3,333,333.33 mm^4 \\
+                               I_{xy} = (20 \times 100) \times -20 \times 30 + (100 \times 20) \times 20 \times -30 = -2,400,000.00 mm^4 $$
+                        </li>
+                        <li>
+                            단면의 주축의 방향 \(\theta_p\)를 다음과 같이 계산한다.
+                            <p><img src="images\04.04.07.png" onload="this.width/=2;"></p>
+                            $$ \tan 2\theta_p = -\frac{2I_{xy}}{I_x-I_y} = -\frac{2 \times -2,400,000.00}{5,333,333.33 - 3,333,333.33} = 2.40 $$
+                            <em>$$ 2\theta_p = \tan^{-1}(2.40) = 67.38^\circ \qquad \theta_p = 33.69^\circ $$</em>
+                        </li>
+                        <li>
+                            주단면 2차모멘트를 다음과 같이 계산한다.
+                            $$ \left( \frac{I_x + I_y}{2} \right) = \left( \frac{5,333,333.33 + 3,333,333.33}{2} \right) = 4,333,333.33 \\
+                                \sqrt{ \left( \frac{I_x - I_y}{2} \right)^2 + I_{xy}^2} = \sqrt{ \left( \frac{5,333,333.33 - 3,333,333.33}{2} \right)^2 + 2,400,000.00^2} = 2,600,000.00 $$
+                            <em>$$  I_1 = 4,333,333.33 + 2,600,000.00 = 6,933,333.33 mm^4 \\
+                                I_2 = 4,333,333.33 - 2,600,000.00 = 1,733,333.33 mm^4 $$</em>
+                        </li>
+                    </ol>
+                </li>
+            </ul>
+        </div>
+        <div class="separator"></div>
+
+        <!--########## RE VIEW ##########-->
+        <div id="re_view_quiz" hidden>
+            <h3><a name="re_view_quiz"></a>복습 퀴즈</h3>
+            <ol class="ol_quiz">
+                <li>어떤 단면의 도심에서 \(I_x = 532.00mm^4, \, I_y = 740.00 mm^4, \, I_{xy} = 345.00mm^4\)일 경우, 주단면 2차모멘트 \(I_1\)을 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm^4\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="996.33">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 1에서 주단면 2차모멘트 \(I_2\)를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm^4\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="275.67">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 1에서 주축의 방향 \(\theta_p\)를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(^\circ\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="36.61">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>폭 \(30mm\), 높이 \(50mm\)인 직사각형 단면의 도심에서의 \(I_x\)를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm^4\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="312500.00">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 4에서 도심에서의 \(I_y\)를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm^4\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="112500.00">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 4에서 도심에서의 \(I_{xy}\)를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm^4\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="0.00">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 4에서 도심에서의 주축의 방향 \(\theta_p\)를 계산하시오.<br>
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(^\circ\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="0.00">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 4에서 도심에서의 주단면 2차모멘트 \(I_1\)을 계산하시오.<br>
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm^4\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="312500.00">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 4에서 도심에서의 주단면 2차모멘트 \(I_2\)를 계산하시오.<br>
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm^4\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="112500.00">
+                    <span class="span_quiz"></span>
+                </li>
+            </ol><br />
+            <input type="submit" class="submit_eval" value="복습 퀴즈 평가" /><br />
+            <span class="span_eval"></span>
+        </div>
+
+    </div>
+
+</body>
+</html>

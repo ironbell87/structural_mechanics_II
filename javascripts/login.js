@@ -12,6 +12,18 @@ $(document).ready(function () {
         toggle_body(false);
     }
 
+    // prohibit context menu, drag, and select for normal user
+    // <body oncontextmenu='return false' onselectstart='return false' ondragstart='return false'>
+    $('body').on('contextmenu', function () {
+        if (sessionStorage.login != "administrator") return false;
+    });
+    $('body').on('drag', function () {
+        if (sessionStorage.login != "administrator") return false;
+    });
+    $('body').on('selectstart', function () {
+        if (sessionStorage.login != "administrator") return false;
+    });
+
     // show dialog box for login
     $('.anchor_login').click(function () {
         $('.header_login').trigger('click');
