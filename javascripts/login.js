@@ -1,4 +1,4 @@
-﻿var id_arr = ["user", "administrator"];  // as many as you like - no comma after final entry
+﻿var id_arr = ["student", "administrator"];  // as many as you like - no comma after final entry
 var kw_arr = ["pink_floyd", "shine_a_light"];  // as many as you like - no comma after final entry
 var time_out_duration = 1500; // 1.5s
 

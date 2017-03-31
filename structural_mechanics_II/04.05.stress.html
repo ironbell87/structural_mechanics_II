@@ -1,0 +1,215 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../javascripts/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="../javascripts/login.js"></script>
+    <script type="text/javascript" src="../javascripts/quiz.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="../stylesheets/stylesheet.css">
+    <title>Stress</title>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div class="header_wrapper">
+        <a class="header_octocat" href="https://pages.github.com" target="_blank"></a>
+        <h1 class="header_title">응력도(stress)</h1>
+        <span class="header_span_login"></span>
+        <a class="header_login"></a>
+        <a class="header_email" href="mailto:ironbell@kyungnam.ac.kr"></a>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="content_wrapper">
+
+        <!--########## PRE VIEW ##########-->
+        <div id="pre_view" hidden>
+            <h3><a name="pre_veiw"></a>교재 학습 범위</h3>
+            <ul>
+                <li>교재 167쪽 "4.2 단면 내의 응력과 변형률" 개요 부분</li>
+                <li>교재 168쪽~169쪽의 "4.2.1 축력에 의한 응력과 변형률"에서 응력도 부분</li>
+                <li>교재 169쪽~170쪽의 "4.2.2 전단응력과 전단변형률"에서 응력도 부분</li>
+                <li>교재 206쪽~209쪽의 "4.3.4 보의 전단응력"에서 예제 4-25, 4-27</li>
+            </ul>
+        </div>
+        <div class="separator"></div>
+
+        <!--########## MAIN VIEW ##########-->
+        <div id="main_view" hidden>
+            <!--inline script for left-align of MathJax equation-->
+            <script>
+                if (MathJax) {
+                    MathJax.Hub.Config({ displayAlign: "left" });
+                    MathJax.Hub.Rerender();
+                }
+            </script>
+            <!--script for left-align of MathJax equation-->
+            <h3><a name="stress"></a>응력도(stress)</h3>
+            <ul>
+                <li>
+                    응력도는 <em>부재력(단면력, 내력)의 단위 면적당 크기 또는 밀도</em>로서 응력 또는 내응력(internal stress)이라고도 한다. 부재의 <em>단면(또는 절점)에 작용</em>한다.
+                </li>
+                <li>
+                    응력도의 기본적인 단위는 힘을 면적으로 나눈 \(N/m^2\)이다. 이는 압력의 단위와 동일하며 간단하게 \(1 N/m^2 = 1Pa\)이라 한다.
+                </li>
+                <li>
+                    하지만, 응력도에서 주로 사용하는 단위는 <em>\(N/mm^2, \, kN/m^2\)</em>이며, 이를 환산하면 <em>\(1N/mm^2 = 10^6Pa = 1MPa, \, 1kN/m^2 = 10^{-3} N/mm^2 = 10^{-3} MPa\)</em>이다.
+                </li>
+                <li>
+                    응력도는 작용효과 기준으로 <em>축력에 의해서 발생하는 축응력도(axial stress), 전단력에 의해서 발생하는 전단응력도(shear stress), 휨모멘트에 의해서 발생하는 휨응력도(bending stress, flexural stress)</em>가 있다.
+                </li>
+                <li>
+                    응력도는 작용방향 기준으로 아래 그림과 같이 <em>부재단면에 수직(직각)으로 작용하는 수직응력도(normal stress) \(\sigma\), 부재단면에 평행(나란)하게 작용하는 전단응력도(shear stress) \(\tau\)</em>가 있다.
+                    <p><img class="top_margin" src="images\04.05.01.png" onload="this.width/=2;"></p>
+                </li>
+                <li><a href="" class="li_test">확인 질문</a>
+                    <div hidden>\(2 \times 10^6 N/m^2\)은 몇 \(MPa\)인지 계산하시오.<br />
+                        <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                        <input type="submit" class="submit_quiz" value="확인" answer="2.00">
+                        <span class="span_quiz"></span>
+                    </div>
+                </li>
+            </ul>
+            <h3><a name="axial_stress"></a>축응력도(axial stress)</h3>
+            <ul>
+                <li>
+                    축응력도는 축력을 단면적으로 나눈 값으로서 <em>\(\sigma = P / A\)</em>이다.
+                </li>
+                <li>
+                    다음 그림과 같이 축응력도는 <em>단면에 수직으로 작용하는 수직응력도이며, 단면 내에서 도심으로부터의 수직거리 \(y\)와 관계없이 모든 부분에서 동일</em>한 값을 갖는다.
+                    <p><img class="top_margin" src="images\04.05.02.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    인장력에 의한 인장응력도(tensile stress)와 압축력에 의한 압축응력도(compressive stress)가 있다.
+                </li>
+                <li>
+                    지름 \(20mm\)인 강봉에 인장력 \(10kN\)이 작용할 때, 축력 \(P = 10,000N\), 강봉의 단면적 \(A = \pi \times 10^2\)이므로, 축응력도(인장응력도)는 \(\sigma = P / A = 10,000/(\pi \times 100) = 31.83 N/mm^2 = 31.83MPa\)이다.<br />
+                </li>
+                <li><a href="" class="li_test">확인 질문</a>
+                    <div hidden>지름 \(200mm\), 높이 \(400mm\)인 콘크리트 원기둥에 압축력 \(150kN\)이 작용하고 있다. 축응력도(압축응력도)를 계산하시오.<br />
+                        <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                        <input type="submit" class="submit_quiz" value="확인" answer="4.77">
+                        <span class="span_quiz"></span>
+                    </div>
+                </li>
+            </ul>
+            <h3><a name="shear_stress"></a>전단응력도(shear stress)</h3>
+            <ul>
+                <li>
+                    전단응력도는 다음 그림과 같이 <em>단면에 나란한 방향으로 작용하며, 단면 내에서 도심으로부터의 수직거리 \(y\)에 따라 다른</em> 값을 갖는다.
+                    <p><img class="top_margin" src="images\04.05.03.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    위 그림의 오른쪽은 부재에서 아주 작은 부분 \(dA\)를 가상으로 절단하여 각 단면에 작용하는 전단응력도를 나타낸 것이다. 
+                    그림에 나타난 바와 같이 <em>4개의 전단응력도의 크기는 항상 같으며</em> 수직방향의 2개 전단응력도와 수평방향의 2개 전단응력도는 각각 방향이 항상 반대이다. 
+                    그리고 만약 수직방향의 2개 전단응력도가 시계방향이면 수평방향의 2개 전단응력도는 반시계방향이다. 반대로 수직평방향의 2개 전단응력도가 반시계방향이면 수평방향의 2개 전단응력도는 시계방향이다.
+                </li>
+                <li>
+                    전단응력도의 계산식은 <em>\(\tau = (VG) / (Ib)\)</em>이다. 여기에서 \(V\)는 전단력, <em>\(G\)는 전단응력도를 계산하는 위치인 \(y\)부터 단면 최외단까지 부분의 단면 전체 도심에 대한 단면 1차모멘트</em>, \(I\)는 단면 전체의 도심에 대한 단면 2차모멘트, \(b\)는 \(y\) 위치에서의 단면의 폭이다.
+                </li>
+                <li>
+                    이 식에 따라 전단응력도를 계산하면, 위의 그림과 같이 <em>도심(\(y=0\))에서 최대</em>이고 <em>도심에서 가장 먼 단면 최외단(\(y\)가 최대)에서 최소값 \(0\)</em>이다.
+                </li>
+                <li>
+                    다음 그림과 같은 단면에 전단력 \(V=1,200kN\)이 작용할 때, \(A, \, B, \, C\), 즉 도심으로부터의 거리 \(y_A=125, \, y_B=100, \, y_C=0\)인 위치에서 전단응력도를 계산하면 다음과 같다.
+                    <p><img src="images\04.05.04.png" onload="this.width/=2;"></p>
+                    $$ V = 1,200kN = 1,200,000N, \, I=bh^3/12 = 125 \times 250^3/12 = 162,760,416.67mm^4, \, b=125mm \\
+                       G_A = bh \times \bar y_A = 125 \times 0 \times (125 + 0/2) = 125 \times 0 \times 125 = 0.00mm^3 \\
+                       G_B = bh \times \bar y_B = 125 \times 25 \times (100 + 25/2) = 125 \times 25 \times 112.5 = 351,562.50mm^3 \\
+                       G_C = bh \times \bar y_C = 125 \times 125 \times (125/2) = 125 \times 125 \times 125 = 976,562.50mm^3 \\
+                       \tau_A = (VG_A)/(Ib) = (1,200,000 \times 0.00)/(162,760,416.67 \times 125) = 0.00 MPa \\
+                       \tau_B = (VG_B)/(Ib) = (1,200,000 \times 351,562.50)/(162,760,416.67 \times 125) = 20.74 MPa \\
+                       \tau_C = (VG_C)/(Ib) = (1,200,000 \times 976,562.50)/(162,760,416.67 \times 125) = 57.60 MPa $$
+                </li>
+                <li><a href="" class="li_test">확인 질문</a>
+                    <div hidden>폭 \(50mm\), 높이 \(120mm\)인 직사각형 단면에 \(75kN\)의 전단력이 작용할 때, 최대 전단응력도 \(\tau_{\max}\)를 계산하시오.<br />
+                        <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                        <input type="submit" class="submit_quiz" value="확인" answer="18.75">
+                        <span class="span_quiz"></span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="separator"></div>
+
+        <!--########## RE VIEW ##########-->
+        <div id="re_view_quiz" hidden>
+            <h3><a name="re_view_quiz"></a>복습 퀴즈</h3>
+            <ol class="ol_quiz">
+                <li>
+                    면적 \(200mm^2\)인 단면에 압축력 \(3kN\)이 작용할 때, 압축응력도를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="15.00">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>
+                    인장력 \(5.3kN\)이 작용하는 부재의 단면의 인장응력도가 \(\sigma = 235MPa\)일 때, 단면적을 구하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm^2\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="22.55">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>
+                    폭 \(300mm\), 높이 \(500mm\)인 직사각형 단면에 인장력 \(753kN\)이 작용할 때, 도심 위치에서의 인장응력도를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="50.20">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>
+                    퀴즈 3에서 단면 최외단에서의 인장응력도를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="50.20">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>
+                    폭 \(300mm\), 높이 \(500mm\)인 직사각형 단면에 전단력 \(753kN\)이 작용할 때, 최소 전단응력도를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="0.00">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>
+                    퀴즈 5에서 최소 전단응력도가 발생하는 위치에서 도심까지의 거리를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="250.00">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>
+                    퀴즈 5에서 최대 전단응력도를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="7.53">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>
+                    퀴즈 5에서 최대 전단응력도가 발생하는 위치에서 도심까지의 거리를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="0.00">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>다음에서 전단력 92.65kN이 작용할 때 도심인 A 위치에서의 전단응력도를 계산하시오.<br />
+                    <img src="images\quiz.04.05.09.png" onload="this.width/=2;"><br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="6.9137" tolerance="1.0e-4">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 9에서 B 위치에서의 전단응력도를 계산하시오.<br>
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPA\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="6.7168" tolerance="1.0e-4">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 9에서 C 위치에서의 전단응력도를 계산하시오.<br>
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPA\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="0.00">
+                    <span class="span_quiz"></span>
+                </li>
+            </ol><br />
+            <input type="submit" class="submit_eval" value="복습 퀴즈 평가" /><br />
+            <span class="span_eval"></span>
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -27,7 +27,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
     margin: 0px 0px;
     font-family: /*'Nanum Myeongjo',*/ 'Lucida Grande', Calibri, Helvetica, Arial, sans-serif;
-    font-weight: 700;
+    font-weight: normal; /* normal = 400; bolt = 700 */
     letter-spacing: -1px;
 }
 
@@ -43,6 +43,7 @@ h3 {
     padding-top: 30px; /* space from top paragraph; */
     line-height: 300%; /* 1.8; */
     font-size: 24px;
+    color: #2B0042; /* very very dark purple */
 }
 
 h4 {
@@ -308,59 +309,48 @@ img.top_margin {
     font-size: 14px;
 }
 
-.span_hint {
-    text-decoration: none;
-    color: #ff6f6f;
-    text-shadow: none;
-
-    transition: color 0.5s ease;
-    transition: text-shadow 0.5s ease;
-    -webkit-transition: color 0.5s ease;
-    -webkit-transition: text-shadow 0.5s ease;
-    -moz-transition: color 0.5s ease;
-    -moz-transition: text-shadow 0.5s ease;
-    -o-transition: color 0.5s ease;
-    -o-transition: text-shadow 0.5s ease;
-    -ms-transition: color 0.5s ease;
-    -ms-transition: text-shadow 0.5s ease;
-}
-
-.span_hint:hover {
-    cursor: pointer;
-}
-
 
 
 /*******************************************************************************
 * tooltip
 *******************************************************************************/
 
-/*.tooltip{
-    display: inline;
+.span_quiz {
     position: relative;
+    display: inline-block;
+    /*border-bottom: 1px dotted black;*/
 }
-		
-.tooltip:hover:after{
-    background: #333;
-    background: rgba(0,0,0,.8);
-    border-radius: 5px;
-    bottom: 26px;
+
+.span_quiz .tooltiptext {
+    visibility: hidden;
+    width: 300px;
+    background-color: #ff6f6f;
     color: #fff;
-    content: attr(custom_tooltip);
-    left: 20%;
-    padding: 5px 15px;
+    /*text-align: center;*/
+    line-height: 130%;
+    border-radius: 6px;
+    padding: 10px;
     position: absolute;
-    z-index: 98;
-    width: 220px;
+    z-index: 1;
+    top: 100%; /* top from 100% of parent */
+    left: 0%; /* left from 0% of parent */
+    margin-left: 0px;
+    opacity: 0;
+    transition: opacity 1s;
 }
-		
-.tooltip:hover:before{
-    border: solid;
-    border-color: #333 transparent;
-    border-width: 6px 6px 0 6px;
-    bottom: 20px;
+
+.span_quiz .tooltiptext::after { /* topward arrow at bottom */
     content: "";
-    left: 50%;
     position: absolute;
-    z-index: 99;
-}*/
+    bottom: 100%;
+    left: 20px; /* arrow left from 20px of parent*/
+    margin-left: 0px;
+    border-width: 5px; /* size of arrow */
+    border-style: solid;
+    border-color: transparent transparent #ff6f6f transparent;
+}
+
+.span_quiz:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}

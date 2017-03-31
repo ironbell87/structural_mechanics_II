@@ -1,0 +1,325 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../javascripts/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="../javascripts/login.js"></script>
+    <script type="text/javascript" src="../javascripts/quiz.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="../stylesheets/stylesheet.css">
+    <title>Principal stress</title>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div class="header_wrapper">
+        <a class="header_octocat" href="https://pages.github.com" target="_blank"></a>
+        <h1 class="header_title">주응력도(principal stress)</h1>
+        <span class="header_span_login"></span>
+        <a class="header_login"></a>
+        <a class="header_email" href="mailto:ironbell@kyungnam.ac.kr"></a>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="content_wrapper">
+
+        <!--########## PRE VIEW ##########-->
+        <div id="pre_view" hidden>
+            <h3><a name="pre_veiw"></a>교재 학습 범위</h3>
+            <ul>
+                <li>교재 177쪽~183쪽의 "4.2.4 주응력"</li>
+            </ul>
+        </div>
+        <div class="separator"></div>
+
+        <!--########## MAIN VIEW ##########-->
+        <div id="main_view" hidden>
+            <!--inline script for left-align of MathJax equation-->
+            <script>
+                if (MathJax) {
+                    MathJax.Hub.Config({ displayAlign: "left" });
+                    MathJax.Hub.Rerender();
+                }
+            </script>
+            <!--script for left-align of MathJax equation-->
+            <h3><a name="stress_at_arbitrary_angle"></a>임의방향 단면의 응력도(stress at the section of arbitrary angle)</h3>
+            <ul>
+                <li>
+                    어떤 임의의 단면 일부분을 대상으로 \(x, \, y\)축 방향에 대해서 <em>응력도 상태, 즉 수직응력도 \(\sigma_x, \, \sigma_y\)와 전단응력도 \(\tau_{xy}\)의 크기와 방향</em>을 표현하면 다음 그림과 같다.
+                    <p><img class="top_margin" src="images\04.09.01.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    만약 \(x, \, y\)축을 \(\theta\)만큼 회전시킨 축을 \(\theta, \, \iota\)축이라 하면, <em>단면의 동일한 부분이라 하더라도 \(\theta, \, \iota\)축에 대한 응력도 상태, 즉 수직응력도 \(\sigma_\theta\)와 전단응력도 \(\tau_\theta\)의 크기와 방향은 다음 그림과 같이 \(x, \, y\)축 방향에 대한 응력도 상태와는 다르게 된다.</em>
+                    <p><img class="top_margin" src="images\04.09.02.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    다음 그림의 오른쪽은 단면의 동일한 부분에 대해서 \(x, \, y\)축과 \(\theta, \, \iota\)축을 겹친 자유물체도이다. 여기에 \(x, \, y\)축 방향의 평형조건식을 적용하면 다음과 같다.
+                    <p><img class="top_margin" src="images\04.09.03.png" onload="this.width/=2;"></p>
+                    $$ \Sigma F_x = \sigma_\theta \, ds \cos \theta + \tau_\theta \, ds \sin \theta - \sigma_x \, dy + \tau_{xy} \, dx = 0 $$
+                    $$ \Sigma F_y = \sigma_\theta \, ds \sin \theta - \tau_\theta \, ds \cos \theta - \sigma_x \, dx + \tau_{xy} \, dy = 0 $$
+                </li>
+                <li>
+                    여기에서 \(dx = ds \sin \theta, \, dy = ds \cos \theta, \, \theta + 90^\circ = \theta'\)이므로, 이를 위의 연립방정식에 대입하고 풀면 다음과 같이 \(\sigma_\theta, \, \tau_\theta\)를 계산할 수 있다.
+                    $$  \sigma_\theta = \left( \frac{\sigma_x + \sigma_y}{2} \right) + \left( \frac{\sigma_x - \sigma_y}{2} \right)\cos2\theta - \tau_{xy}\sin 2\theta \\
+                        \sigma_{\theta'} = \left( \frac{\sigma_x + \sigma_y}{2} \right) - \left( \frac{\sigma_x - \sigma_y}{2} \right)\cos2\theta + \tau_{xy}\sin 2\theta \\
+                        \tau_\theta = \left( \frac{\sigma_x - \sigma_y}{2} \right)\sin2\theta + \tau_{xy}\cos2\theta $$
+                </li>
+                <li>
+                    만약 <em>\(\sigma_x, \, \sigma_y, \, \tau_{xy}\)를 알고 있다면</em>, 위의 식을 이용해서 임의의 각도 \(\theta\)만큼 회전한 \(\theta, \, \iota\)축에 대한 \(\sigma_\theta, \, \sigma_{\theta'}, \, \tau_{\theta}\)를 편리하게 계산할 수 있다.
+                    그리고 위 첫번째, 두번째 식을 더하면 <em>\(\sigma_x + \sigma_y = \sigma_\theta + \sigma_{\theta'}\), 즉 직각인 2개 축에 대한 수직응력도의 합은 항상 일정</em>하다는 것도 알 수 있다.
+                </li>
+                <li><a href="" class="li_test">확인 질문</a>
+                    <div hidden>어떤 단면에서 서로 직각인 \(x, \, y\)축에 대한 \(\sigma_x = 200 MPa, \, \sigma_y=100 MPa\)이다. 여기에서 \(x, \, y\)축을 \(132.53^\circ\)만큼 회전시킨 \(x', \, y'\)축에 대한 \(\sigma_{\theta}\)와 \(\sigma_{\theta'}\)의 합을 계산하시오.<br />
+                        <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                        <input type="submit" class="submit_quiz" value="확인" answer="300.00">
+                        <span class="span_quiz"></span>
+                    </div>
+                </li>
+            </ul>
+            <h3><a name="princiapl_stress"></a>수직응력도의 최대값 또는 최소값 - 주응력도(principal stress)</h3>
+            <ul>
+                <li>
+                    좌표축의 변환을 이용하여 \(\theta\)를 \(0^\circ\)부터 \(360^\circ\)까지 변화시키면, 수직응력도 \(\sigma_{\theta}, \, \sigma_{\theta'}\)의 값이 달라지면서 최대 또는 최소가 되는 각도가 있다.
+                </li>
+                <li>
+                    \(\sigma_{\theta}, \, \sigma_{\theta'}\)이 최대 또는 최소가 되는 각도를 <em>주응력도 각도 \(\theta_p\)</em>라 하면, \(\sigma_{\theta}, \, \sigma_{\theta'}\)을 \(\theta\)로 미분하여 \(0\)으로 놓고 다음과 같이 계산할 수 있다.
+                    $$ \frac{d \sigma_\theta}{d\theta} = -( \sigma_x - \sigma_y )\sin2\theta - 2\tau_{xy}\cos2\theta=0 $$
+                    <em>$$ \therefore \tan2\theta_p=-\frac{2\tau_{xy}}{\sigma_x - \sigma_y} $$</em>
+                </li>
+                <li><a href="" class="li_test">확인 질문</a>
+                    <div hidden>어떤 단면에서 \(\sigma_x=1,000 MPa, \, \sigma_y=500 MPa, \, \tau_{xy}=-50 MPa \)이다. 이 단면의 주응력도의 각도 \(\theta_p\)를 계산하시오.<br />
+                        <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(^\circ\)
+                        <input type="submit" class="submit_quiz" value="확인" answer="5.65">
+                        <span class="span_quiz"></span><br /><br />
+                    </div>
+                </li>
+                <li>
+                    앞에서 구한 \(\theta_p\)를 \(\sigma_{\theta}, \, \sigma_{\theta'}\)에 대입하면 그 최대값 \(\sigma_1\)과 최소값 \(\sigma_2\)를 다음과 같이 계산할 수 있다. 이 값을 수직응력도의 최대값과 최소값인 <em>주응력도</em>라 한다.
+                    <em>
+                        $$ \max (\sigma_{\theta}, \, \sigma_{\theta'}) = \sigma_1 = \left( \frac{\sigma_x + \sigma_y}{2} \right) + \sqrt{ \left( \frac{\sigma_x - \sigma_y}{2} \right)^2 + \tau_{xy}^2} \\
+                           \min (\sigma_{\theta}, \, \sigma_{\theta'}) = \sigma_2 = \left( \frac{\sigma_x + \sigma_y}{2} \right) - \sqrt{ \left( \frac{\sigma_x - \sigma_y}{2} \right)^2 + \tau_{xy}^2} $$
+                    </em>
+                </li>
+                <li>
+                    그리고 \(\theta_p\)를 \(\tau_{\theta}\)에 대입하면 전단응력도 \(\tau_{\theta} = \tau_p = 0\)이 된다. 이는 <em>수직응력도가 최대 또는 최소가 되는 주응력도 각도 \(\theta_p\)에서 전단응력도 \(\tau_p = 0\)</em>이라는 것을 의미한다.
+                </li>
+                <li><a href="" class="li_test">확인 질문</a>
+                    <div hidden>어떤 단면에서 \(\sigma_x=300 MPa, \, \sigma_y=150 MPa, \, \tau_{xy}=200 MPa \)이다. 여기에서 주응력도 \(\sigma_1\)을 계산하시오.<br />
+                        <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                        <input type="submit" class="submit_quiz" value="확인" answer="438.60">
+                        <span class="span_quiz"></span>
+                    </div>
+                </li>
+            </ul>
+            <h3><a name="max_shear_stress"></a>전단응력도의 최대값 또는 최소값</h3>
+            <ul>
+                <li>
+                    좌표축의 변환을 이용하여 \(\theta\)를 \(0^\circ\)부터 \(360^\circ\)까지 변화시키면, 전단응력도 \(\tau_{\theta}\)의 값이 달라지면서 최대 또는 최소가 되는 각도가 있다.
+                </li>
+                <li>
+                    \(\tau_{\theta}\)가 최대 또는 최소가 되는 각도를 <em>\(\theta_s\)</em>라 하면, \(\tau_{\theta}\)를 \(\theta\)로 미분하여 \(0\)으로 놓고 다음과 같이 계산할 수 있다.
+                    $$ \frac{d \tau_\theta}{d\theta} = ( \sigma_x - \sigma_y )\cos2\theta - 2\tau_{xy}\sin2\theta=0 $$
+                    <em>$$ \therefore \tan2\theta_s=\frac{\sigma_x - \sigma_y}{2\tau_{xy}} $$</em>
+                </li>
+                <li>
+                    주응력도의 각도 \(\theta_p\)와 전단응력도의 최대 또는 최소가 되는 각도 \(\theta_s\)는 다음 식과 같은 관계를 갖는다.
+                    $$ \tan2\theta_p \times \tan2\theta_s = -\frac{2\tau_{xy}}{\sigma_x - \sigma_y} \times \frac{\sigma_x - \sigma_y}{2\tau_{xy}} = -1 $$
+                    <em>$$ \therefore 2\theta_s = 2\theta_p \pm 90 ^\circ \implies \theta_s = \theta_p \pm 45^\circ $$</em>
+                </li>
+                <li>
+                    위의 식으로부터 \(\theta_p\)와 \(\theta_s\)는 \(45^\circ\)의 차이가 있다, 즉 <em>최대 또는 최소 전단응력도는 주응력도 면에서 \(45^\circ\) 방향에서 발생</em>한다는 것을 알 수 있다.
+                </li>
+                <li><a href="" class="li_test">확인 질문</a>
+                    <div hidden>어떤 단면에서 \(\theta_p = 30^\circ\)일 때, \(\theta_s\)를 계산하시오. 단, \(\theta_s > 0^\circ\)이다.<br />
+                        <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(^\circ\)
+                        <input type="submit" class="submit_quiz" value="확인" answer="75.00">
+                        <span class="span_quiz"></span><br /><br />
+                    </div>
+                </li>
+                <li>
+                    앞에서 구한 \(\theta_s\)를 \(\tau_{\theta}\)에 대입하면 전단응력도의 <em>최대값 \(\tau_{\max}\)와 최소값 \(\tau_{\min}\)</em>을 다음과 같이 계산할 수 있다.
+                    <em>
+                        $$ \tau_{\max} = \sqrt{ \left( \frac{\sigma_x - \sigma_y}{2} \right)^2 + \tau_{xy}^2} \\
+                           \tau_{\min} =-\sqrt{ \left( \frac{\sigma_x - \sigma_y}{2} \right)^2 + \tau_{xy}^2} $$
+                    </em>
+                </li>
+                <li><a href="" class="li_test">확인 질문</a>
+                    <div hidden>어떤 단면에서 \(\sigma_x=50 MPa, \, \sigma_y=-10 MPa, \, \tau_{xy}=40 MPa \)이다. 여기에서 최소 전단응력도 \(\tau_{\min}\)를 계산하시오.<br />
+                        <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                        <input type="submit" class="submit_quiz" value="확인" answer="-50.00">
+                        <span class="span_quiz"></span>
+                    </div>
+                </li>
+            </ul>
+            <h3><a name="principal_stress_consideration"></a>주응력도 계산시 고려사항</h3>
+            <ul>
+                <li>
+                    다음 그림과 같이 <em>\(x\)축에 수직으로 절단한 면을 ①번면, \(y\)축에 수직으로 절단한 면을 ②번면</em>으로 설정한다.
+                    <p><img src="images\04.09.04.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    <em>①번면의 수직응력도는 \(\sigma_x\), ①번면의 전단응력도는 \(\tau_{xy}\), ②번면의 수직응력도는 \(\sigma_y\)</em>이다.
+                </li>
+                <li>
+                    여기에서 수직응력도는 인장응력도가 \(+\), 압축응력도가 \(-\)이다. 전단응력도는 시계방향이면 \(+\), 반시계방향이면 \(-\)이다.
+                </li>
+                <!--<li>
+                    다음 그림과 같이 <em>\(x\)축에 수직으로 절단한 면을 ①번면, \(y\)축에 수직으로 절단한 면을 ②번면</em>으로 설정한다.
+                    <p><img src="images\04.09.04.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    ①번면의 수직응력도 \(\sigma_x\)와 전단응력도 \(\tau_{xy}\)를 <em>①번면의 좌표, \((\sigma_x, \, \tau_{xy})\)</em>로 설정한다.
+                </li>
+                <li>
+                    ②번면의 수직응력도 \(\sigma_y\)와 전단응력도 \(-\tau_{xy}\)를 <em>②번면의 좌표, \((\sigma_y, \, -\tau_{xy})\)</em>로 설정한다.
+                </li>
+                <li>
+                    여기에서 수직응력도는 인장응력도가 \(+\), 압축응력도가 \(-\)이다. 전단응력도는 시계방향이면 \(+\), 반시계방향이면 \(-\)이다.
+                </li>-->
+                <li><a href="" class="li_test">확인 질문</a>
+                    <div hidden>다음 그림과 같은 응력도 상태에서 \(\tau_{xy}\)를 구하시오.<br />
+                        <p><img src="images\test.04.09.06.png" onload="this.width/=2;"></p>
+                        <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                        <input type="submit" class="submit_quiz" value="확인" answer="11.00">
+                        <span class="span_quiz"></span>
+                    </div>
+                </li>
+            </ul>
+            <h3><a name="example"></a>예제</h3>
+            <ul>
+                <li>
+                    문제 : 다음의 응력도 상태에서 주응력도 \(\sigma_1, \, \sigma_2\)와 그 각도 \(\theta_p\), 최대 전단응력도, 최소 전단응력도 \(\tau_{\max}, \, \tau_{\min}\)와 그 각도 \(\theta_s\)를 계산하시오.
+                    <p><img src="images\04.09.05.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    풀이
+                    <ol>
+                        <li>
+                            다음과 그림과 같이 \(x\)축에 수직으로 절단한 <em>①번면의 수직응력도는 인장응력도이므로 \(+\)이며 \(\sigma_x = 800MPa\)</em>이다.
+                            \(y\)축에 수직으로 절단한 <em>②번면의 수직응력도 역시 인장응력도이므로 \(+\)이며 \(\sigma_y = 400MPa\)</em>이다.
+                            \(x\)축에 수직으로 절단한 <em>①번면의 전단응력도는 반시계방향이므로 \(-\)이며 \(\tau_{xy} = -550MPa\)</em>이다.
+                            <p><img src="images\04.09.06.png" onload="this.width/=2;"></p>
+                        </li>
+                        <li>\(\sigma_x, \, \sigma_y, \, \tau_{xy}\)를 공식에 대입하여 다음과 같이 \(\sigma_1, \, \sigma_2, \, \theta_p\)를 계산한다.
+                            $$ \begin{align}
+                                \sigma_{1,2} & = \left( \frac{\sigma_x + \sigma_y}{2} \right) \pm \sqrt{ \left( \frac{\sigma_x - \sigma_y}{2} \right)^2 + \tau_{xy}^2} \\
+                                             & = \left( \frac{800 + 400}{2} \right) \pm \sqrt{ \left( \frac{800 - 400}{2} \right)^2 + (-550)^2} = 600 \pm 585.23
+                            \end{align}$$
+                            $$ \sigma_1 = 600 + 585.23 = 1185.23 MPa, \quad \sigma_2 = 600 - 585.23 = 14.77 MPa $$
+                            $$ \tan2\theta_p = -\frac{2\tau_{xy}}{\sigma_x - \sigma_y} = -\frac{2 \times -550}{800 - 400} = 2.75 \\
+                                2\theta_p = \tan^{-1}(2.75) = 70.02^\circ, \quad \theta_p = 35.01^\circ
+                            $$
+                        </li>
+                        <li>\(\sigma_x, \, \sigma_y, \, \tau_{xy}\)를 공식에 대입하여 다음과 같이 \(\tau_{\max}, \, \tau_{\min}, \, \theta_s\)를 계산한다.
+                            $$ \begin{align}
+                                \tau_{\max} & = \sqrt{ \left( \frac{\sigma_x - \sigma_y}{2} \right)^2 + \tau_{xy}^2} \\
+                                            & = \sqrt{ \left( \frac{800 - 400}{2} \right)^2 + (-550)^2} = 585.23 MPa \\
+                                \tau_{\min} & = -\sqrt{ \left( \frac{\sigma_x - \sigma_y}{2} \right)^2 + \tau_{xy}^2} \\
+                                            & = -\sqrt{ \left( \frac{800 - 400}{2} \right)^2 + (-550)^2} = -585.23 MPa
+                            \end{align}$$
+                            $$ \theta_s = \theta_p \pm 45^\circ = 35.01^\circ \pm 45^\circ = 80.01^\circ, \, -9.99^\circ $$
+                        </li>
+                    </ol>
+                </li>
+            </ul>
+        </div>
+        <div class="separator"></div>
+
+        <!--########## RE VIEW ##########-->
+        <div id="re_view_quiz" hidden>
+            <h3><a name="re_view_quiz"></a>복습 퀴즈</h3>
+            <ol class="ol_quiz">
+                <li>어떤 단면에서 \(\sigma_x=50 MPa, \, \sigma_y=-10 MPa, \, \tau_{xy}=40 MPa \)이다. 여기에서 \(\sigma_1\)을 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="353.1448">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 1에서 \(\sigma_2\)를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="-151.1448">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 1에서 \(\theta_p\)를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(^\circ\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="-2.7309">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 1에서 \(\tau_{\max}\)를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="252.1448">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 1에서 \(\theta_s\)를 계산하시오. 단, \(\theta_s < 0^\circ\)이다.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(\circ\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="-47.7309">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>다음 그림과 같은 응력도 상태에서 \(\sigma_1\)을 구하시오.<br />
+                    <p><img src="images\quiz.04.09.06.png" onload="this.width/=2;"></p>
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="-220.00">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 6에서 \(\sigma_2\)를 계산하시오.<br>
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="-480.00">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 6에서 \(\theta_p\)을 계산하시오.<br>
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(^\circ\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="33.6901">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 6에서 \(\tau_{\min}\)을 계산하시오.<br>
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="130.00">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 6에서 \(\theta_s\)를 계산하시오. 단, \(\theta_s > 0^\circ\)이다.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(\circ\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="78.6901">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>다음 그림과 같은 응력도 상태에서 \(\sigma_x + \sigma_y\)를 구하시오.<br />
+                    <p><img src="images\quiz.04.09.11.png" onload="this.width/=2;"></p>
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="-30.00">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 11에서 \(\sigma_1 + \sigma_2\)를 계산하시오.<br>
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="-30.00">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 11에서 \(\theta_p\)을 계산하시오.<br>
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(^\circ\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="15.3253">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 11에서 \(\theta_p\)일 때의 \(\tau_p\)를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="0.00">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 11에서 \(\tau_{\min}\)을 계산하시오.<br>
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="156.9235">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 11에서 \(\theta_s\)를 계산하시오. 단, \(\theta_s > 0^\circ\)이다.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(\circ\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="60.3253">
+                    <span class="span_quiz"></span>
+                </li>
+            </ol><br />
+            <input type="submit" class="submit_eval" value="복습 퀴즈 평가" /><br />
+            <span class="span_eval"></span>
+        </div>
+
+    </div>
+
+</body>
+</html>

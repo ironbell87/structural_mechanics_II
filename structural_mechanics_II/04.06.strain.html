@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../javascripts/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="../javascripts/login.js"></script>
+    <script type="text/javascript" src="../javascripts/quiz.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="../stylesheets/stylesheet.css">
+    <title>Strain</title>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div class="header_wrapper">
+        <a class="header_octocat" href="https://pages.github.com" target="_blank"></a>
+        <h1 class="header_title">변형도(strain)</h1>
+        <span class="header_span_login"></span>
+        <a class="header_login"></a>
+        <a class="header_email" href="mailto:ironbell@kyungnam.ac.kr"></a>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="content_wrapper">
+
+        <!--########## PRE VIEW ##########-->
+        <div id="pre_view" hidden>
+            <h3><a name="pre_veiw"></a>교재 학습 범위</h3>
+            <ul>
+                <li>교재 167쪽 "4.2 단면 내의 응력과 변형률" 개요 부분</li>
+                <li>교재 168쪽~169쪽의 "4.2.1 축력에 의한 응력과 변형률"에서 변형도 부분</li>
+                <li>교재 169쪽~170쪽의 "4.2.2 전단응력과 전단변형률"에서 변형도 부분</li>
+                <li>교재 172쪽~173쪽의 "4.2.3 응력-변형률 관계"에서 "[3] 푸아송비"의 설명 부분</li>
+            </ul>
+        </div>
+        <div class="separator"></div>
+
+        <!--########## MAIN VIEW ##########-->
+        <div id="main_view" hidden>
+            <!--inline script for left-align of MathJax equation-->
+            <script>
+                if (MathJax) {
+                    MathJax.Hub.Config({ displayAlign: "left" });
+                    MathJax.Hub.Rerender();
+                }
+            </script>
+            <!--script for left-align of MathJax equation-->
+            <h3><a name="strain"></a>변형도(strain)</h3>
+            <ul>
+                <li>
+                    변형도는 <em>변형의 정도 또는 밀도</em>를 의미하며, <em>길이가 늘어난 비율과 변화된 각도의 크기(radian)</em>로 표현된다. 변형도는 <em>단위가 없다.</em>
+                </li>
+                <li>
+                    변형도는 작용효과 기준으로 <em>축력에 의해서 발생하는 축변형도(axial strain)와 전단력에 의해서 발생하는 전단변형도(shear strain)</em>가 있다.
+                </li>
+                <li>
+                    변형도는 작용방향 기준으로 <em>부재단면에 수직(직각)으로 작용하는 수직변형도(normal strain) \(\epsilon\), 부재단면에 평행(나란)하게 작용하는 전단변형도(shear strain) \(\gamma\)</em>가 있다.
+                </li>
+                <li>
+                    <a href="" class="li_test">확인 질문</a>
+                    <div hidden>부재단면에 평행(나란)하게 작용하는 변형도를 쓰시오.<br />
+                        <input type="text" class="input_quiz" placeholder="답을 입력하세요" ondrop="return false;" onpaste="return false;">
+                        <input type="submit" class="submit_quiz" value="확인" answer="전단변형도">
+                        <span class="span_quiz"></span>
+                    </div>
+                </li>
+            </ul>
+            <h3><a name="axial_strain"></a>축변형도(axial strain)</h3>
+            <ul>
+                <li>
+                    축변형도는 다음 그림과 같이 길이의 변화량을 원래 길이로 나눈 값으로서 <em>\(\epsilon = \Delta L / L\)</em>이다.
+                    <p><img src="images\04.06.01.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    축변형도는 <em>단면에 수직방향으로 작용하는 수직변형도(normal strain)</em>이며, 가로변형도(longitudinal strain)라고도 한다. 길이가 늘어나는 인장변형도(tensile strain)와 길이가 줄어드는 압축변형도(compressive strain)가 있다.
+                </li>
+                <li>
+                    길이 \(1m\)인 강봉이 인장력을 받아 길이가 \(5mm\) 증가한 경우, 축변형도 \(\epsilon\)의 계산은 다음과 같다.<br />
+                    \(\epsilon = \Delta L / L = 5 / 1,000 = 0.005 \)
+                </li>
+                <li>
+                    <a href="" class="li_test">확인 질문</a>
+                    <div hidden>길이 \(260mm\)인 강봉에 인장력이 작용하여 길이가 \(0.2mm\) 증가하였다. 축변형도 \(\epsilon\)을 계산하시오.<br />
+                        <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;">
+                        <input type="submit" class="submit_quiz" value="확인" answer="0.000769" tolerance="1.0e-6">
+                        <span class="span_quiz"></span>
+                    </div>
+                </li>
+            </ul>
+            <h3><a name="poisson"></a>프와송비(Poisson's ratio)</h3>
+            <ul>
+                <li>
+                    길이가 변화하면 부재의 부피는 일정해야 하므로, 길이에 직각인 두께 또는 폭이 반대로 변화하게 된다. 이러한 두께 또는 폭 방향의 변형도를 세로변형도(횡변형도, lateral strain)라 한다.
+                </li>
+                <li>
+                    세로변형도는 두께(직경)의 변화량을 원래 두께(직경)로 나눈 값으로서 <em>\(\beta = \Delta d / d\)</em>이다.
+                </li>
+                <li>
+                    프와송비(Poisson's ratio)는 가로변형도에 대한 세로변형도의 비, 즉 <em>\(\nu = \beta / \epsilon\)</em>이다. 프와송수(Poisson's number)는 프와송비의 역수이며, \(m = 1/\nu\)이다.
+                </li>
+                <li>
+                    지름 \(30mm\), 길이 \(1.2m\)인 기둥에 압축력이 작용하여 길이는 \(20mm\) 감소하고 지름은 \(0.03mm\) 증가하였다. 이 경우에 프와송비를 계산하면 다음과 같다.<br />
+                    $$ \epsilon = \Delta L / L = 20/1,200 = 0.016667, \, \beta = \Delta d / d = 0.03/30 = 0.001 $$
+                    $$ \therefore \nu = \beta / \epsilon = 0.001 / 0.016667 = 0.06 $$
+                </li>
+                <li><a href="" class="li_test">확인 질문</a>
+                    <div hidden>지름 \(20mm\), 길이 \(0.75m\)인 강봉에 인장력이 작용하여 길이는 \(6mm\) 증가하고 지름은 \(0.04mm\) 감소하였다. 프와송비를 계한하시오.<br />
+                        <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;">
+                        <input type="submit" class="submit_quiz" value="확인" answer="0.25">
+                        <span class="span_quiz"></span>
+                    </div>
+                </li>
+            </ul>
+            <h3><a name="shear_strain"></a>전단변형도(shear strain)</h3>
+            <ul>
+                <li>
+                    전단변형도는 다음 그림과 같이 <em>\(\pi/2(=90^\circ)\)의 각도 변화량 \(\gamma\)</em>로 표현한다.
+                    <p><img src="images\04.06.02.png" onload="this.width/=2;"></p>
+                </li>
+            </ul>
+        </div>
+        <div class="separator"></div>
+
+        <!--########## RE VIEW ##########-->
+        <div id="re_view_quiz" hidden>
+            <h3><a name="re_view_quiz"></a>복습 퀴즈</h3>
+            <ol class="ol_quiz">
+                <li>길이 \(3m\)의 부재에 인장력이 작용하여 \(6mm\)증가하였다. 축변형도를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;">
+                    <input type="submit" class="submit_quiz" value="확인" answer="0.002" tolerance="1.0e-3">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>어떤 부재의 축방향의 길이 변화량이 \(10mm\)이고 축변형도가 0.0023이다. 부재의 원래 길이를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="4000.00">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>어떤 부재에 압축력 \(135kN\)이 작용하여 \(50mm\)의 직경이 \(48mm\)가 되었다. 세로변형도를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;">
+                    <input type="submit" class="submit_quiz" value="확인" answer="0.04">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>어떤 부재에 인장력이 작용하여 가로변형도는 0.025이고 \(20mm\)의 직경이 \(19.9mm\)가 되었다. 프와송비를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;">
+                    <input type="submit" class="submit_quiz" value="확인" answer="0.20">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>어떤 부재에 압축력이 작용하여 길이 \(1.3m\)는 \(1.28m\)가, \(30mm\)의 직경은 \(30.1mm\)가 되었다. 프와송비를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;">
+                    <input type="submit" class="submit_quiz" value="확인" answer="0.2167" tolerance="1.0e-4">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>어떤 부재에 전단력이 작용하여 원래 \(90^\circ\)이던 부분이 \(93^\circ\)가 되었다. 전단변형도를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;">
+                    <input type="submit" class="submit_quiz" value="확인" answer="0.05236" tolerance="1.0e-5">
+                    <span class="span_quiz"></span>
+                </li>
+            </ol><br />
+            <input type="submit" class="submit_eval" value="복습 퀴즈 평가" /><br />
+            <span class="span_eval"></span>
+        </div>
+
+    </div>
+
+</body>
+</html>

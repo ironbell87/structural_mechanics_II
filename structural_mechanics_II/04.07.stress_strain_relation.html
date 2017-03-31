@@ -1,0 +1,226 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../javascripts/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="../javascripts/login.js"></script>
+    <script type="text/javascript" src="../javascripts/quiz.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="../stylesheets/stylesheet.css">
+    <title>Relation of stress and strain</title>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div class="header_wrapper">
+        <a class="header_octocat" href="https://pages.github.com" target="_blank"></a>
+        <h1 class="header_title">응력도(stress)와 변형도(strain)의 관계</h1>
+        <span class="header_span_login"></span>
+        <a class="header_login"></a>
+        <a class="header_email" href="mailto:ironbell@kyungnam.ac.kr"></a>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="content_wrapper">
+
+        <!--########## PRE VIEW ##########-->
+        <div id="pre_view" hidden>
+            <h3><a name="pre_veiw"></a>교재 학습 범위</h3>
+            <ul>
+                <li>교재 170쪽~171쪽의 "4.2.3 응력-변형률 관계"에서 "[1] 응력-변형률 선도"</li>
+                <li>교재 171쪽~172쪽의 "4.2.3 응력-변형률 관계"에서 "[2] 후크(Hooke)의 법칙"</li>
+                <li>교재 173쪽의 예제 4-10</li>
+                <li>교재 183쪽~185쪽의 "4.2.5 탄성계수 간의 관계"</li>
+            </ul>
+        </div>
+        <div class="separator"></div>
+
+        <!--########## MAIN VIEW ##########-->
+        <div id="main_view" hidden>
+            <!--inline script for left-align of MathJax equation-->
+            <script>
+                if (MathJax) {
+                    MathJax.Hub.Config({ displayAlign: "left" });
+                    MathJax.Hub.Rerender();
+                }
+            </script>
+            <!--script for left-align of MathJax equation-->
+            <h3><a name="coupon_test"></a>인장강도 시험(tension test, coupon test)</h3>
+            <ul>
+                <li>
+                    인장강도 시험을 위해서는 먼저 다음 그림과 같은 형상의 인장시편(coupon)을 제작하는데 보통 두께 \(25mm\), 너비 \(40mm\), 기본길이(표점거리) \(200mm\)이다.
+                    <p><img class="top_margin" src="images\04.07.01.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    인장강도 시험은 이 인장시편의 양 끝단을 가력장치에 고정시키고 매우 느린 속도로 파괴될 때까지 인장력을 지속적으로 가하는 것이다.
+                </li>
+                <li>
+                    인장강도 시험을 수행하는 동안 인장시편의 길이방향 응력도와 변형도를 계측하고, 이를 그래프로 나타낸 것이 <em>응력도-변형도 곡선(stress-strain curve)</em>이다.
+                </li>
+                <li>
+                    <a href="" class="li_test">확인 질문</a>
+                    <div hidden>인장시편의 양 끝단을 가력장치에 고정시키고 매우 느린 속도로 파괴될 때까지 인장력을 지속적으로 가하는 것을 무엇이라 하는지 쓰시오.<br />
+                        <input type="text" class="input_quiz" placeholder="답을 입력하세요" ondrop="return false;" onpaste="return false;">
+                        <input type="submit" class="submit_quiz" value="확인" answer="인장강도 시험">
+                        <span class="span_quiz"></span>
+                    </div>
+                </li>
+            </ul>
+            <h3><a name="stress_strain_curve"></a>응력도-변형도 곡선(stress-strain curve)</h3>
+            <ul>
+                <li>
+                    인장시편은 탄성, 소성, 변형도 경화, 네킹(necking) 및 파괴(fracture)과정을 거치게 된다. 다음 그림은 설명을 위해서 매우 과장하여 그린 응력도-변형도 곡선이다.
+                    <p><img src="images\04.07.03.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    <em>탄성(elasticity)은 하중을 제거했을 때 하중에 의해 발생한 변형이 완전히 사리져 원래의 형상 그대로 되돌아가는 성질로서, 인장시편이 완전히 안전한 상태이다. 응력도-변형도 곡선에서 기울기가 있는 직선으로 표현되는 부분이다.</em>
+                </li>
+                <li>
+                    <em>항복(yield)은 탄성과 소성의 경계이다. 탄성범위를 넘어서는 시점에서 하중이 증가하지 않아도 변형이 급격하게 증가하기 시작하는 상태로서, 인장시편의 손상이 시작된다. 응력도-변형도 곡선에서 수평선으로 그려지기 시작하는 부분이다.</em>
+                </li>
+                <li>
+                    <em>소성(plasticity)은 항복 이후에 하중이 증가하지 않아도 변형이 급격하게 증가하고, 하중을 제거해도 하중에 의해 발생한 변형 일부가 영구적으로 남게되는 성질이다. 인장시편이 완전히 파괴되지는 않지만 손상이 계속 진행된다. 응력도-변형도 곡선에서 수평선으로 표현되는 부분이다.</em>
+                </li>
+                <li>
+                    <em>변형도 경화(strain hardenging)는 소성 이후에 다시 하중을 증가시켜야만 변형이 증가하는 성질로서, 인장시편이 지지할 수 있는 최대 응력도까지 도달한다. 소성과 마찬가지로 인장시편이 완전히 파괴되지는 않았지만 손상이 상당히 진행된 상태이다. 응력도-변형도 곡선에서 소성이후에 점차 증가하여 최대 응력도까지 도달하는 곡선으로 표현되는 부분이다.</em>
+                </li>
+                <li>
+                    <em>네킹(necking) 및 파괴(fracture)는 변형도 경화에서 최대 응력도에 도달한 이후 하중은 감소함에도 불구하고 변형이 지속적으로 증가하며, 동시에 다음 그림과 같이 중앙부의 너비가 약간 줄어들면서(necking) 인장시편이 완전히 파괴(fracture)된다. 응력도-변형도 곡선에서 최대 응력도에서 응력도가 점차 감소하는 곡선으로 표현되는 부분이다.</em>
+                    <p><img class="top_margin" src="images\04.07.02.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    <em>비례한도(proportional limit)</em>는 탄성의 범위 내에서 응력도와 변형도의 선형 비례관계가 유지되는 한계점이다.
+                </li>
+                <li>
+                    <em>탄성한도(elastic limit)</em>는 탄성이 유지되는 한계점이다.
+                </li>
+                <li>
+                    <em>항복점(yield point)</em>은 항복하는 시점의 응력도이며 상항복점(upper yield point)과 하항복점(lower yield point)이 있지만, 보통을 하항복점이 항복점이 된다.
+                </li>
+                <li>
+                    <em>항복강도(yield strength) \(\sigma_y\)</em>는 하항복점의 응력도이다.
+                </li>
+                <li>
+                    <em>인장강도(ultimate strength) \(\sigma_u\)</em>는 변형도 경화에서의 최대 응력도로서, 인장시편이 도달할 수 있는 최대의 응력도이다.
+                </li>
+                <li>
+                    <em>허용응력도(allowable stress) \(\sigma_a\)</em>는 안전을 고려하여 허용할 수 있는 응력도의 최대값으로 항복강도를 약간 감소시킨 응력도이다.
+                </li>
+                <li>
+                    <a href="" class="li_test">확인 질문</a>
+                    <div hidden>하항복점의 응력도를 무엇이라 하는지 쓰시오.<br />
+                        <input type="text" class="input_quiz" placeholder="답을 입력하세요" ondrop="return false;" onpaste="return false;">
+                        <input type="submit" class="submit_quiz" value="확인" answer="항복강도">
+                        <span class="span_quiz"></span>
+                    </div>
+                </li>
+            </ul>
+            <h3><a name="elastic_modulus"></a>탄성계수(elastic modulus)</h3>
+            <ul>
+                <li>
+                    탄성은, 앞에서 설명한 바와 같이, 하중을 제거했을 때 하중에 의해 발생한 변형이 완전히 사리져 원래의 형상 그대로 되돌아가는 성질이며 응력도-변형도 곡선에서 기울기가 있는 직선으로 표현되는 부분이다.
+                </li>
+                <li>
+                    이러한 탄성한계 내에서 응력도와 변형도는 선형으로 비례한다. 이 비례의 상수, 즉 <em>응력보-변형도 곡선에서 탄성 부분 직선의 기울기 \(E\)를 탄성계수(elastic modulus, Young's modulus)</em>라 하며, 다음 식으로 표현한다.
+                    <em>$$ \sigma = \ E \, \epsilon, \quad E = \sigma / \epsilon $$</em>
+                </li>
+                <li>
+                    탄성계수는 응력도를 단위가 없는 변형도로 나눈 값이므로 단위가 응력도와 같으며, 보통 \(MPa\)을 사용한다.
+                </li>
+                <li>
+                    이상의 내용은 인장력에 대한 결과이다. 이를 동일한 방식으로 전단력에 적용하면, 전단응력도 \(\tau\)와 전단변형도 \(\gamma\)가 선형으로 비례하며 이 비례상수 <em>\(G\)를 전단탄성계수(shear modulus of elasticity), 또는 강성계수(modulus of rigidity)</em>라 하며 다음 식으로 표현한다.
+                    <em>$$ \tau = \ G \, \gamma, \quad G = \tau / \gamma $$</em>
+                </li>
+                <li>
+                    인장력에 대한 탄성계수 \(E\), 전단력에 대한 탄성계수 \(G\), 프와송비 \(\nu\) 사이에는 다음과 같은 관계가 있다.
+                    <em>$$ G = \frac{E}{2(1 + \nu)} $$</em>
+                </li>
+                <li>탄성계수 \(E = 27,000 MPa\), 프와송비 \(\nu = 0.168\)일 때, 전단탄성계수 \(G\)는 다음과 같이 계산할 수 있다.<br />
+                    \( G = E / 2(1 + \nu) = 27,000 / 2(1+0.168) = 11,558.22 MPa \)
+                </li>
+                <li><a href="" class="li_test">확인 질문</a>
+                    <div hidden>탄성계수 \(E = 205,000 MPa\), 프와송비 \(\nu = 0.3\)일 때, 전단탄성계수 \(G\)를 계산하시오.<br />
+                        <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                        <input type="submit" class="submit_quiz" value="확인" answer="78846.15">
+                        <span class="span_quiz"></span>
+                    </div>
+                </li>
+            </ul>
+        <div class="separator"></div>
+
+        <!--########## RE VIEW ##########-->
+        <div id="re_view_quiz" hidden>
+            <h3><a name="re_view_quiz"></a>복습 퀴즈</h3>
+            <ol class="ol_quiz">
+                <li>길이 \(4m\), 단면적 \(1,000mm^2\)인 부재에 \(200kN\)의 인장력이 작용하여 길이가 \(5mm\) 증가하였다. 축응력도를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="200.00">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 1에서 축변형도를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;">
+                    <input type="submit" class="submit_quiz" value="확인" answer="0.00125" tolerance="1.0e-5">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 1에서 탄성계수를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="160000.00">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>길이 \(260mm\), 직경 \(14mm\)인 강봉에 인장력 \(2.4kN\)이 작용하여 길이가 \(0.2mm\) 증가하였다. 축응력도를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="15.59">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 4에서 축변형도를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;">
+                    <input type="submit" class="submit_quiz" value="확인" answer="0.000769" tolerance="1.0e-6">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 4에서 탄성계수를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="20267.89" tolerance="1.0e1">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>길이 \(2m\), 직경 \(30mm\)인 강봉에 인장력 \(3,600kN\)이 작용하여 길이는 \(2.05m\)가, 직경은 \(29.7mm\)가 되었다. 축응력도를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="5,092.9582" tolerance="1.0e-4">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 7에서 축변형도를 계산하시오.<br>
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;">
+                    <input type="submit" class="submit_quiz" value="확인" answer="0.025" tolerance="1.0e-4">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 7에서 탄성계수를 계산하시오.<br>
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="203,718.3272" tolerance="1.0e-4">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 7에서 세로변형도를 계산하시오.<br>
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;">
+                    <input type="submit" class="submit_quiz" value="확인" answer="0.01">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 7에서 프와송비를 계산하시오.<br>
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;">
+                    <input type="submit" class="submit_quiz" value="확인" answer="0.40">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 7에서 전단탄성계수를 계산하시오.<br>
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="72,756.55">
+                    <span class="span_quiz"></span>
+                </li>
+            </ol><br />
+            <input type="submit" class="submit_eval" value="복습 퀴즈 평가" /><br />
+            <span class="span_eval"></span>
+        </div>
+
+    </div>
+
+</body>
+</html>

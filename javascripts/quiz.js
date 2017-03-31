@@ -23,6 +23,7 @@ $(document).ready(function () {
 
     // show / hide each quiz
     $(".submit_quiz").click(function () {
+
         // get id of the corresponding elements
         var m_input = $(this).prevAll('input:first');
         var m_submit = $(this);
@@ -35,7 +36,9 @@ $(document).ready(function () {
         // in case of no input
         if (m_input_val == "") {
             m_input.focus();
-            m_span.text("답을 입력하세요!");
+            m_message = "답을 입력하세요!";
+            if (sessionStorage.login == "administrator") m_message = "답을 입력하세요! 정답은 " + m_answer + "입니다."; // for instructor
+            m_span.text(m_message);
             return false;
         }
 
@@ -54,12 +57,25 @@ $(document).ready(function () {
             m_span.text("정답입니다!"); // change the text of submit span
             m_span.css("color", "#ff6f6f"); // change the color of submit span
             m_submit.parent().prev('a.li_test').text("확인 질문 - 풀이 완료"); // in case of no a.li_test, no problem
+
+            // remove tooltip hint
+            m_span.children(":first").remove();
             return true;
         }
         else { // in case of wrong answer
             m_input.val("");
             m_input.focus();
-            m_span.text("오답입니다! 다시 풀어보세요!");
+            m_message = "오답입니다! 다시 풀어보세요!"; // default message in case of no hint
+            if (sessionStorage.login == "administrator") m_message = "오답입니다! 정답은 " + m_answer + "입니다."; // for instructor
+            m_span.text(m_message);
+
+            // add tooltip hint
+            var m_hint = m_submit.attr('hint'); // hint for student
+            if (m_hint != undefined) {
+                m_span.append('<span class="tooltiptext">' + m_hint + '</span>');
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+            }
+
             return false;
         }
     });
@@ -93,12 +109,6 @@ $(document).ready(function () {
                 location.href = "../index.html"; return false;
             }
         }
-    });
-
-    // show / hide hint for quiz; not implemented
-    $(".span_hint").click(function () {
-        var hint_id = "#" + $(this).attr("hint_id");
-        $(hint_id).toggle(400);
     });
 });
 

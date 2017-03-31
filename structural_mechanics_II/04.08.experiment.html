@@ -1,0 +1,234 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../javascripts/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="../javascripts/login.js"></script>
+    <script type="text/javascript" src="../javascripts/quiz.js"></script>
+    <script type="text/javascript" src="../javascripts/experiment.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="../stylesheets/stylesheet.css">
+    <title>Experiment on stress and strain</title>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div class="header_wrapper">
+        <a class="header_octocat" href="https://pages.github.com" target="_blank"></a>
+        <h1 class="header_title">Experiment on stress and strain</h1>
+        <span class="header_span_login"></span>
+        <a class="header_login"></a>
+        <a class="header_email" href="mailto:ironbell@kyungnam.ac.kr"></a>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="content_wrapper">
+
+        <h3>
+            <a name="welcome"></a>Welcome to structural experiment pages.
+        </h3>
+        <p style="padding-left: 40px;">
+            This page is for structural experiment on stress and strain of member forces, i.e., axial force, shear force, and bending moment.
+            When you enter the measured values of the experiment below, you can get the computed corresponding stree, strain, and elastic modulus, and so on.<br />
+            (Unit : force = \(N\), length = \(mm\), stress = \(MPa\))
+        </p>
+
+        <h3><a name="axial"></a>Axial force and stress</h3>
+        <div style="padding-left: 40px;">
+            <table>
+                <tr>
+                    <td>
+                        try<br>
+                        1st<br>
+                        2nd<br>
+                        3rd<br>
+                        4th<br>
+                        5th<br>
+                        6th
+                    </td>
+                    <td style="padding: 0px 20px 0px 30px;">
+                        force of 5 pendulums \(P\)<br>
+                        <input type="number" class="input_quiz" readonly value="4.90"><br>
+                        <input type="number" class="input_quiz" readonly value="4.90"><br>
+                        <input type="number" class="input_quiz" readonly value="4.90"><br>
+                        <input type="number" class="input_quiz" readonly value="4.90"><br>
+                        <input type="number" class="input_quiz" readonly value="4.90"><br>
+                        <input type="number" class="input_quiz" readonly value="4.90">
+                    </td>
+                    <td>
+                        enlongation \(\Delta L\)<br>
+                        <input type="number" id="axial_1st" class="input_quiz" ondrop="return false;" onpaste="return false;"><br>
+                        <input type="number" id="axial_2nd" class="input_quiz" ondrop="return false;" onpaste="return false;"><br>
+                        <input type="number" id="axial_3rd" class="input_quiz" ondrop="return false;" onpaste="return false;"><br>
+                        <input type="number" id="axial_4th" class="input_quiz" ondrop="return false;" onpaste="return false;"><br>
+                        <input type="number" id="axial_5th" class="input_quiz" ondrop="return false;" onpaste="return false;"><br>
+                        <input type="number" id="axial_6th" class="input_quiz" ondrop="return false;" onpaste="return false;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" id="axial_submit" class="submit_quiz" value="Submit">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        average
+                    </td>
+                    <td style="padding: 0px 20px 0px 30px;">
+                        <input type="number" id="axial_average_force" class="input_quiz" readonly value="4.90">
+                    </td>
+                    <td>
+                        <input type="number" id="axial_average_length" class="input_quiz" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        normal stress \(\sigma_x\)<br>
+                        normal strain \(\epsilon_x\)<br>
+                        elastic modulus \(E\)
+                    </td>
+                    <td style="padding: 0px 20px 0px 30px;">
+                        <input type="number" id="axial_sigma" class="input_quiz" readonly><br>
+                        <input type="number" id="axial_epsilon" class="input_quiz" readonly><br>
+                        <input type="number" id="axial_modulus" class="input_quiz" readonly>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <h3><a name="shear"></a>Shear force and sress</h3>
+        <div style="padding-left: 40px;">
+            <table>
+                <tr>
+                    <td>
+                        try<br>
+                        1st<br>
+                        2nd<br>
+                        3rd<br>
+                        4th<br>
+                        5th<br>
+                        6th
+                    </td>
+                    <td style="padding: 0px 20px 0px 30px;">
+                        force of 5 pendulums \(V\)<br>
+                        <input type="number" class="input_quiz" readonly value="4.90"><br>
+                        <input type="number" class="input_quiz" readonly value="4.90"><br>
+                        <input type="number" class="input_quiz" readonly value="4.90"><br>
+                        <input type="number" class="input_quiz" readonly value="4.90"><br>
+                        <input type="number" class="input_quiz" readonly value="4.90"><br>
+                        <input type="number" class="input_quiz" readonly value="4.90">
+                    </td>
+                    <td>
+                        displacement \(\lambda\)<br>
+                        <input type="number" id="shear_1st" class="input_quiz" ondrop="return false;" onpaste="return false;"><br>
+                        <input type="number" id="shear_2nd" class="input_quiz" ondrop="return false;" onpaste="return false;"><br>
+                        <input type="number" id="shear_3rd" class="input_quiz" ondrop="return false;" onpaste="return false;"><br>
+                        <input type="number" id="shear_4th" class="input_quiz" ondrop="return false;" onpaste="return false;"><br>
+                        <input type="number" id="shear_5th" class="input_quiz" ondrop="return false;" onpaste="return false;"><br>
+                        <input type="number" id="shear_6th" class="input_quiz" ondrop="return false;" onpaste="return false;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" id="shear_submit" class="submit_quiz" value="Submit">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        average
+                    </td>
+                    <td style="padding: 0px 20px 0px 30px;">
+                        <input type="number" id="shear_average_force" class="input_quiz" readonly value="4.90">
+                    </td>
+                    <td>
+                        <input type="number" id="shear_average_length" class="input_quiz" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        shear stress \(\tau_{xy}\)<br>
+                        shear strain \(\gamma_{xy}\)<br>
+                        shear modulus \(G\)
+                    </td>
+                    <td style="padding: 0px 20px 0px 30px;">
+                        <input type="number" id="shear_tau" class="input_quiz" readonly><br>
+                        <input type="number" id="shear_gamma" class="input_quiz" readonly><br>
+                        <input type="number" id="shear_modulus" class="input_quiz" readonly>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <h3><a name="bending"></a>Bending moment and stress</h3>
+        <div style="padding-left: 40px;">
+            <table>
+                <tr>
+                    <td>
+                        try<br>
+                        1st<br>
+                        2nd<br>
+                        3rd<br>
+                        4th<br>
+                        5th<br>
+                        6th
+                    </td>
+                    <td style="padding: 0px 20px 0px 30px;">
+                        length at center \(L\)<br>
+                        <input type="number" id="moment_cnt_1st" class="input_quiz" ondrop="return false;" onpaste="return false;"><br>
+                        <input type="number" id="moment_cnt_2nd" class="input_quiz" ondrop="return false;" onpaste="return false;"><br>
+                        <input type="number" id="moment_cnt_3rd" class="input_quiz" ondrop="return false;" onpaste="return false;"><br>
+                        <input type="number" id="moment_cnt_4th" class="input_quiz" ondrop="return false;" onpaste="return false;"><br>
+                        <input type="number" id="moment_cnt_5th" class="input_quiz" ondrop="return false;" onpaste="return false;"><br>
+                        <input type="number" id="moment_cnt_6th" class="input_quiz" ondrop="return false;" onpaste="return false;">
+                    </td>
+                    <td>
+                        length at top fiber \(L'\)<br>
+                        <input type="number" id="moment_top_1st" class="input_quiz" ondrop="return false;" onpaste="return false;"><br>
+                        <input type="number" id="moment_top_2nd" class="input_quiz" ondrop="return false;" onpaste="return false;"><br>
+                        <input type="number" id="moment_top_3rd" class="input_quiz" ondrop="return false;" onpaste="return false;"><br>
+                        <input type="number" id="moment_top_4th" class="input_quiz" ondrop="return false;" onpaste="return false;"><br>
+                        <input type="number" id="moment_top_5th" class="input_quiz" ondrop="return false;" onpaste="return false;"><br>
+                        <input type="number" id="moment_top_6th" class="input_quiz" ondrop="return false;" onpaste="return false;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" id="moment_submit" class="submit_quiz" value="Submit">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        average
+                    </td>
+                    <td style="padding: 0px 20px 0px 30px;">
+                        <input type="number" id="moment_cnt_average_length" class="input_quiz" readonly>
+                    </td>
+                    <td>
+                        <input type="number" id="moment_top_average_length" class="input_quiz" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        normal strain \(\epsilon_x\)<br>
+                        radius of curvature \(\rho\)<br>
+                        curvature \(\kappa\)<br>
+                        moment \(M_x\)<br>
+                        bending stress \(\sigma_x\)
+                    </td>
+                    <td style="padding: 0px 20px 0px 30px;">
+                        <input type="number" id="moment_epsilop" class="input_quiz" readonly><br>
+                        <input type="number" id="radius_curvature" class="input_quiz" readonly><br>
+                        <input type="number" id="curvature" class="input_quiz" readonly><br>
+                        <input type="number" id="moment" class="input_quiz" readonly><br>
+                        <input type="number" id="bending_sigma" class="input_quiz" readonly>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

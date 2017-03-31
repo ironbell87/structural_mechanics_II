@@ -1,0 +1,287 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../javascripts/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="../javascripts/login.js"></script>
+    <script type="text/javascript" src="../javascripts/quiz.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="../stylesheets/stylesheet.css">
+    <title>Stress of beam</title>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div class="header_wrapper">
+        <a class="header_octocat" href="https://pages.github.com" target="_blank"></a>
+        <h1 class="header_title">보의 응력도(stress of beam)</h1>
+        <span class="header_span_login"></span>
+        <a class="header_login"></a>
+        <a class="header_email" href="mailto:ironbell@kyungnam.ac.kr"></a>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="content_wrapper">
+
+        <!--########## PRE VIEW ##########-->
+        <div id="pre_view" hidden>
+            <h3><a name="pre_veiw"></a>교재 학습 범위</h3>
+            <ul>
+                <li>교재 193쪽~202쪽의 "4.3.3 보의 휨응력"에서 예제 4-18, 4-19, 4-24</li>
+                <li>교재 207쪽~208쪽의 "4.3.4 보의 전단응력"에서 예제 4-26</li>
+            </ul>
+        </div>
+        <div class="separator"></div>
+
+        <!--########## MAIN VIEW ##########-->
+        <div id="main_view" hidden>
+            <!--inline script for left-align of MathJax equation-->
+            <script>
+                if (MathJax) {
+                    MathJax.Hub.Config({ displayAlign: "left" });
+                    MathJax.Hub.Rerender();
+                }
+            </script>
+            <!--script for left-align of MathJax equation-->
+            <h3><a name="stress_of-beam"></a>보에 작용하는 응력도</h3>
+            <ul>
+                <li>
+                    보(beam)는 수평방향으로 배치되는 선형(linear) 부재이며, 하중은 부재의 축에 직각방향으로 작용한다. 보에는 부재력으로 휨모멘트와 전단력이 작용한다.
+                    따라서 <em>보에는 휨응력도와 전단응력도가 작용</em>한다.
+                </li>
+                <li>
+                    보에 작용하는 휨응력도와 전단응력도를 계산하기 위해서는 먼저 해당 단면에 작용하는 휨모멘트와 전단력을 계산해야 한다. 
+                    다음에는 <em>응력도와 응력도가 작용하는 단면의 위치와 방향</em>을 정확하게 파악해야 한다. 
+                </li>
+                <li>
+                    이를 위해서 <em>휨모멘트에 의해서 길이가 늘어나거나 줄어드는 방향이 휨응력도의 방향, 전단력이 작용하는 방향이 전단응력도의 방향</em>이라는 것을 유의해야 한다.
+                </li>
+                <li>
+                    다음 그림에서 휨모멘트가 부재 단면에서의 도심축인 \(x-x\)축을 중심으로 작용하기 때문에 그로 인한 휨응력도는 부재의 축방향인 \(x-x\)방향으로 작용한다.
+                    전단력은 부재의 축방향인 \(x-x\)방향과 단면에서의 도심축인 \(x-x\) 모두에 직각인 수직방향으로 작용한다.
+                    <p><img class="top_margin" src="images\04.12.01.png" onload="this.width/=2;"></p>
+                </li>
+            </ul>
+            <h3><a name="example_1"></a>예제 1</h3>
+            <ul>
+                <li>
+                    문제 : 다음 보에서 ①번 위치의 단면에서 휨응력도와 전단응력도의 최대값 \(\sigma_{\max}, \, \tau_{\max}\)을 계산하시오.
+                    <p><img src="images\04.12.02.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    풀이
+                    <ol>
+                        <li>
+                            위 문제에서 자유물체도를 그리고 평형조건식을 적용하여 지점반력을 계산한다. 
+                            그리고 ①번 위치에서 단면을 가상으로 절단하여 다음 그림과 같이 자유물체도를 작성한다. 여기에서 다음과 같이 평형조건식을 적용하여 \(V, \, M\)을 계산한다.
+                            <p><img src="images\04.12.03.png" onload="this.width/=2;"></p>
+                            $$ \Sigma F_y = 1,000 - 500 \times 1 - V = 0; \quad V = 500kN = 500,000 N $$
+                            $$ \Sigma M_1 = -1,000 \times 1 + (500 \times 1)\times (1/2) + M = 0; \quad M = 750 kNm = 7.5 \times 10^8 Nmm $$
+                        </li>
+                        <li>
+                            부재의 단면에서 도심에 대한 단면 2차모멘트 \(I\), 단면의 폭 \(b\)는 다음과 같다.
+                            $$ b = 400mm, \quad I = bh^3/12 = 400 \times 600^3 / 12 = 7.2\times 10^9 mm^4 $$
+                        </li>
+                        <li>
+                            <em>휨응력도의 최대값은 도심에서 가장 먼 단면의 최 외단에서 발생</em>하므로 다음 그림처럼 <em>도심에서 단면의 최 외단까지의 거리 \(y_{max}\)</em>를 계산한다.
+                            <em>전단응력도의 최대값은 도심 위치에서 발생</em>하므로 <em>다음 그림에서 짙게 색칠된 부분의 도심에 대한 단면 1차모멘트 \(G_{\max}\)</em>를 계산한다. 다음은 계산 결과이다.
+                            <p><img src="images\04.12.04.png" onload="this.width/=2;"></p>
+                            $$ y_{max} = 300mm, \quad G_{\max} = 400 \times 300 \times 150 = 1.8 \times 10^7 mm^3 $$
+                        </li>
+                        <li>
+                            휨응력도와 전단응력도의 최대값 \(\sigma_{\max}, \, \tau_{\max}\)를 다음과 같이 계산한다.
+                            $$ \sigma_{\max} = \frac{M}{I}y_{\max} = \frac{7.5 \times 10^8}{7.2 \times 10^9}300 = 31.25 N/mm^2 = 31.25 MPa $$
+                            $$ \tau_{\max} = \frac{VG_{\max}}{Ib} = \frac{5.0 \times 10^5 \times 1.8 \times 10^7}{7.2 \times 10^9 \times 400} = 3.125 N/mm^2 = 3.125 MPa $$
+                        </li>
+                    </ol>
+                </li>
+            </ul>
+            <h3><a name="example_2"></a>예제 2</h3>
+            <ul>
+                <li>
+                    문제 : 다음 보에서 휨응력도와 전단응력도의 최대값 \(\sigma_{\max}, \, \tau_{\max}\)을 계산하시오.
+                    <p><img src="images\04.12.05.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    풀이
+                    <ol>
+                        <li>
+                            위 문제에서 자유물체도를 그리고 평형조건식을 적용하여 지점반력을 계산한다. 
+                            그리고 다음 그림과 같이 SFD, BMD를 작성하고 이로부터 전단력과 휨모멘트의 최대값 \(M_{\max}, \, V_{\max}\)를 구한다.
+                            <p><img src="images\04.12.06.png" onload="this.width/=2;"></p>
+                            $$ V_{\max} = 2,000kN = 2.0 \times 10^6 N, \quad M_{\max} = 6,000 kNm = 6.0 \times 10^9 Nmm $$
+                        </li>
+                        <li>
+                            부재의 단면에서 도심에 대한 단면 2차모멘트 \(I\), 단면의 폭 \(b\)는 다음과 같다.
+                            $$ b = 300mm, \quad I = bh^3/12 = 300 \times 500^3 / 12 = 3.125\times 10^9 mm^4 $$
+                        </li>
+                        <li>
+                            <em>휨응력도의 최대값은 도심에서 가장 먼 단면의 최 외단에서 발생</em>하므로 다음 그림처럼 <em>도심에서 단면의 최 외단까지의 거리 \(y_{max}\)</em>를 계산한다.
+                            <em>전단응력도의 최대값은 도심 위치에서 발생</em>하므로 <em>다음 그림에서 짙게 색칠된 부분의 도심에 대한 단면 1차모멘트 \(G_{\max}\)</em>를 계산한다. 다음은 계산 결과이다.
+                            <p><img src="images\04.12.07.png" onload="this.width/=2;"></p>
+                            $$ y_{max} = 250mm, \quad G_{\max} = 300 \times 250 \times 125 = 9.375 \times 10^6 mm^3 $$
+                        </li>
+                        <li>
+                            휨응력도와 전단응력도의 최대값 \(\sigma_{\max}, \, \tau_{\max}\)를 다음과 같이 계산한다.
+                            $$ \sigma_{\max} = \frac{M_{\max}}{I}y_{\max} = \frac{6.0 \times 10^9}{3.125 \times 10^9}300 = 480.00 N/mm^2 = 480.00 MPa $$
+                            $$ \tau_{\max} = \frac{V_{\max}G_{\max}}{Ib} = \frac{2.0 \times 10^6 \times 9.375 \times 10^6}{3.125 \times 10^9 \times 300} = 20.00 N/mm^2 = 20.00 MPa $$
+                        </li>
+                    </ol>
+                </li>
+            </ul>
+            <h3><a name="example_3"></a>예제 3</h3>
+            <ul>
+                <li>
+                    문제 : 다음 보에서 ①번 위치의 단면에서 C점의 응력도 상태에 대한 모어의 원을 그리고, 이로부터 \(\sigma_1, \, \sigma_2, \, \theta_p, \, \tau_{\max}, \, \tau_{\min}, \, \theta_s\)를 계산하시오.
+                    <p><img src="images\04.12.08.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    풀이
+                    <ol>
+                        <li>
+                            위 문제에서 자유물체도를 그리고 평형조건식을 적용하여 지점반력을 계산한다. 
+                            그리고 ①번 위치에서 단면을 가상으로 절단하여 다음 그림과 같이 자유물체도를 작성한다. 여기에서 다음과 같이 평형조건식을 적용하여 \(V, \, M\)을 계산한다.
+                            <p><img src="images\04.12.09.png" onload="this.width/=2;"></p>
+                            $$ \Sigma F_y = 480 - 120 \times 2 - V = 0; \quad V = 240kN = 240,000 N $$
+                            $$ \Sigma M_1 = -480 \times 2 + (120 \times 2)\times (2/2) + M = 0; \quad M = 720 kNm = 7.2 \times 10^8 Nmm $$
+                        </li>
+                        <li>
+                            부재의 단면에서 도심에 대한 단면 2차모멘트 \(I\), 단면의 폭 \(b\)는 다음과 같다.
+                            $$ b = 240mm, \quad I = bh^3/12 = 240 \times 360^3 / 12 = 9.3312\times 10^8 mm^4 $$
+                        </li>
+                        <li>
+                            도심에서 \(C\)까지의 거리 \(y_C\), \(C\)와 단면의 최 외단까지 부분, 즉 아래 그림에서 짙게 색칠된 부분의 도심에 대한 단면 1차모멘트 \(G_C\)를 다음과 같이 계산한다.
+                            <p><img src="images\04.12.10.png" onload="this.width/=2;"></p>
+                            $$ y_C = 40mm, \quad G_C = 240 \times 140 \times (40 + 140/2) = 3.696 \times 10^6 mm^3 $$
+                        </li>
+                        <li>
+                            휨응력도와 전단응력도의 최대값 \(\sigma_C, \, \tau_C\)를 다음과 같이 계산한다.
+                            $$ \sigma_C = \frac{M}{I}y_C = \frac{7.2 \times 10^8}{9.3312 \times 10^8}40 = 30.8642 N/mm^2 = 30.8642 MPa $$
+                            $$ \tau_C = \frac{VG_C}{Ib} = \frac{2.4 \times 10^5 \times 3.696 \times 10^6}{9.3312 \times 10^8 \times 240} = 3.9609 N/mm^2 = 3.9609 MPa $$
+                        </li>
+                        <li>
+                            <em>휨응력도 \(\sigma_C\)와 전단응력도 \(\tau_C\)가 작용하는 단면과 그 방향을 고려하면 \(C\)위치에서의 응력도상태</em>는 다음 그림과 같다. 
+                            여기에서 <em>\(\sigma_x = \sigma_C = 30.8642MPa, \tau_{xy} = \tau_C = 3.9609MPa, \, \sigma_y = 0MPa\)</em>이다. 
+                            즉, <em>\(\sigma_C\)는 부재축에 직각으로 절단한 면에 수직으로 작용하는 수직응력도인데, 부재축 방향이 단면에서는 \(x\)방향이므로 \(\sigma_x = \sigma_C\)이다. 
+                            그리고 부재축에 직각인 전단력 방향으로는 축력이 작용하지 않으므로 수직응력도가 \(0\)인데, 부재축에 직각인 방향이 단면에서는 \(y\) 방향이므로 \(\sigma_y = 0\)이다.</em>
+                            <p><img src="images\04.12.11.png" onload="this.width/=2;"></p>
+                        </li>
+                        <li>
+                            따라서 \(x\)축에 수직으로 절단한 ①번면, \(y\)축에 수직으로 절단한 ②번면의 좌표는 다음과 같다.
+                            <em>$$ ① = (\sigma_x, \, \tau_{xy}) = (30.8642, 3.9609) $$
+                                $$ ② = (\sigma_y, \, -\tau_{xy}) = (0, -3.9609) $$</em>
+                        </li>
+                        <li>
+                            다음 그림과 같이 ①, ②, 모어의 원, ①', ②', ①'', ②''을 표시한다. 이때 원의 중심의 좌표와 반지름은 다음과 같다.
+                            <p><img src="images\04.12.12.png" onload="this.width/=2;"></p>
+                            <em> $$ C_x = \left( \frac{\sigma_x + \sigma_y}{2} \right) = \left( \frac{30.8642 + 0}{2} \right) = 15.4321 \\
+                            r = \sqrt{\left( \frac{\sigma_x - \sigma_y}{2} \right)^2 + \tau_{xy}^2} = \sqrt{\left( \frac{30.8642 - 0}{2} \right)^2 + 3.9609^2} = 15.9323 $$</em>
+                        </li>
+                        <li>
+                            위의 그림에서 ①', ②'의 \(x\)좌표를 이용하여 다음과 같이 주응력도를 계산한다.
+                            $$ \sigma_1 = C_x + r = 15.4321 + 15.9323 = 31.3644 MPa \\ \sigma_2 = C_x - r = 15.4321 - 15.9323 = -0.5002 MPa $$
+                        </li>
+                        <li>
+                            위 그림에서 ①과 연결되고 색칠된 직각삼각형의 밑변과 높이로부터 다음과 같이 주응력도의 각도를 계산한다. 주응력도의 각도가 \(-\)이므로 시계방향이다.
+                            $$ \tan2\theta_p = \frac{\tau_{xy}}{C_x - \sigma_x} = \frac{3.9609}{15.4321 - 30.8642} = -0.2625 \\
+                            2\theta_p = \tan^{-1}(-0.2625) = -14.3952^\circ, \quad \theta_p = -7.1976^\circ$$
+                        </li>
+                        <li>
+                            다음 그림에서 ①'', ②''의 \(y\)좌표를 이용하여 다음과 같이 최대 또는 최소 전단응력도를 계산한다.
+                            $$ \tau_{\max} = r = 15.9323 MPa \\ \tau_{\min} = -r = -15.9323 MPa $$
+                        </li>
+                        <li>
+                            이때의 각도 \(\theta_s\)는 \(\theta_p\)에 \(45^\circ\)를 더하거나 빼면 다음 식과 같이 계산할 수 있다.
+                            여기에서는 <em>①'을 시계방향으로 회전시켰으므로 \(\theta_p\)에서 \(45^\circ\)를 뺀다.</em>
+                            $$ \theta_s = \theta_p - 45^\circ = -7.1976^\circ - 45^\circ = -52.1976^\circ = -104.3952^\circ / 2 $$
+                        </li>
+                        <li>
+                            만약 <em>①'을 반시계방향으로 \(90^\circ\) 회전시켜 ②''가 되도록 했다면, \(\theta_s\)는 \(\theta_p\)에 \(45^\circ\)를 더해서</em> 다음 식과 같이 계산할 수 있다.
+                            $$ \theta_s = \theta_p + 45^\circ = -7.1976^\circ + 45^\circ = 37.8024^\circ $$
+                        </li>                    </ol>
+                </li>
+            </ul>
+        </div>
+        <div class="separator"></div>
+
+        <!--########## RE VIEW ##########-->
+        <div id="re_view_quiz" hidden>
+            <h3><a name="re_view_quiz"></a>복습 퀴즈</h3>
+            <ol class="ol_quiz">
+                <li>길이 \(4m\)이고 폭 \(200mm\), 높이 \(360mm\)인 직사각형 단면을 갖는 단순보 전체에 등분포하중 \(80kN/m\)가 작용한다. 전단응력도의 최대값을 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="3.3333">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 1에서 휨응력도의 최대값을 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="37.0370">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>길이 \(6m\)이고 폭 \(360mm\), 높이 \(600mm\)인 직사각형 단면을 갖는 캔틸레버보 전체에 등분포하중 \(350kN/m\)이 작용한다. 고정단의 전단력을 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(kN\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="2100.00">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 3에서 고정단의 휨모멘트를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(kNm\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="6300000.00">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 3에서 도심에 대한 단면 2차모멘트를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm^4\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="6.48e9">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 3에서 고정단의 단면에서 도심으로부터 \(50mm\) 위치에 발생하는 휨모멘트에 의한 부재 축방향 수직응력도를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="48.61111">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 3에서 고정단의 단면에서 도심으로부터 \(50mm\) 위치의 전단응력도를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mMPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="14.1782">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 3에서 고정단의 단면에서 도심으로부터 \(50mm\) 위치의 부재축에 직각인 방향으로 작용하는 수직응력도를 계산하시오.<br>
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="0.00">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 6, 7, 8에서 계산한 응력도를 이용하여, 주응력도 \(\sigma_1\)을 계산하시오.<br>
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="52.4442">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 9에서 주응력도 \(\sigma_2\)를 계산하시오.<br>
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="-3.8331">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 9에서 주응력도 방향 \(\theta_p\)를 계산하시오.<br>
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(^\circ\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="-15.1282">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 9에서 최대 전단응력도를 계산하시오.<br>
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="28.1386">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 9에서 \(\theta_s\)를 계산하시오. 단, \(\theta_s < 0^\circ\)이다.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(^\circ\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="-60.1282" hint="\(\theta_s = \theta_p\ \pm 45^\circ\)">
+                    <span class="span_quiz"></span>
+                </li>
+            </ol><br />
+            <input type="submit" class="submit_eval" value="복습 퀴즈 평가" /><br />
+            <span class="span_eval"></span>
+        </div>
+
+    </div>
+
+</body>
+</html>

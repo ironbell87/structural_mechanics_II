@@ -1,0 +1,286 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../javascripts/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="../javascripts/login.js"></script>
+    <script type="text/javascript" src="../javascripts/quiz.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="../stylesheets/stylesheet.css">
+    <title>Bending stress</title>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div class="header_wrapper">
+        <a class="header_octocat" href="https://pages.github.com" target="_blank"></a>
+        <h1 class="header_title">휨응력도(bending stress)</h1>
+        <span class="header_span_login"></span>
+        <a class="header_login"></a>
+        <a class="header_email" href="mailto:ironbell@kyungnam.ac.kr"></a>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="content_wrapper">
+
+        <!--########## PRE VIEW ##########-->
+        <div id="pre_view" hidden>
+            <h3><a name="pre_veiw"></a>교재 학습 범위</h3>
+            <ul>
+                <li>교재 185쪽~187쪽의 "4.3.1 보의 처짐과 곡률"</li>
+                <li>교재 187쪽~188쪽의 "4.3.2 보의 휨변형률"</li>
+                <li>교재 188쪽~192쪽의 "4.3.3 보의 휨응력" 예제 4-17까지</li>
+            </ul>
+        </div>
+        <div class="separator"></div>
+
+        <!--########## MAIN VIEW ##########-->
+        <div id="main_view" hidden>
+            <!--inline script for left-align of MathJax equation-->
+            <script>
+                if (MathJax) {
+                    MathJax.Hub.Config({ displayAlign: "left" });
+                    MathJax.Hub.Rerender();
+                }
+            </script>
+            <!--script for left-align of MathJax equation-->
+            <h3><a name="moment_and_bending"></a>휨모멘트와 휨</h3>
+            <ul>
+                <li>
+                    다음 그림은 오직 휨모멘트 \(M\)만 작용하는 순수휨 상태의 부재이다.
+                    <p><img class="top_margin" src="images\04.11.01.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    위 부재에서 가상으로 절단한 아주 작은 \(dx\) 부분을 휨모멘트 작용 전과 후로 구분하고 설명을 위해서 아주 과장하여 아래 그림에 나타냈다.
+                    <p><img src="images\04.11.02.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    여기에서, \(dx\)는 가상으로 절단한 부분의 길이, \(\overline{ss}\)는 단면의 <em>중립축(neutral axis)</em>, \(ds\)는 중립축 \(\overline{ss}\)의 길이, \(\overline{s's'}\)는 중립축 \(\overline{ss}\)로부터 \(y\)만큼 떨어진 위치의 길이이다.
+                    휨모멘트가 작용하기 전에는 \( dx = ds = ds' \)이다. 그리고 \(dx\)의 시작과 끝부분의 연장선은 모두 중립축에 수직이므로 평행하여 서로 만나지 않는다.
+                </li>
+                <li>
+                    위 그림에서 <em>휨모멘트가 작용하면 중립축 위 부분은 길이가 줄어들고 중립축 아래 부분은 길이가 늘어나는데, 이것이 적절히 조합되면 아래쪽으로 볼록하게 휘어지며 휨이 발생</em>한다, 즉 \(O\)를 중심으로 하는 곡선형이 된다.
+                </li>
+                <li>
+                    이에 따라 \(dx\)의 시작과 끝 단면이 각각 회전하여 그 연장선이 \(O\)에서 \(d\theta\) 각도를 형성하며 서로 만난다. 
+                    여기에서 <em>\(O\)에서 중립축까지의 거리 \(\rho\)는 곡률반지름(radius of curvature)</em>이라 하며, 휨의 정도와 반비례한다.
+                </li>
+                <li><a href="" class="li_test">확인 질문</a>
+                    <div hidden>어떤 단면에 휨모멘트가 작용할 때 길이가 줄어드는 부분과 길이가 늘어나는 부분의 경계에 있는 축의 이름을 쓰시오.<br />
+                        <input type="text" class="input_quiz" placeholder="답을 입력하세요" ondrop="return false;" onpaste="return false;">
+                        <input type="submit" class="submit_quiz" value="확인" answer="중립축">
+                        <span class="span_quiz"></span>
+                    </div>
+                </li>
+            </ul>
+            <h3><a name="bending_strain"></a>휨에 의한 수직변형도</h3>
+            <ul>
+                <li>
+                    휨에 의해 발생하는 수직변형도를 계산하기 위한 가정(오일러-베르누이의 가정, Euler-Bernoulli's assumptions)은 다음과 같다.
+                    <ul>
+                        <li>중립축에 직각인 면은 휨모멘트에 의해서 변형된 후에도 중립축에 직각이다.</li>
+                        <li>탄성한도 이내에서 변형도는 후크의 법칙(Hooke's law)을 따른다.</li>
+                    </ul>
+                </li>
+                <li>
+                    휨이 발생하면 앞 그림에 표시한 \(dx, \, ds, \, ds'\)의 길이가 모두 달라진다. \(d\theta\)가 매우 작다는 것을 고려하면, \(ds'\)을 다음과 같이 계산할 수 있다.
+                    $$ ds = \rho d\theta, \quad ds' = (\rho-y)d\theta = \rho d\theta - yd\theta = \rho d\theta - \frac{y}{\rho}\rho d\theta = ds - \frac{y}{\rho}ds $$
+                </li>
+                <li>
+                    이를 이용하여 <em>중립축으로부터 \(y\)만큼 떨어지 위치에서의 휨에 의한 수직변형도 \(\epsilon_x\)</em>를 계산하면 다음과 같다.
+                    $$ \epsilon_x = \frac{ds' - ds}{ds} = \frac{ds-\frac{y}{\rho}ds-ds}{ds} = -\frac{y}{\rho} = -\kappa y $$
+                </li>
+                <li>
+                    여기에서 \(\kappa\)는 곡률(curvature)이라 하며, 휨의 정도와 비례하고 곡률반지름 \(\rho\)와는 반비례한다.
+                </li>
+                <li><a href="" class="li_test">확인 질문</a>
+                    <div hidden>어떤 단면에 휨모멘트 \(100 kNm\)가 작용할 때, 중립축에서의 수직변형도 \(\epsilon_x\)를 구하시오.<br />
+                        <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;">
+                        <input type="submit" class="submit_quiz" value="확인" answer="0.00">
+                        <span class="span_quiz"></span>
+                    </div>
+                </li>
+            </ul>
+            <h3><a name="bending_stress"></a>휨응력도(bending stress)</h3>
+            <ul>
+                <li>
+                    앞에서 계산한 휨에 의한 수직변형도 \(\epsilon_x\)를 응력보-변형도 관계식 \(\sigma = E \epsilon \)에 적용하면 휨에 의한 수직응력도, 즉 휨응력도를 다음과 같이 계산할 수 있다.
+                    $$ \sigma_x = E \epsilon_x = -E \kappa y $$
+                </li>
+                <li>
+                    위 식으로부터 <em>휨응력도는 중립축으로부터의 거리 \(y\)에 비례</em>한다는 것을 알 수 있다. 그리고 이를 반영한 <em>휨응력도의 분포</em>는 다음 그림과 같다.
+                    <p><img class="top_margin" src="images\04.11.03.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    위 그림에서 단면의 아주 작은 부분 \(dA\)에 작용하는 휨응력도에 의한 힘 \(dF_x \)를 계산하고 이를 단면 전체에 대해 적분하여 구한 \(\Sigma F_x\)는 \(x\)방향 축력과 같게 된다. 
+                    그런데, 이 단면에는 \(x\)방향 축력이 작용하지 않기 때문에 \(\Sigma F_x = 0\)이 된다. 다음은 이를 구체적으로 나타낸 것이다.
+                    $$ dF_x = \sigma_x dA \\
+                    \Sigma F_x = \int dF_x = \int \sigma_x dA = -\int E\kappa ydA = -E\kappa \int ydA=0 \implies \int y dA = 0 $$
+                    여기에서 \(\int y dA\)는 단면1차모멘트인데 이 값이 \(0\)이므로 이 단면1차모멘트 계산의 기준축인 <em>중립축이 도심축</em>이라는 것을 알 수 있다.
+                </li>
+                <li>
+                    위 그림에서 \(dF_x\)의 도심축에 대한 모멘트를 계산하고 이를 단면 전체에 대해 적분하면 이 단면에 작용하는 휨모멘트 \(M\)과 같게 된다. 다음은 이를 구체적으로 나타낸 것이다.
+                    $$ dM = y \, dF_x = y \, \sigma_x dA \\
+                    \Sigma dM = \int dM = \int y \, \sigma_x dA = \int y \, (-E\kappa y) dA = -E\kappa \int y^2 dA = -E\kappa I = M $$
+                    여기에서 \(\int y^2 dA\)는 단면의 도심축에 대한 단면2차모멘트 \(I\)이다.
+                </li>
+                <li>
+                    위 식의 맨 마지막 부분에서 곡률 \(\kappa\)를 구하면 다음과 같다. 여기에서 <em>\(M\)은 단면에 작용하는 휨모멘트</em>이다.
+                    <em>$$ \kappa = - \frac{M}{EI} = \frac{1}{\rho} $$</em>
+                </li>
+                <li>
+                    위의 \(\kappa\)를 \(\sigma_x = -E \kappa y\)에 대입하면, <em>도심축으로부터 \(y\)만큼 떨어진 위치의 휨응력도 \(\sigma_x\)</em>를 다음과 같이 계산할 수 있다.
+                    <em>$$ \sigma_x = \frac{M}{I} y $$</em>
+                </li>
+                <li><a href="" class="li_test">확인 질문</a>
+                    <div hidden>\(I_x = 100mm^4\)인 단면에 휨모멘트 \(10,000 Nmm\)가 작용할 때, 도심축에서 \(10mm\)거리인 위치의 휨응력도를 계산하시오.<br />
+                        <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                        <input type="submit" class="submit_quiz" value="확인" answer="1000.00">
+                        <span class="span_quiz"></span>
+                    </div>
+                </li>
+            </ul>
+            <h3><a name="bending_stress_section_modulus"></a>휨응력도(bending stress)와 단면계수(secion modulus)</h3>
+            <ul>
+                <li>
+                    위의 식에서 휨응력도의 크기는 도심으로부터의 거리에 비례한다는 것을 알 수 있다.
+                    따라서 어떤 단면에서 휨응력도의 최소값은 도심 위치에서 발생하며 다음 식과 같이 도심까지의 거리 \(y = 0\)이므로 그 크기는 \(0\)이다.
+                    $$ \sigma_{centroid} = \frac{M}{I}y = \frac{M}{I}\times 0 = 0 $$
+                </li>
+                <li>
+                    반면에 어떤 단면에서 <em>휨응력도의 최대값은 도심으로부터 가장 먼 단면의 위쪽과 아래쪽 끝단에서 발생</em>한다.
+                    다음 그림과 같은 단면에서 휨응력도의 최대값은 다음과 같다.
+                    <p><img class="top_margin" src="images\04.11.04.png" onload="this.width/=2;"></p>
+                    <em>$$ \sigma_1 = \frac{M}{I}y_1 = \frac{M}{I/y_1} = \frac{M}{S_1}, \quad S_1 = \frac{I}{y_1} \\
+                    \sigma_2 = \frac{M}{I}y_2 = \frac{M}{I/y_2} = \frac{M}{S_2}, \quad S_2 = \frac{I}{y_2} $$</em>
+                </li>
+                <li>
+                    위의 식에서 <em>\(S_1, \, S_2\)는 단면계수</em>이다. 따라서 단면계수를 이용하면 어떤 단면에서 휨응력도의 최대값을 계산할 수 있다.
+                </li>
+                <li>
+                    만약 단면이 도심축에 대해서 대칭이면 도심축 위쪽과 아래쪽에서 구한 \(S_1, \, S_2\)이 같기 때문에 \(\sigma_1, \, \sigma_2\)도 같게 된다. 다만, 보통 길이가 늘어나는 부분의 응력도는 인장응력도이므로 부호가 \(+\)이고 길이가 줄어드는 부분의 응력도는 압축응력도이므로 부호가 \(-\)이다.
+                </li>
+                <li><a href="" class="li_test">확인 질문</a>
+                    <div hidden>\(S_1 = 100mm^3\)이고 도심축에 대해 대칭인 단면에 휨모멘트 \(20,000 Nmm\)가 작용할 때, 이 단면에서 발생하는 최대 휨응력도를 계산하시오.<br />
+                        <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                        <input type="submit" class="submit_quiz" value="확인" answer="200.00">
+                        <span class="span_quiz"></span>
+                    </div>
+                </li>
+            </ul>
+            <h3><a name="example"></a>예제</h3>
+            <ul>
+                <li>
+                    문제 : 다음의 단면에 휨모멘트 \(M=250kNm\)가 작용할 때 A, B, C 위치에서의 휨응력도를 \(MPa\) 단위로 계산하시오.
+                    <p><img src="images\04.11.05.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    풀이
+                    <ol>
+                        <li>
+                            먼저 휨모멘트의 단위를 \(MPa\)에 맞도록 다음과 같이 \(Nmm\)로 환산한다.
+                            $$ M=250kNm = 250 \times 1,000N \times 1,000mm = 250 \times 10^6 Nmm = 2.5 \times 10^8 Nmm $$
+                        </li>
+                        <li>
+                            <em>도심축에 대한 단면 2차모멘트</em>를 다음과 같이 계산한다.
+                            $$ I_x = \frac{125 \times 250^3}{12} = 162,760,416.67mm^4 $$
+                        </li>
+                        <li>
+                            <em>도심축에서 A, B, C 위치까지의 거리</em>를 다음과 같이 계산한다.
+                            <p><img src="images\04.11.06.png" onload="this.width/=2;"></p>
+                            $$ y_A = 125mm, \, y_B = 100mm, \, y_C = 0mm $$
+                        </li>
+                        <li>
+                            다음과 같이 A, B, C 위치에서의 휨응력도를 계산한다.
+                            $$ \sigma_A = \frac{M}{I_x}y_A = \frac{2.5 \times 10^8}{162,760,416.67}125 = 192.00 N/mm^2 = 192.00 MPa \\
+                               \sigma_B = \frac{M}{I_x}y_B = \frac{2.5 \times 10^8}{162,760,416.67}100 = 153.60 N/mm^2 = 153.60 MPa \\
+                               \sigma_C = \frac{M}{I_x}y_C = \frac{2.5 \times 10^8}{162,760,416.67}0 = 0.00 N/mm^2 = 0.00 MPa $$
+                        </li>
+                    </ol>
+                </li>
+            </ul>
+        </div>
+        <div class="separator"></div>
+
+        <!--########## RE VIEW ##########-->
+        <div id="re_view_quiz" hidden>
+            <h3><a name="re_view_quiz"></a>복습 퀴즈</h3>
+            <ol class="ol_quiz">
+                <li>폭 \(200mm\), 높이 \(360mm\)인 직사각형 단면에 휨모멘트 \(350kNm\)가 작용한다. 최대 횜모멘트를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="81.0185">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 1에서 최대 휨모멘트가 발생하는 위치부터 단면의 도심까지의 거리를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="180.00">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 1에서 최소 휨모멘트를 계산하시오<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="0.00">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 1에서 최소 휨모멘트가 발생하는 위치부터 단면의 도심까지의 거리를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="0.00">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>폭 \(100mm\), 높이 \(220mm\)인 직사각형 단면에 휨모멘트 \(76.3kNm\)가 작용한다. 도심에서의 휨응력도를 계산하시오.
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="0.00">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 5에서 도심에서 \(25mm\)위치의 휨응력도를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="21.4970">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 5에서 도심에서 \(50mm\)위치의 휨응력도를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="42.9940">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 5에서 도심에서 \(75mm\)위치의 휨응력도를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="64.4910">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 5에서 도심에서 \(110mm\)위치의 휨응력도를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="94.5868">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>다음의 단면에 휨모멘트 \(73kNm\)가 작용한다. A위치에서의 휨응력도를 계산하시오.<br>
+                    <p><img src="images\quiz.04.11.09.png" onload="this.width/=2;"></p>
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="0.00">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 9에서 B 위치에서의 휨응력도를 계산하시오.<br>
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="103.4320">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 9에서 C 위치에서의 휨응력도를 계산하시오.<br>
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="206.8640">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 9에서 D 위치에서의 휨응력도를 계산하시오.<br>
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="275.8186">
+                    <span class="span_quiz"></span>
+                </li>
+            </ol><br />
+            <input type="submit" class="submit_eval" value="복습 퀴즈 평가" /><br />
+            <span class="span_eval"></span>
+        </div>
+
+    </div>
+
+</body>
+</html>

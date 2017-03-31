@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../javascripts/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="../javascripts/login.js"></script>
+    <script type="text/javascript" src="../javascripts/quiz.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="../stylesheets/stylesheet.css">
+    <title>Axial and shear deformation</title>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div class="header_wrapper">
+        <a class="header_octocat" href="https://pages.github.com" target="_blank"></a>
+        <h1 class="header_title">축변형(axial deformation)과 전단변형(shear deformation)</h1>
+        <span class="header_span_login"></span>
+        <a class="header_login"></a>
+        <a class="header_email" href="mailto:ironbell@kyungnam.ac.kr"></a>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="content_wrapper">
+
+        <!--########## PRE VIEW ##########-->
+        <div id="pre_view" hidden>
+            <h3><a name="pre_veiw"></a>교재 학습 범위</h3>
+            <ul>
+                <li>교재 284쪽 "7.1.1 축방향부재"</li>
+                <li>교재 173~174쪽 예제 4-11</li>
+                <li>교재 285쪽 "7.1.4 전단판"</li>
+            </ul>
+        </div>
+        <div class="separator"></div>
+
+        <!--########## MAIN VIEW ##########-->
+        <div id="main_view" hidden>
+            <!--inline script for left-align of MathJax equation-->
+            <script>
+                if (MathJax) {
+                    MathJax.Hub.Config({ displayAlign: "left" });
+                    MathJax.Hub.Rerender();
+                }
+            </script>
+            <!--script for left-align of MathJax equation-->
+            <h3><a name="axial_deformation"></a>축변형(axial deformation)</h3>
+            <ul>
+                <li>
+                    축변형은 축력에 의해서 부재의 길이가 늘어나거나 줄어드는 것이다.
+                </li>
+                <li>
+                    다음 그림의 축변형 \(\Delta L\)의 계산식은 응력도와 변형도의 정의, 응력도와 변형도의 관계식을 이용하여 아래와 같이 유도할 수 있다.
+                    <p><img src="images\05.01.01.png" onload="this.width/=2;"></p>
+                    <em>$$ \sigma = \frac{P}{A} \qquad \epsilon = \frac{\Delta L}{L} \qquad \sigma = E\epsilon \implies \frac{P}{A}=E\frac{\Delta L}{L} \implies \Delta L = \frac{PL}{EA} $$</em>
+                </li>
+                <li>
+                    탄성계수 \(205,000MPa\), 직경 \(50mm^2\), 길이 \(1.3m\)인 강봉에 인장력 \(390kN\)이 작용한다면, 단면적은 \(A = \pi r^2 = \pi \times 25^2 = 1,936.50mm^2\)이므로 축변형은 다음과 같이 계산한다.
+                    $$ \Delta L = \frac{PL}{EA} = \frac{(390 \times 1000) N \times (1.3 \times 1,000) mm}{205,000 MPa \times 1,936.50 mm^2} = 1.26mm$$
+                </li>
+                <li><a href="" class="li_test">확인 질문</a>
+                    <div hidden>탄성계수 \(200,000MPa\), 단면적 \(1,000mm^2\), 길이 \(1m\)인 부재에 인장력 \(200kN\)이 작용할 때, 축변형을 계산하시오.<br />
+                        <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm\)
+                        <input type="submit" class="submit_quiz" value="확인" answer="1.00">
+                        <span class="span_quiz"></span>
+                    </div>
+                </li>
+            </ul>
+            <h3><a name="shear_deformation"></a>전단변형(shear deformation)</h3>
+            <ul>
+                <li>
+                    전단변형은 전단력에 의해서 부재 축의 직각방향으로 이동하는 것이다.
+                </li>
+                <li>
+                    다음 그림의 전단변형 \(\delta\)의 계산식은 아래와 같다.
+                    <p><img src="images\05.01.02.png" onload="this.width/=2;"></p>
+                    <em>$$ \delta = k\frac{VL}{GA} $$</em>
+                    여기에서 \(k\)는 단면의 형상에 따라 결정된다.
+                </li>
+                <li>
+                    전단변형은 대부분의 경우 그 값이 크지 않고 계산하기 복잡하다.
+                </li>
+            </ul>
+        <div class="separator"></div>
+
+        <!--########## RE VIEW ##########-->
+        <div id="re_view_quiz" hidden>
+            <h3><a name="re_view_quiz"></a>복습 퀴즈</h3>
+            <ol class="ol_quiz">
+                <li>탄성계수 \(27,000MPa\), 단면적 \(2,000mm^2\), 길이 \(1m\)인 부재에 축력 \(250kN\)이 작용할 때, 축변형을 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="4.6296">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 1에서 길이 \(2.0m\)일 때, 축변형을 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="9.2593">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>폭과 높이가 \(500mm\)인 정사각형 단면을 갖고 탄성계수 \(28,500MPa\), 길이 \(2.4m\)인 부재에 압축력 \(7,800kN\)이 작용할 때, 축변형을 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="2.6274">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 3에서 축변형을 줄이기 위해서 단면의 폭과 높이를 \(550mm\)로 증가시켰을 때, 축변형을 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="2.1714">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>길이 \(2.1m\), 탄성계수 \(37,000MPa\)인 부재에 \(3,600kN\)의 축력이 작용할 때, 축변형을 \(1mm\) 이하로 줄이기 위한 정사각형 단면의 최소 폭 또는 높이를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="452.0225">
+                    <span class="span_quiz"></span>
+                </li>
+            </ol><br />
+            <input type="submit" class="submit_eval" value="복습 퀴즈 평가" /><br />
+            <span class="span_eval"></span>
+        </div>
+
+    </div>
+
+</body>
+</html>
