@@ -1,0 +1,411 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../javascripts/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="../javascripts/login.js"></script>
+    <script type="text/javascript" src="../javascripts/quiz.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="../stylesheets/stylesheet.css">
+    <title>Conjugate beam method</title>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div class="header_wrapper">
+        <a class="header_octocat" href="https://pages.github.com" target="_blank"></a>
+        <h1 class="header_title">공액보법(conjugate beam method)</h1>
+        <span class="header_span_login"></span>
+        <a class="header_login"></a>
+        <a class="header_email" href="mailto:ironbell@kyungnam.ac.kr"></a>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="content_wrapper">
+
+        <!--########## PRE VIEW ##########-->
+        <div id="pre_view" hidden>
+            <h3><a name="pre_veiw"></a>교재 학습 범위</h3>
+            <ul>
+                <li>교재 311쪽~317쪽 "7.3.3 공액보법" 예제 7-13까지</li>
+            </ul>
+        </div>
+        <div class="separator"></div>
+
+        <!--########## MAIN VIEW ##########-->
+        <div id="main_view" hidden>
+            <!--inline script for left-align of MathJax equation-->
+            <script>
+                if (MathJax) {
+                    MathJax.Hub.Config({ displayAlign: "left" });
+                    MathJax.Hub.Rerender();
+                }
+            </script>
+            <!--script for left-align of MathJax equation-->
+            <h3><a name="conjugate_beam_method"></a>공액보법(conjugate beam method)의 원리</h3>
+            <ul>
+                <li>
+                    공액보법은 탄성하중법 또는 탄성중량법(elastic weight method)으로도 불리운다. 비교적 계산이 간단하고 적용범위도 넓다.
+                </li>
+                <li>
+                    <a href="03.03.member_force_diagram.html#relation_equation">부재력도 작성을 설명하는 과정</a>에서 얻은 분포하중, 전단력, 휨모멘트의 관계식은 다음과 같다.
+                    <em>$$ -w(x)= \frac{dV(x)}{dx} = \frac{d^2M(x)}{dx^2} $$</em>
+                </li>
+                <li>
+                    위의 식은 <em>분포하중 \(w(x)\)로부터 발생하는 전단력 \(V(x)\)와 휨모멘트 \(M(x)\)를 계산할 수 있다</em>는 것을 의미하고, 그 계산방법은 이미 학습하였다.
+                </li>
+                <li>
+                    한편 <a href="05.02.elastic_curve_method.html#elastic_curve_method">탄성곡선법을 설명하는 과정</a>에서 얻은 휨모멘트, 처짐각, 처짐의 관계식은 다음과 같다.
+                    <em>$$ - \frac{M(x)}{EI} = \frac{d\theta(x)}{dx} = \frac{d^2y(x)}{dx^2} $$</em>
+                </li>
+                <li>
+                    이 식을 분포하중, 전단력, 휨모멘트 관계식과 비교하면, 분포하중 \(w(x)\)가 휨모멘트를 휨강성으로 나눈 \(M(x)/EI\)로, 전단력 \(V(x)\)가 처짐각 \(\theta(x)\)로, 휨모멘트 \(M(x)\)가 처짐 \(y(x)\)로 변경된 것을 제외하면 모두 동일하다는 것을 알 수 있다.
+                </li>
+                <li>
+                    즉, <em>\(M(x)/EI\)를 분포하중으로 취급하면 그로부터 계산한 전단력 \(V(x)\)와 휨모멘트 \(M(x)\)가 각각 처짐각 \(\theta(x)\)와 처짐 \(y(x)\)</em>가 된다.
+                </li>
+            </ul>
+            <h3><a name="conjugate_beam"></a>공액보(conjugate beam)</h3>
+            <ul>
+                <li>
+                    \(M(x)/EI\)를 분포하중으로 취급하고 그로부터 전단력 \(V(x)\)와 휨모멘트 \(M(x)\)를 계산하기 위해서는 실재 보를 가상의 공액보로 변경해야 한다.
+                </li>
+                <li>
+                    공액보는 실재 보의 지점과 절점을 다음과 같이 치환한 것이다.
+                    <ul>
+                        <li><em>회전단과 이동단은 그대로 유지</em></li>
+                        <li><em>고정단은 자유단으로, 자유단은 고정단으로 치환</em></li>
+                        <li><em>부재 내부 회전절점은 부재 내부 이동단으로, 부재 내부 이동단은 부재 내부 회전절점으로 치환</em></li>
+                    </ul>
+                </li>
+            </ul>
+            <h3><a name="procedure"></a>계산절차</h3>
+            <ol>
+                <li>
+                    구조물 전체를 대상으로 자유물체도를 작성하고 평형조건식을 적용하여 지점반력을 계산한다. 이를 바탕으로 <em>M/EI 다이어그램</em>을 작성한다.
+                </li>
+                <li>
+                    실재 보의 지점과 절점을 치환하여 가상의 공액보로 변경한다.
+                </li>
+                <li>
+                    \(-\) 부호를 반영하여 <em>M/EI 다이어그램</em>을 \(x\)축에 대칭으로 변환하고 공액보에 하중으로 설정한다. 이때 하중은 항상 부재의 축을 향하도록 한다.
+                    다음 그림은 \(+\)의 M/EI 다이어그램과 이를 공액보에 작용하는 하중으로 나타낸 것이다.
+                    <p><img src="images\05.04.01.png" onload="this.width/=2;"></p>
+                    다음 그림은 \(-\)의 M/EI 다이어그램과 이를 공액보에 작용하는 하중으로 나타낸 것이다.
+                    <p><img class="top_margin" src="images\05.04.02.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    <em>처짐각을 계산할 위치를 가상으로 절단하고 자유물체도를 작성한 후에, 평형조건식을 적용하여 해당 위치의 전단력을 계산</em>한다. 이 값이 해당 위치의 처짐각이다.
+                </li>
+                <li>
+                    <em>처짐을 계산할 위치를 가상으로 절단하고 자유물체도를 작성한 후에, 평형조건식을 적용하여 해당 위치의 휨모멘트를 계산</em>한다. 이 값이 해당 위치의 처짐이다.
+                </li>
+                <li>
+                    앞에서 계산한 <em>전단력이 부재력으로서 \(+\)이면 처짐각은 시계방향, \(-\)이면 반시계방향</em>이다. 
+                    그리고 <em>휨모멘트가 부재력으로서 \(+\)이면 처짐은 아래쪽 방향, \(-\)이면 위쪽 방향</em>이다.
+                </li>
+            </ol>
+            <h3><a name="example_1"></a>예제 1</h3>
+            <ul>
+                <li>
+                    문제 : 공액보법을 이용하여 자유단의 처짐각과 처짐 \(\theta, \, y\)를 계산하시오.
+                    <p><img src="images\05.02.07.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    풀이
+                    <ol>
+                        <li>
+                            구조물 전체를 대상으로 자유물체도를 작성하고 평형조건식을 적용하여 지점반력을 계산한다. 이를 바탕으로 다음 그림과 같이 <em>M/EI 다이어그램</em>을 작성한다.
+                            <p><img class="top_margin" src="images\05.04.03.png" onload="this.width/=2;"></p>
+                        </li>
+                        <li>
+                            실재 보의 고정단을 자유단으로, 자유단을 고정단으로 치환하여 다음과 같은 <em>공액보로 변경</em>한다.
+                            <p><img src="images\05.04.04.png" onload="this.width/=2;"></p>
+                        </li>
+                        <li>
+                            M/EI 다이어그램을 \(x\)축에 대칭으로 변환하고 부재의 축을 향하도록 하여 다음과 같이 공액보에 <em>하중으로 설정</em>한다.
+                            <p><img src="images\05.04.05.png" onload="this.width/=2;"></p>
+                        </li>
+                        <li>
+                            이 문제에서는 자유단의 처짐각과 처짐을 계산해야 한다. 
+                            때문에, 다음과 같이 <em>자유물체도를 그리고 평형조건식을 적용</em>하여 실재 보의 자유단 위치인 공액보의 고정단에 작용하는 전단력 \(V'\)과 휨모멘트 \(M'\)을 계산한다. 
+                            <p><img src="images\05.04.06.png" onload="this.width/=2;"></p>
+                            $$ \Sigma F_y = L \times \frac{PL}{EI} \times \frac{1}{2} - V' = 0; \quad V' = \frac{PL^2}{2EI} \\
+                            \Sigma M_{V'} = -\left( L \times \frac{PL}{EI} \times \frac{1}{2} \right) \times \frac{2L}{3} + M' = 0; \quad M' = \frac{PL^3}{3EI} $$
+                        </li>
+                        <li>
+                            자유단의 처짐각 \(\theta\)와 처짐 \(y\)의 크기는 다음과 같다. 그리고, <em>전단력 \(V'\)과 휨모멘트 \(M'\)이 부재력으로서 \(+\)이므로 처짐각은 시계방향이고 처짐은 아래쪽 방향</em>이다.
+                            $$ \theta = \frac{PL^2}{2EI} \quad y = \frac{PL^3}{3EI} $$
+                        </li>
+                    </ol>
+                </li>
+            </ul>
+            <h3><a name="example_2"></a>예제 2</h3>
+            <ul>
+                <li>
+                    문제 : 공액보법을 이용하여 자유단의 처짐각과 처짐 \(\theta, \, y\)를 계산하시오.
+                    <p><img src="images\05.02.10.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    풀이
+                    <ol>
+                        <li>
+                            구조물 전체를 대상으로 자유물체도를 작성하고 평형조건식을 적용하여 지점반력을 계산한다. 이를 바탕으로 다음 그림과 같이 <em>M/EI 다이어그램</em>을 작성한다.
+                            <p><img class="top_margin" src="images\05.04.07.png" onload="this.width/=2;"></p>
+                        </li>
+                        <li>
+                            실재 보의 고정단을 자유단으로, 자유단을 고정단으로 치환하여 다음과 같은 <em>공액보로 변경</em>한다.
+                            <p><img class="top_margin" src="images\05.04.04.png" onload="this.width/=2;"></p>
+                        </li>
+                        <li>
+                            M/EI 다이어그램을 \(x\)축에 대칭으로 변환하고 부재의 축을 향하도록 하여 다음과 같이 공액보에 <em>하중으로 설정</em>한다.
+                            <p><img src="images\05.04.08.png" onload="this.width/=2;"></p>
+                        </li>
+                        <li>
+                            이 문제에서는 자유단의 처짐각과 처짐을 계산해야 한다. 
+                            때문에, 다음과 같이 <em>자유물체도를 그리고 평형조건식을 적용</em>하여 실재 보의 자유단 위치인 공액보의 고정단에 작용하는 전단력 \(V'\)과 휨모멘트 \(M'\)을 계산한다. 
+                            <p><img src="images\05.04.09.png" onload="this.width/=2;"></p>
+                            $$ \Sigma F_y = L \times \frac{wL^2}{2EI} \times \frac{1}{3} - V' = 0; \quad V' = \frac{wL^3}{6EI} \\
+                            \Sigma M_{V'} = -\left( L \times \frac{wL^2}{2EI} \times \frac{1}{3} \right) \times \frac{3L}{4} + M' = 0; \quad M' = \frac{wL^4}{8EI} $$
+                        </li>
+                        <li>
+                            자유단의 처짐각 \(\theta\)와 처짐 \(y\)의 크기는 다음과 같다. 그리고, <em>전단력 \(V'\)과 휨모멘트 \(M'\)이 부재력으로서 \(+\)이므로 처짐각은 시계방향이고 처짐은 아래쪽 방향</em>이다.
+                            $$ \theta = \frac{wL^3}{6EI} \quad y = \frac{wL^4}{8EI} $$
+                        </li>
+                    </ol>
+                </li>
+            </ul>
+            <h3><a name="example_3"></a>예제 3</h3>
+            <ul>
+                <li>
+                    문제 : 공액보법을 이용하여 양단의 처짐각과 가운데의 처짐 \(\theta, \, y\)를 계산하시오.
+                    <p><img src="images\05.02.13.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    풀이
+                    <ol>
+                        <li>
+                            구조물 전체를 대상으로 자유물체도를 작성하고 평형조건식을 적용하여 지점반력을 계산한다. 이를 바탕으로 다음 그림과 같이 <em>M/EI 다이어그램</em>을 작성한다.
+                            <p><img src="images\05.04.10.png" onload="this.width/=2;"></p>
+                        </li>
+                        <li>
+                            실재 보가 단순보이므로, 양단의 회전단과 이동단을 그대로 유지한다. 따라서 공액보는 실재 보와 동일하다.
+                        </li>
+                        <li>
+                            M/EI 다이어그램을 \(x\)축에 대칭으로 변환하고 부재의 축을 향하도록 하여 다음과 같이 공액보에 <em>하중으로 설정</em>한다.
+                            <p><img class="top_margin" src="images\05.04.11.png" onload="this.width/=2;"></p>
+                        </li>
+                        <li>
+                            공액보 전체를 대상으로 자유물체도를 그리고 평형조건식을 적용하여 지점반력 \(V'_A, \, V'_B\)을 다음과 같이 계산한다.
+                            $$ \Sigma M_{V'_B} = \left( \frac{L}{2} \times \frac{wL^2}{8EI} \times \frac{2}{3} \times 2 \right) \times \frac{L}{2} - V'_A \times L = 0; \quad V'_A = \frac{wL^3}{24EI} \\
+                            \Sigma F_y = -\left( \frac{L}{2} \times \frac{wL^2}{8EI} \times \frac{2}{3} \times 2 \right) + V'_A \times + V'_B = 0; \quad V'_B = \frac{wL^3}{24EI} $$
+                        </li>
+                        <li>
+                            부재 가운데를 가상으로 절단한 후, 왼쪽 부분을 대상으로 자유물체도를 그리고 평형조건식을 적용하여 다음과 같이 부재 가운데의 휨모멘트를 계산한다.
+                            <p><img class="top_margin" src="images\05.04.12.png" onload="this.width/=2;"></p>
+                            $$ \Sigma M_{V'} = -\frac{L}{2} \times \frac{wL^3}{24EI} + \left( \frac{L}{2} \times \frac{wL^2}{8EI} \times \frac{2}{3} \right) \times \left( \frac{L}{2} \times \frac{3}{8} \right) + M' = 0; \\
+                            M' = \frac{5wL^4}{384EI} $$
+                        </li>
+                        <li>
+                            양단의 처짐각 \(\theta\)와 가운데의 처짐 \(y\)의 크기는 다음과 같다. 그리고, 
+                            <em>전단력 \(V'_A\)과 휨모멘트 \(M'\)이 부재력으로서 \(+\)이므로 왼쪽단의 처짐각은 시계방향이고 처짐은 아래쪽 방향</em>이다.
+                            <em>전단력 \(V'_B\)이 부재력으로서 \(-\)이므로 오른쪽단의 처짐각은 반시계방향</em>이다.
+                            $$ \theta_A = \frac{wL^3}{24EI} \quad \theta_B = -\frac{wL^3}{24EI} \quad y = \frac{5wL^4}{384EI} $$
+                        </li>
+                    </ol>
+                </li>
+            </ul>
+            <h3><a name="example_4"></a>예제 4</h3>
+            <ul>
+                <li>
+                    문제 : 공액보법을 이용하여 양단의 처짐각과 가운데의 처짐 \(\theta, \, y\)를 계산하시오.
+                    <p><img src="images\05.02.16.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    풀이
+                    <ol>
+                        <li>
+                            구조물 전체를 대상으로 자유물체도를 작성하고 평형조건식을 적용하여 지점반력을 계산한다. 이를 바탕으로 다음 그림과 같이 <em>M/EI 다이어그램</em>을 작성한다.
+                            <p><img src="images\05.04.13.png" onload="this.width/=2;"></p>
+                        </li>
+                        <li>
+                            실재 보가 단순보이므로, 양단의 회전단과 이동단을 그대로 유지한다. 따라서 공액보는 실재 보와 동일하다.
+                        </li>
+                        <li>
+                            M/EI 다이어그램을 \(x\)축에 대칭으로 변환하고 부재의 축을 향하도록 하여 다음과 같이 공액보에 <em>하중으로 설정</em>한다.
+                            <p><img class="top_margin" src="images\05.04.14.png" onload="this.width/=2;"></p>
+                        </li>
+                        <li>
+                            공액보 전체를 대상으로 자유물체도를 그리고 평형조건식을 적용하여 지점반력 \(V'_A, \, V'_B\)을 다음과 같이 계산한다.
+                            $$ \Sigma M_{V'_B} = \left( \frac{L}{2} \times \frac{PL}{4EI} \times \frac{1}{2} \times 2 \right) \times \frac{L}{2} - V'_A \times L = 0; \quad V'_A = \frac{PL^2}{16EI} \\
+                            \Sigma F_y = -\left( \frac{L}{2} \times \frac{PL}{4EI} \times \frac{1}{2} \times 2 \right) + V'_A \times + V'_B = 0; \quad V'_B = \frac{PL^2}{16EI} $$
+                        </li>
+                        <li>
+                            부재 가운데를 가상으로 절단한 후, 왼쪽 부분을 대상으로 자유물체도를 그리고 평형조건식을 적용하여 다음과 같이 부재 가운데의 휨모멘트를 계산한다.
+                            <p><img class="top_margin" src="images\05.04.15.png" onload="this.width/=2;"></p>
+                            $$ \Sigma M_{V'} = -\frac{L}{2} \times \frac{PL^2}{16EI} + \left( \frac{L}{2} \times \frac{PL}{4EI} \times \frac{1}{2} \right) \times \left( \frac{L}{2} \times \frac{1}{3} \right) + M' = 0; \\
+                            M' = \frac{PL^3}{48EI} $$
+                        </li>
+                        <li>
+                            양단의 처짐각 \(\theta\)와 가운데의 처짐 \(y\)의 크기는 다음과 같다. 그리고,
+                            <em>전단력 \(V'_A\)과 휨모멘트 \(M'\)이 부재력으로서 \(+\)이므로 왼쪽단의 처짐각은 시계방향이고 처짐은 아래쪽 방향</em>이다.
+                            <em>전단력 \(V'_B\)이 부재력으로서 \(-\)이므로 오른쪽단의 처짐각은 반시계방향</em>이다.
+                            $$ \theta_A = \frac{PL^2}{16EI} \quad \theta_B = -\frac{PL^2}{16EI} \quad y = \frac{PL^3}{48EI} $$
+                        </li>
+                    </ol>
+                </li>
+            </ul>
+            <h3><a name="example_5"></a>예제 5</h3>
+            <ul>
+                <li>
+                    문제 : 공액보법을 이용하여 양단의 처짐각과 하중점의 처짐각과 처짐 \(\theta, \, y\)를 계산하시오.
+                    <p><img src="images\05.02.19.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    풀이
+                    <ol>
+                        <li>
+                            구조물 전체를 대상으로 자유물체도를 작성하고 평형조건식을 적용하여 지점반력을 계산한다. 이를 바탕으로 다음 그림과 같이 <em>M/EI 다이어그램</em>을 작성한다.
+                            <p><img class="top_margin" src="images\05.04.16.png" onload="this.width/=2;"></p>
+                        </li>
+                        <li>
+                            실재 보가 단순보이므로, 양단의 회전단과 이동단을 그대로 유지한다. 따라서 공액보는 실재 보와 동일하다.
+                        </li>
+                        <li>
+                            M/EI 다이어그램을 \(x\)축에 대칭으로 변환하고 부재의 축을 향하도록 하여 다음과 같이 공액보에 <em>하중으로 설정</em>한다.
+                            <p><img class="top_margin" src="images\05.04.17.png" onload="this.width/=2;"></p>
+                        </li>
+                        <li>
+                            공액보 전체를 대상으로 자유물체도를 그리고 평형조건식을 적용하여 지점반력 \(V'_A, \, V'_B\)을 다음과 같이 계산한다.
+                            $$ \Sigma M_{V'_B} = \left( a \times \frac{Pab}{EIL} \times \frac{1}{2} \right) \times \left( b + \frac{a}{3} \right)
+                            + \left( b \times \frac{Pab}{EIL} \times \frac{1}{2} \right) \times \frac{2b}{3} - V'_A \times L = 0; \\
+                            V'_A = \frac{Pab}{6EIL}(L+b) \\
+                            \Sigma M_{V'_A} = -\left( b \times \frac{Pab}{EIL} \times \frac{1}{2} \right) \times \left( a + \frac{b}{3} \right)
+                            - \left( a \times \frac{Pab}{EIL} \times \frac{1}{2} \right) \times \frac{2a}{3} + V'_B \times L = 0; \\
+                            V'_B = \frac{Pab}{6EIL}(L+a) $$
+                        </li>
+                        <li>
+                            부재의 하중점을 가상으로 절단한 후, 왼쪽 부분을 대상으로 자유물체도를 그리고 평형조건식을 적용하여 다음과 같이 부재 가운데의 전단력과 휨모멘트를 계산한다.
+                            <p><img class="top_margin" src="images\05.04.18.png" onload="this.width/=2;"></p>
+                            $$ \Sigma F_y = \frac{Pab}{6EIL}(L+b) - a \times \frac{Pab}{EIL} \times \frac{1}{2} - V' = 0; \quad V' = \frac{Pab}{3EIL}(-a+b) \\
+                            \Sigma M_{V'} = -\frac{Pab}{6EIL}(L+b) \times a + \left( a \times \frac{Pab}{EIL} \times \frac{1}{2} \right) \times \frac{a}{3} + M' = 0; \\
+                            M' = \frac{Pa^2b^2}{3EIL} $$
+                        </li>
+                        <li>
+                            양단의 처짐각과 하중점의 처짐각 \(\theta\)와 처짐 \(y\)의 크기는 다음과 같다. 그리고,
+                            <em>전단력 \(V'_A\)과 휨모멘트 \(M'\)이 부재력으로서 \(+\)이므로 왼쪽단의 처짐각은 시계방향이고 처짐은 아래쪽 방향</em>이다.
+                            <em>전단력 \(V'_B\)이 부재력으로서 \(-\)이므로 오른쪽단의 처짐각은 반시계방향</em>이다. 
+                            하중점의 처짐각은 \(a, \, b\)의 크기에 따라 부호가 달라지므로 방향을 알 수 없다.
+                            $$ \theta_A = \frac{Pab}{6EIL}(L+b) \quad \theta_B = -\frac{Pab}{6EIL}(L+a) \\
+                            \theta = \frac{Pab}{3EIL}(-a+b) \quad y = \frac{Pa^2b^2}{3EIL} $$
+                        </li>
+                    </ol>
+                </li>
+            </ul>
+        </div>
+        <div class="separator"></div>
+
+        <!--########## RE VIEW ##########-->
+        <div id="re_view_quiz" hidden>
+            <h3><a name="re_view_quiz"></a>복습 퀴즈</h3>
+            <ol class="ol_quiz">
+                <li>다음에서 자유단의 처짐각과 처짐을 계산하려고 한다. M/EI 다이어그램의 전체 면적을 계산하시오.<br />
+                    <img src="images\quiz.05.02.01.png" onload="this.width/=2;"><br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;">
+                    <input type="submit" class="submit_quiz" value="확인" answer="6.00" hint="집중하중에 의한 M/EI 다이어그램은 1차식이므로, M/EI의 최대값과 부재 길이의 곱">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 1에서 실재 보의 자유단은 공액보에서 무엇으로 치환되는지 쓰시오.<br />
+                    <input type="text" class="input_quiz" placeholder="답을 입력하세요" ondrop="return false;" onpaste="return false;">
+                    <input type="submit" class="submit_quiz" value="확인" answer="고정단" hint="자유단 <=> 고정단, 회전단과 이동단은 동일, 내부 힌지 절점 <=> 내부 이동단">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 1에서 실재 보의 고정단은 공액보에서 무엇으로 치환되는지 쓰시오오.<br />
+                    <input type="text" class="input_quiz" placeholder="답을 입력하세요" ondrop="return false;" onpaste="return false;">
+                    <input type="submit" class="submit_quiz" value="확인" answer="자유단" hint="자유단 <=> 고정단, 회전단과 이동단은 동일, 내부 힌지 절점 <=> 내부 이동단">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 1에서 자유단의 처짐각을 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(rad\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="6.00" hint="공액보의 고정단의 전단력 또는 수직방향 지점반력">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 1에서 자유단의 처짐을 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(m\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="8.00" hint="공액보의 고정단의 휨모멘트 또는 모멘트 지점반력">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>다음에서 왼쪽 끝단의 처짐각과 부재 가운데의 처짐을 계산하려고 한다. M/EI 다이어그램의 전체 면적의 절반을 계산하시오.<br />
+                    <img src="images\quiz.05.02.05.png" onload="this.width/=2;"><br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;">
+                    <input type="submit" class="submit_quiz" value="확인" answer="2.25" hint="포물선(2차곡선)의 면적은 직사각형 면적의 2/3">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 6에서 실재 보의 왼쪽 끝단은 공액보에서 무엇으로 치환되는지 쓰시오.<br />
+                    <input type="text" class="input_quiz" placeholder="답을 입력하세요" ondrop="return false;" onpaste="return false;">
+                    <input type="submit" class="submit_quiz" value="확인" answer="회전단" hint="자유단 <=> 고정단, 회전단과 이동단은 동일, 내부 힌지 절점 <=> 내부 이동단">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 6에서 보의 왼쪽 끝단의 처짐각을 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(rad\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="2.25" hint="공액보의 왼쪽 끝단의 전단력 (부호 고려)">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 6에서 보의 오른쪽 끝단의 처짐각을 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(rad\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="-2.25" hint="공액보의 오른쪽 끝단의 전단력 (부호 고려)">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 6에서 부재 가운데의 처짐을 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(m\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="2.1094" hint="공액보 가운데의 휨모멘트 (부호 고려)">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>다음에서 왼쪽 끝단과 하중점 사이의 M/EI 다이어그램의 면적을 계산하시오.<br />
+                    <img src="images\quiz.05.02.09.png" onload="this.width/=2;"><br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;">
+                    <input type="submit" class="submit_quiz" value="확인" answer="1.00" hint="집중하중에 의한 M/EI 다이어그램은 1차식으므로, M/EI의 최대값과 부재 길이의 곱">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 11에서 오른쪽 끝단과 하중점 사이의 M/EI 다이어그램의 면적을 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;">
+                    <input type="submit" class="submit_quiz" value="확인" answer="2.00" hint="집중하중에 의한 M/EI 다이어그램은 1차식으므로, M/EI의 최대값과 부재 길이의 곱">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 11에서 실재 보의 오른쪽 끝단은 공액보에서 무엇으로 치환되는지 쓰시오.<br />
+                    <input type="text" class="input_quiz" placeholder="답을 입력하세요" ondrop="return false;" onpaste="return false;">
+                    <input type="submit" class="submit_quiz" value="확인" answer="이동단" hint="자유단 <=> 고정단, 회전단과 이동단은 동일, 내부 힌지 절점 <=> 내부 이동단">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 11에서 왼쪽 끝단의 처짐각을 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(rad\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="1.6667" hint="공액보의 왼쪽 끝단의 전단력 (부호 고려)">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 11에서 오른쪽 끝단의 처짐각을 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(rad\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="-1.3333" hint="공액보의 오른쪽 끝단의 전단력 (부호 고려)">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 11에서 하중점에서의 처짐각을 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(rad\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="0.6667" hint="공액보의 하중점의 전단력">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 11에서 하중점에서의 처짐을 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="1.3333" hint="공액보의 하중점의 휨모멘트 (부호 고려)">
+                    <span class="span_quiz"></span>
+                </li>
+            </ol><br />
+            <input type="submit" class="submit_eval" value="복습 퀴즈 평가" /><br />
+            <span class="span_eval"></span>
+        </div>
+
+    </div>
+
+</body>
+</html>
