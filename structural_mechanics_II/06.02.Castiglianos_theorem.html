@@ -1,0 +1,282 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../javascripts/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="../javascripts/login.js"></script>
+    <script type="text/javascript" src="../javascripts/quiz.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="../stylesheets/stylesheet.css">
+    <title>Castigliano's theorem</title>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div class="header_wrapper">
+        <a class="header_octocat" href="https://pages.github.com" target="_blank"></a>
+        <h1 class="header_title">카스틸리아노의 정리(Castigliano's theorem)</h1>
+        <span class="header_span_login"></span>
+        <a class="header_login"></a>
+        <a class="header_email" href="mailto:ironbell@kyungnam.ac.kr"></a>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="content_wrapper">
+
+        <!--########## PRE VIEW ##########-->
+        <div id="pre_view" hidden>
+            <h3><a name="pre_veiw"></a>교재 학습 범위</h3>
+            <ul>
+                <li>교재 334쪽~338쪽 "8.3.2 카스틸리아노 정리"</li>
+                <li>교재 347쪽 "8.3.4 카스틸리아노의 제2정리" 설명부분</li>
+                <li>교재 351쪽~352쪽 예제 8-10</li>
+            </ul>
+        </div>
+        <div class="separator"></div>
+
+        <!--########## MAIN VIEW ##########-->
+        <div id="main_view" hidden>
+            <!--inline script for left-align of MathJax equation-->
+            <script>
+                if (MathJax) {
+                    MathJax.Hub.Config({ displayAlign: "left" });
+                    MathJax.Hub.Rerender();
+                }
+            </script>
+            <!--script for left-align of MathJax equation-->
+            <h3><a name="1st_theorem"></a>카스틸리아노의 제1정리(Castigliano's first theorem)</h3>
+            <ul>
+                <li>
+                    다음 그림은 구조물에 힘이 \(0\)부터 점차 증가하여 \(P_k\)까지 가해지고 그에 따라 변위도 \(0\)부터 \(\Delta_k\)까지 증가했을 때 힘과 변위의 관계를 나타낸 것이다. 
+                    여기에서 외부의 일 \(W_e = P_k\Delta_k/2\)이다.
+                    <p><img class="top_margin" src="images\06.02.01.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    위의 상태에서 아래 그림과 같이 아주 작은 힘 \(dP_k\)가 추가로 가해지면 변위도 그에 상응하여 \(d\Delta_k\)만큼 증가하며 외부의 일도 증가한다. 
+                    이때 위쪽에 점선으로 표시된 부분을 무시하면 외부의 일의 증가량 \(dW_e = P_kd\Delta_k\)이다.
+                    <p><img class="top_margin" src="images\06.02.02.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    위의 식에서 \(P_k\)를 구하면 다음과 같다. 이는 외부의 일 \(W_e\)를 변위 \(\Delta_k\)로 미분한 것이다.
+                    $$ P_k = \frac{dW_e}{d\Delta_k} $$
+                </li>
+                <li>
+                    다시 위의 식에서 미분을 편미분으로 변경하고 \(W_e = W_i\)을 대입하면 다음의 식을 얻는다.
+                    $$\begin{align}
+                    P_k &= \frac{\partial W_e}{\partial\Delta_k} = \frac{\partial W_i}{\partial\Delta_k} \\
+                    &= \frac{\partial}{\partial\Delta_k} \int_0^L \frac{P(x)^2}{2EA}dx + k\frac{\partial}{\partial\Delta_k} \int_0^L \frac{V(x)^2}{2GA}dx + \frac{\partial}{\partial\Delta_k} \int_0^L \frac{M(x)^2}{2EI}dx \\
+                    &= \int_0^L \frac{P(x)}{EA} \frac{\partial P(x)}{\partial\Delta_k} dx + k\int_0^L \frac{V(x)}{GA} \frac{\partial V(x)}{\partial\Delta_k} dx + \int_0^L \frac{M(x)}{EI} \frac{\partial M(x)}{\partial\Delta_k} dx
+                    \end{align}$$
+                </li>
+            </ul>
+            <h3><a name="2nd_theorem"></a>카스틸리아노의 제2정리(Castigliano's second theorem)</h3>
+            <ul>
+                <li>
+                    카스틸리아노의 제1정리에서 \(dW_e^* = dP_k\Delta_k\), 그리고 \(dW_e^* = dW_e\)라는 것을 알 수 있다. 위 식들에서 \(\Delta_k\)를 구하면 다음과 같다.
+                    $$ \Delta_k = \frac{dW_e^*}{dP_k} = \frac{dW_e}{dP_k} $$
+                </li>
+                <li>
+                    위의 식은 외부의 일 \(W_e\)를 힘 \(P_k\)로 미분한 것이다. 여기에서 미분을 편미분으로 변경하고 \(W_e = W_i\)을 대입하면 다음의 식을 얻는다.
+                    $$\begin{align}
+                    \Delta_k &= \frac{\partial W_e}{\partial P_k} = \frac{\partial W_i}{\partial P_k} \\
+                    &= \frac{\partial}{\partial P_k} \int_0^L \frac{P(x)^2}{2EA}dx + k\frac{\partial}{\partial P_k} \int_0^L \frac{V(x)^2}{2GA}dx + \frac{\partial}{\partial P_k} \int_0^L \frac{M(x)^2}{2EI}dx \\
+                    &= \int_0^L \frac{P(x)}{EA} \frac{\partial P(x)}{\partial P_k} dx + k\int_0^L \frac{V(x)}{GA} \frac{\partial V(x)}{\partial P_k} dx + \int_0^L \frac{M(x)}{EI} \frac{\partial M(x)}{\partial P_k} dx
+                    \end{align}$$
+                </li>
+            </ul>
+            <h3><a name="procedure"></a>카스틸리아노의 제2정리를 이용한 처짐 계산 절차</h3>
+            <ul>
+                <li>
+                    <em>변위를 계산하려는 위치와 방향을 \(k\)로 결정</em>하고, 그에 해당되는 힘(집중하중)과 변위를 각각 <em>\(P_k, \, \Delta_k\)로 설정</em>한다.
+                </li>
+                <li>
+                    부재의 부재력 \(P(x), \, V(x), \, M(x)\)와 편미분 \(\partial P(x)/\partial P_k, \, \partial V(x)/\partial P_k, \, \partial M(x)/\partial P_k \)를 계산한다.
+                </li>
+                <li>
+                    다음 식을 이용하여 처짐 \(\Delta_k\)를 계산한다.
+                    <em>$$ \Delta_k = \int_0^L \frac{P(x)}{EA} \frac{\partial P(x)}{\partial P_k} dx + k\int_0^L \frac{V(x)}{GA} \frac{\partial V(x)}{\partial P_k} dx + \int_0^L \frac{M(x)}{EI} \frac{\partial M(x)}{\partial P_k} dx $$</em>
+                </li>
+            </ul>
+            <h3><a name="2nd_example_1"></a>카스틸리아노의 제2정리를 이용한 처짐 계산 예제 1</h3>
+            <ul>
+                <li>
+                    문제 : 카스틸리아노의 제2정리를 이용하여 자유단의 처짐 \(y\)를 계산하시오.
+                    <p><img src="images\06.02.03.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    풀이
+                    <ol>
+                        <li>
+                            다음 그림과 같이 <em>변위를 계산하려는 자유단의 수직방향을 \(k\)로 결정</em>하고, 그에 해당되는 집중하중 \(P\)와 변위 \(y\)를 각각 <em>\(P_k, \, \Delta_k\)로 설정</em>한다.
+                            <p><img src="images\06.02.04.png" onload="this.width/=2;"></p>
+                        </li>
+                        <li>
+                            부재가 보이므로 축력과 전단력을 무시하고 다음 그림의 자유물체도로부터 휨모멘트 \(M(x)\), \(P_k\)에 대한 편미분을 다음과 같이 계산한다.
+                            <p><img src="images\06.02.05.png" onload="this.width/=2;"></p>
+                            \( \Sigma M_x = P_kx + M(x) = 0; \quad M(x) = -P_kx \quad \partial M(x)/\partial P_k = -x \)
+                        </li>
+                        <li>
+                            \(\Delta_k = y, \, P_k = P\)를 고려하여 다음과 같이 처짐 \(y\)를 계산한다.
+                            <em>$$\begin{align}
+                            y = \Delta_k &= \int_0^L \frac{M(x)}{EI} \frac{\partial M(x)}{\partial P_k} dx = \int_0^L \frac{-P_kx}{EI} (-x) dx = \int_0^L \frac{P_kx^2}{EI} dx \\
+                            &= \int_0^L \frac{Px^2}{EI} dx = \frac{P}{EI} \int_0^L x^2 dx = \frac{P}{EI} \left[ \frac{x^3}{3} \right]_0^L = \frac{PL^3}{3EI}
+                            \end{align}$$</em>
+                        </li>
+                    </ol>
+                </li>
+            </ul>
+            <h3><a name="2nd_example_2"></a>카스틸리아노의 제2정리를 이용한 처짐 계산 예제 2</h3>
+            <ul>
+                <li>
+                    문제 : 카스틸리아노의 제2정리를 이용하여 부재 가운데의 처짐 \(y\)를 계산하시오.
+                    <p><img src="images\06.02.06.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    풀이
+                    <ol>
+                        <li>
+                            다음 그림과 같이 <em>변위를 계산하려는 부재 가운데의 수직방향을 \(k\)로 결정</em>하고, 그에 해당되는 변위 \(y\)를 <em>\(\Delta_k\)로 설정</em>한다.
+                            하지만 그에 해당되는 집중하중은 없다. 따라서 <em>크기가 \(0\)인 가상의 힘 \(P_k = 0\)을 부재 가운데</em>에 가한다.
+                            <p><img src="images\06.02.07.png" onload="this.width/=2;"></p>
+                        </li>
+                        <li>
+                            부재가 보이므로 축력과 전단력을 무시하고 다음 그림의 자유물체도로부터 휨모멘트 \(M(x)\), \(P_k\)에 대한 편미분을 다음과 같이 계산한다.
+                            여기에서 가상의 힘 \(P_k\)이 가해진 것을 고려하고, 이로 인해 \(0 \le x \le L/2\)에 대해서만 휨모멘트를 계산한다.
+                            <p><img src="images\06.02.08.png" onload="this.width/=2;"></p>
+                            \( \Sigma M_x = -(wL+P_k)x/2 + wx^2/2 + M(x) = 0; \\ M(x) = -wx^2/2 + (wL+P_k)x/2 \quad \partial M(x)/\partial P_k = x/2 \)
+                        </li>
+                        <li>
+                            \(\Delta_k = y, \, P_k = 0\)를 고려하여 다음과 같이 처짐 \(y\)를 계산한다. \(M(x)\)가 \(0 \le x \le L/2\)에서만 유효하므로 \(0 \le x \le L/2\)구간에 대해서 적분하고 2를 곱해준다.
+                            $$\begin{align}
+                            y = \Delta_k &= \int_0^L \frac{M(x)}{EI} \frac{\partial M(x)}{\partial P_k} dx = 2\int_0^{L/2} \frac{-wx^2/2 + (wL+P_k)x/2}{EI} (x/2) dx \\
+                            &= \int_0^{L/2} \frac{-wx^3 + (wL+P_k)x^2}{2EI} dx = \int_0^{L/2} \frac{-wx^3 + (wL)x^2}{2EI} dx \\
+                            &= \frac{w}{2EI} \int_0^{L/2} (-x^3 + Lx^2) dx = \frac{w}{2EI} \left[ -\frac{x^4}{4} + L\frac{x^3}{3} \right]_0^{L/2} \\
+                            &= \frac{w}{2EI} \left( -\frac{1}{4}\frac{L^4}{16} + \frac{L}{3}\frac{L^3}{8} \right) = \frac{w}{2EI} \left( -\frac{3L^4}{12\times16} + \frac{8L^4}{12 \times 16} \right) \\
+                            &= \frac{w}{2EI} \frac{5L^4}{12\times16} = \frac{5wL^4}{384EI}
+                            \end{align}$$
+                        </li>
+                    </ol>
+                </li>
+            </ul>
+            <h3><a name="least_work_method"></a>최소일법(least work method)</h3>
+            <ul>
+                <li>
+                    카스틸리아노의 제2법칙을 적용하면 변위를 계산할 수 있다. 그런데, 고정단, 회전단, 이동단 등의 지지에 의해 변위가 \(0\)인 위치와 방향을 \(k\)로 결정하면 그 결과는 당연히 \(0\)이 된다.
+                    하지만, 그 과정에서 \(k\)로 결정한 위치와 방향의 지점반력을 계산할 수 있다.
+                </li>
+                <li>
+                    이와 같이, <em>변위가 \(0\)인 위치와 방향을 \(k\)로 결정하고 카스틸리아노의 제2법칙을 적용하여 해당 지점반력을 계산</em>하는 방식으로 최소일법(least work method)을 적용할 수 있다.
+                </li>
+                <li>
+                    다음의 구조물은 1차부정정 구조물로서 지금까지 학습한 방법으로는 지점반력을 계산할 수 없다. 여기에서 지점 \(A\)의 수직방향을 \(k\)로 결정하고 최소일법을 적용하면 지점반력 \(V_A\)를 계산할 수 있다.
+                    <p><img class="top_margin" src="images\06.02.09.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    지점 \(A\)를 제거하고 지점반력 \(V_A\)로 대체하면 다음 그림과 같다. 여기에서 <em>지점 \(A\)의 수직방향을 \(k\)로 결정하면 지점 \(A\)의 해당 변위와 힘은 \(0 = \Delta_k, \, V_A = P_k\)</em>로 설정한다.
+                    <p><img src="images\06.02.10.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    부재가 보이므로 축력과 전단력을 무시하고 다음 그림의 자유물체도로부터 휨모멘트 \(M(x)\), \(P_k\)에 대한 편미분을 다음과 같이 계산한다.
+                    <p><img src="images\06.02.11.png" onload="this.width/=2;"></p>
+                    \( \Sigma M_x = -P_kx + wx^2/2 + M(x) = 0; \\ M(x) = -wx^2/2 + P_kx \quad \partial M(x)/\partial P_k = x \)
+                </li>
+                <li>
+                    \(\Delta_k = 0, \, P_k = V_A\)를 고려하여 다음과 같이 지점반력 \(V_A\)를 계산한다.
+                    $$\begin{align}
+                    \Delta_k &= \int_0^L \frac{M(x)}{EI} \frac{\partial M(x)}{\partial P_k} dx = \int_0^L \frac{-wx^2/2 + P_kx}{EI} x dx \\
+                    &= \int_0^L \frac{-wx^3 + 2P_kx^2}{2EI} dx = \int_0^L \frac{-wx^3 + 2V_Ax^2}{2EI} dx \\
+                    &= \frac{1}{2EI} \int_0^L (-wx^3 + 2V_Ax^2) dx = \frac{1}{2EI} \left[ -\frac{wx^4}{4} + 2V_A\frac{x^3}{3} \right]_0^L \\
+                    &= \frac{1}{2EI} \left( -\frac{wL^4}{4} + \frac{2V_AL^3}{3} \right) = \frac{1}{2EI} \left( \frac{-3wL^4 + 8V_AL^3}{12} \right) = 0
+                    \end{align}$$
+                    $$\begin{align}
+                    -3wL^4 + 8V_AL^3 = 0; \quad V_A = \frac{3wL^4}{8L^3} = \frac{3wL}{8}
+                    \end{align}$$
+                </li>
+                <li>
+                    위의 1차 부정정구조물은 지점반력 1개를 계산했으므로, 정정구조물과 동일한 방법으로 지점반력, 부재력, 변위 등을 계산할 수 있다.
+                </li>
+            </ul>
+        </div>
+        <div class="separator"></div>
+
+        <!--########## RE VIEW ##########-->
+        <div id="re_view_quiz" hidden>
+            <h3><a name="re_view_quiz"></a>복습 퀴즈</h3>
+            <ol class="ol_quiz">
+                <li>다음에서 카스틸리아노의 제2정리를 적용하여 자유단의 처짐 \(y\)을 계산하려고 한다. \(k\)의 위치와 고정단까지의 거리를 계산하시오.<br />
+                    <img src="images\quiz.05.02.01.png" onload="this.width/=2;"><br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(m\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="2.00" hint="처짐을 계산하려고 하는 위치가 \(k\)의 위치">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 1에서 \(k\)의 방향을 수직, 수평 중에서 쓰시오.<br />
+                    <input type="text" class="input_quiz" placeholder="답을 입력하세요" ondrop="return false;" onpaste="return false;">
+                    <input type="submit" class="submit_quiz" value="확인" answer="수직" hint="계산하려고 하는 처짐의 방향이 \(k\)의 방향">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>다음은 퀴즈 1에서 휨모멘트 \(M(x)\)를 계산하기 위한 자유물체도이다. 여기에서 \(\partial M(x) / \partial P_k\)를 쓰시오.<br />
+                    <img src="images\quiz.06.02.03.png" onload="this.width/=2;"><br />
+                    <input type="text" class="input_quiz" placeholder="답을 입력하세요" ondrop="return false;" onpaste="return false;">
+                    <input type="submit" class="submit_quiz" value="확인" answer="x-2" hint="\(M(x) = P_kx-2P_k\)">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 1에서 \(P_k\)을 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(kN\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="3.00" hint="\(P_k\)는 \(k\) 위치의 방향으로 작용하는 집중하중">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 1에서 카스틸리아노의 제2정리를 이용하여 처짐 \(y\)를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(m\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="8.00">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>다음에서 카스틸리아노의 제2정리를 적용하여 하중점의 처짐 \(y\)을 계산하려고 한다. \(k\)의 위치와 왼쪽 단부까지의 거리를 계산하시오.<br />
+                    <img src="images\quiz.05.02.09.png" onload="this.width/=2;"><br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(m\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="1.00" hint="처짐을 계산하려고 하는 위치가 \(k\)의 위치">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>다음은 퀴즈 6에서 하중점 왼쪽 부분의 휨모멘트 \(M(x)\)를 계산하기 위한 자유물체도이다. 여기에서 \(\partial M(x) / \partial P_k = \fbox{X}x\)이다. \(\fbox{X}\)를 계산하시오.<br />
+                    <img src="images\quiz.06.02.07.png" onload="this.width/=2;"><br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;">
+                    <input type="submit" class="submit_quiz" value="확인" answer="0.6667" hint="\(M(x) = 2P_kx/3\)">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>다음은 퀴즈 6에서 하중점 오른쪽 부분의 휨모멘트 \(M(x)\)를 계산하기 위한 자유물체도이다. 여기에서 \(\partial M(x) / \partial P_k = \fbox{X}x\)이다. \(\fbox{X}\)를 계산하시오.<br />
+                    <img src="images\quiz.06.02.08.png" onload="this.width/=2;"><br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;">
+                    <input type="submit" class="submit_quiz" value="확인" answer="0.3333" hint="\(M(x) = P_kx/3\)">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 6에서 \(P_k\)을 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(kN\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="3.00" hint="\(P_k\)는 \(k\) 위치의 방향으로 작용하는 집중하중">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 6에서 하중점 왼쪽 부분의 카스틸리아노의 제2정리 적분값을 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;">
+                    <input type="submit" class="submit_quiz" value="확인" answer="0.4444">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 6에서 하중점 오른쪽 부분의 카스틸리아노의 제2정리 적분값을 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;">
+                    <input type="submit" class="submit_quiz" value="확인" answer="0.8889">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>퀴즈 6에서 카스틸리아노의 제2정리를 이용하여 처짐 \(y\)를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(m\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="1.3333">
+                    <span class="span_quiz"></span>
+                </li>
+            </ol><br />
+            <input type="submit" class="submit_eval" value="복습 퀴즈 평가" /><br />
+            <span class="span_eval"></span>
+        </div>
+
+    </div>
+
+</body>
+</html>
