@@ -95,6 +95,13 @@ em {
     color: MediumVioletRed;
 }
 
+img {
+    transition: all 0.5s ease-in-out;
+}
+img:hover {
+    transform: scale(2.5);
+}
+
 img.top_margin {
     margin-top: 20px;
 }
