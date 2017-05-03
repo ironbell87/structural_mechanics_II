@@ -3,6 +3,13 @@ var kw_arr = ["pink_floyd", "shine_a_light"];  // as many as you like - no comma
 var time_out_duration = 1500; // 1.5s
 
 $(document).ready(function () {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-98360953-2', 'auto');
+    ga('send', 'pageview');
+
     // get login id from sesseionStorage
     if (sessionStorage.login != undefined) {
         $(".header_span_login").text(sessionStorage.login);
