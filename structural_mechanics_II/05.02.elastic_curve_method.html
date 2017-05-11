@@ -141,7 +141,7 @@
                     \(EI\theta(x) = -\int M(x)dx \)식으로 \(EI\theta(x)\)를 계산한다. 이때, 처짐각에 대한 경계조건을 적용하여 적분상수를 계산한다.
                 </li>
                 <li>
-                    \(EIy(x) = EI\int \theta(x)dx \)식으로 \(EIy(x)\)를 계산한다. 이때, 처짐에 대한 경계조건을 적용한하여 적분상수를 계산한다.
+                    \(EIy(x) = EI\int \theta(x)dx \)식으로 \(EIy(x)\)를 계산한다. 이때, 처짐에 대한 경계조건을 적용하여 적분상수를 계산한다.
                 </li>
                 <li>
                     <em>\(EI\theta(x), \, EIy(x) \)를 \(EI\)로 나누어</em> \(\theta(x), \, y(x)\)를 계산한다.
@@ -242,7 +242,7 @@
                         <li>
                             자유단인 <em>오른쪽 끝단의 처짐각과 처짐은 그 위치를 나타내는 \(x = L\)을 위의 식에 대입</em>하여 다음과 같이 계산한다.
                             $$ \theta(L) = \frac{1}{EI} \left( \frac{wL^3}{6} -\frac{wL^3}{2} + \frac{wL^3}{2} \right) = \frac{wL^3}{6EI} \\
-                            y(x) = \frac{1}{EI} \left( \frac{wL^4}{24} -\frac{wL^4}{6} + \frac{wL^4}{4} \right) = \frac{wL^4}{8EI} $$
+                            y(L) = \frac{1}{EI} \left( \frac{wL^4}{24} -\frac{wL^4}{6} + \frac{wL^4}{4} \right) = \frac{wL^4}{8EI} $$
                         </li>
                         <li>
                             처짐각과 처짐 모두 계산결과가 \(+\)이므로 처짐각은 시계방향, 처짐은 아래쪽인 것을 알 수 있다.
@@ -410,7 +410,7 @@
                             그리고 이에 더하여 경계조건으로 집중하중이 가해지는 위치에서 두 개 구간의 처짐각과 처짐의 크기가 같다는 것, 즉 <em>\(EI\theta_1(a) = EI\theta_2(a), \, EIy_1(a) = EIy_2(a)\)</em>을 적용할 수 있다. 
                             적용한 내용은 다음과 같다.
                             $$ EIy_1(0) = -\frac{Pb\times0^3}{6L} + C_1\times0 + C_2 = C_2 = 0 \\
-                            EIy_2(L) = -\frac{PbL^3}{6L} + \frac{P(L-a)^3}{6} + C_3L + C_4 = -\frac{PbL^2}{6} + \frac{Pb^3}{6} + C_3L + C_4 \\
+                            EIy_2(L) = -\frac{PbL^3}{6L} + \frac{P(L-a)^3}{6} + C_3L + C_4 = -\frac{PbL^2}{6} + \frac{Pb^3}{6} + C_3L + C_4 = 0 \\
                             EI\theta_1(a) = -\frac{Pba^2}{2L} + C_1 = EI\theta_2(a) = -\frac{Pba^2}{2L} + \frac{P(a-a)^2}{2} + C_3 = -\frac{Pba^2}{2L} + C_3 \\
                             EIy_1(a) = -\frac{Pba^3}{6L} + C_1a + C_2 = EIy_2(a) = -\frac{Pba^3}{6L} + \frac{P(a-a)^3}{2} + C_3a + C_4= -\frac{Pba^3}{6L} + C_3a + C_4 $$
                         </li>
@@ -460,7 +460,7 @@
                 </li>
                 <li>퀴즈 1에서 가운데 \(x=1m\) 위치에서의 처짐을 계산하시오.<br />
                     <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm\)
-                    <input type="submit" class="submit_quiz" value="확인" answer="1.50">
+                    <input type="submit" class="submit_quiz" value="확인" answer="2.50">
                     <span class="span_quiz"></span>
                 </li>
                 <li>다음에서 처짐각 \(EI\theta(x) = x^3/3-3x^2/2+C_1\)이다. 경계조건 \(\theta(1.5) = 0\)을 적용하여 \(C_1\)을 계산하시오.<br />
@@ -497,12 +497,12 @@
                     <input type="submit" class="submit_quiz" value="확인" answer="-1.50">
                     <span class="span_quiz"></span>
                 </li>
-                <li>퀴즈 9에서 경계조건 \(EIy_1(1) = EIy_2(1)\)을 적용하면 \(C_4\)를 계산하시오.<br />
+                <li>퀴즈 9에서 경계조건 \(EIy_1(1) = EIy_2(1)\)을 적용하여 \(C_4\)를 계산하시오.<br />
                     <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;">
                     <input type="submit" class="submit_quiz" value="확인" answer="-0.50">
                     <span class="span_quiz"></span>
                 </li>
-                <li>퀴즈 9에서 경계조건 \(EIy_2(3) = 0\)을 적용하면 \(C_3\)을 계산하시오.<br />
+                <li>퀴즈 9에서 경계조건 \(EIy_2(3) = 0\)을 적용하여 \(C_3\)을 계산하시오.<br />
                     <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;">
                     <input type="submit" class="submit_quiz" value="확인" answer="3.1667">
                     <span class="span_quiz"></span>

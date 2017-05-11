@@ -1,4 +1,4 @@
-﻿var g_tolerance = 1.0e-2;
+﻿var g_tolerance = 1.0e-2, g_toggle_duration = 400;
 
 $(document).ready(function () {
     // show / hide dependent on login
@@ -11,7 +11,7 @@ $(document).ready(function () {
     $(".li_test").click(function () {
         // get the test element
         var test = $(this).parent().children().eq(1);
-        test.slideToggle(400); // hide -> show or show -> hide
+        test.slideToggle(g_toggle_duration); // hide -> show or show -> hide
         return false;
     });
 
@@ -23,7 +23,6 @@ $(document).ready(function () {
 
     // show / hide each quiz
     $(".submit_quiz").click(function () {
-
         // get id of the corresponding elements
         var m_input = $(this).prevAll('input:first');
         var m_submit = $(this);
@@ -36,9 +35,11 @@ $(document).ready(function () {
         // in case of no input
         if (m_input_val == "") {
             m_input.focus();
-            m_message = "답을 입력하세요!";
-            if (sessionStorage.login == "administrator") m_message = "답을 입력하세요! 정답은 " + m_answer + "입니다."; // for instructor
-            m_span.text(m_message);
+            m_span.text("답을 입력하세요!");
+            if (sessionStorage.login == "administrator") { // for instructor
+                m_input.val(m_answer); // set answer
+                add_hint(m_span, m_submit); // add tooltip hint
+            }
             return false;
         }
 
@@ -65,17 +66,11 @@ $(document).ready(function () {
         else { // in case of wrong answer
             m_input.val("");
             m_input.focus();
-            m_message = "오답입니다! 다시 풀어보세요!"; // default message in case of no hint
-            if (sessionStorage.login == "administrator") m_message = "오답입니다! 정답은 " + m_answer + "입니다."; // for instructor
-            m_span.text(m_message);
+            m_span.text("오답입니다! 다시 풀어보세요!"); // default message in case of no hint
+            if (sessionStorage.login == "administrator") m_input.val(m_answer); // for instructor
 
             // add tooltip hint
-            var m_hint = m_submit.attr('hint'); // hint for student
-            if (m_hint != undefined) {
-                m_span.append('<span class="tooltiptext">' + m_hint + '</span>');
-                MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-            }
-
+            add_hint(m_span, m_submit);
             return false;
         }
     });
@@ -111,6 +106,17 @@ $(document).ready(function () {
         }
     });
 });
+
+function add_hint(p_span_mom, p_submit) {
+    var m_span_hint = p_span_mom.children('.tooltiptext');
+    if (m_span_hint.length > 0) return; // hint is already added
+
+    var m_hint = p_submit.attr('hint');
+    if (m_hint != undefined) {
+        p_span_mom.append('<span class="tooltiptext">' + m_hint + '</span>');
+        MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+}
 
 function compare_value(p_input, p_ex_ans, p_in_ans, p_tolerance) {
     var m_tolerance = g_tolerance;
