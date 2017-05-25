@@ -74,7 +74,7 @@
             <h3><a name="virtual_work"></a>가상의 일(virtual work)</h3>
             <ul>
                 <li>
-                    다음 그림은 앞과 동일한 구조물에서 점 i에 크기가 \(1\)인 가상의 외력 <em>\(Q = 1\)</em>이 작용하는 것을 나타낸 것이다.
+                    다음 그림은 앞과 동일한 구조물에서 점 \(i\)에 크기가 \(1\)인 가상의 외력 <em>\(Q = 1\)</em>이 작용하는 것을 나타낸 것이다.
                     <p><img src="images\06.03.02.png" onload="this.width/=2;"></p>
                 </li>
                 <li>
@@ -98,11 +98,11 @@
                 </li>
                 <li>
                     이 경우, 점 \(i\)에는 다음 그림과 같이 \(Q\)가 \(0\)부터 점차 증가하면서 가상의 변위 \(\delta_i\)가 발생하고 이후에 일정한 \(Q\)가 가해지고 있는 상태에서 \(P_1, \, P_2\)에 의한 실제의 변위 \(\Delta_i\)가 추가로 발생한다.
-                    <p><img class="top_margin" src="images\06.03.03.png" onload="this.width/=2;"></p>
+                    <p><img src="images\06.03.03.png" onload="this.width/=2;"></p>
                 </li>
                 <li>
                     따라서 점 \(i\)에서 외부의 일은 다음 식과 같다.
-                    $$ W_e^1 = \frac{1}{2}Q\delta_i \quad W_e^2 = Q\Delta_i $$
+                    $$ W_e^1 = \frac{1}{2}Q\delta_i \qquad W_e^2 = Q\Delta_i $$
                 </li>
                 <li>
                     그리고 점 1과 2에는 다음 그림과 같이 \(Q\)가 \(0\)부터 점차 증가하면서 가상의 변위 \(\delta_1, \, \delta_2\)가 발생하지만 직접 가해지는 힘은 없고 이후에 \(P_1, \, P_2\)에 의한 실제의 변위 \(\Delta_1, \, \Delta_2\)가 추가로 발생한다.
@@ -127,7 +127,7 @@
                 </li>
                 <li>
                     따라서 구조물 전체의 내부의 일은 다음 식과 같다.
-                    $$ W_i^1 = \frac{1}{2} \int pdl \quad W_i^2 = \int pdL \quad W_i^3 = \frac{1}{2} \int PdL $$
+                    $$ W_i^1 = \frac{1}{2} \int pdl \qquad W_i^2 = \int pdL \qquad W_i^3 = \frac{1}{2} \int PdL $$
                 </li>
             </ul>
             <h3><a name="combo_preserve"></a>조합한 경우의 외부의 일과 내부의 일의 비교</h3>
@@ -186,7 +186,7 @@
             <h3><a name="example_1"></a>예제 1</h3>
             <ul>
                 <li>
-                    문제 : 다음에서 가상일법을 이용하여 자유단의 처짐를 계산하시오.
+                    문제 : 다음에서 가상일법을 이용하여 자유단의 처짐을 계산하시오.
                     <p><img src="images\05.02.07.png" onload="this.width/=2;"></p>
                 </li>
                 <li>
@@ -217,7 +217,7 @@
                         <li>
                             앞에서 구한 \(M(x), \, m(x)\)를 다음과 같이 가상일법의 공식에 대입하고 적분하여 처짐을 계산한다.
                             $$\begin{align} \Delta &= \int_0^L \frac{M(x)m(x)}{EI}dx = \int_0^L \frac{(Px-PL)(x-L)}{EI}dx \\
-                            &= \frac{P}{EI} \int_0^L (x-L)^2dx = \frac{P}{3EI}\left[(x-L)^3\right]_0^L = \frac{PL^3}{EI} \end{align}$$
+                            &= \frac{P}{EI} \int_0^L (x-L)^2dx = \frac{P}{3EI}\left[(x-L)^3\right]_0^L = \frac{PL^3}{3EI} \end{align}$$
                         </li>
                     </ol>
                 </li>
@@ -225,7 +225,7 @@
             <h3><a name="example_2"></a>예제 2</h3>
             <ul>
                 <li>
-                    문제 : 다음에서 가상일법을 이용하여 자유단의 처짐를 계산하시오.
+                    문제 : 다음에서 가상일법을 이용하여 자유단의 처짐을 계산하시오.
                     <p><img src="images\05.02.10.png" onload="this.width/=2;"></p>
                 </li>
                 <li>
@@ -257,9 +257,10 @@
                             앞에서 구한 \(M(x), \, m(x)\)를 다음과 같이 가상일법의 공식에 대입하고 적분하여 처짐을 계산한다.
                             $$\begin{align} \Delta &= \int_0^L \frac{M(x)m(x)}{EI}dx = \int_0^L \frac{(-wx^2/2 + wLx - wL^2/2)(x-L)}{EI}dx \\
                             &= \frac{w}{EI} \int_0^L \left( -\frac{x^3}{2}+\frac{Lx^2}{2}+Lx^2-L^2x-\frac{L^2x}{2}+\frac{L^3}{2} \right) dx \\
-                            &= \frac{w}{EI} \left[ -\frac{x^4}{8}+\frac{Lx^3}{6}+\frac{Lx^3}{3}-\frac{L^2x^2}{2}-\frac{L^2x^2}{4}+\frac{L^3x}{2} \right]_0^L dx \\
-                            &= \frac{w}{EI} \left( -\frac{L^4}{8}+\frac{L^4}{6}+\frac{L^4}{3}-\frac{L^4}{2}-\frac{L^4}{4}+\frac{L^4}{2} \right) \\
-                            &= \frac{wL^4}{EI} \left( \frac{-3+4+8-12-6+12}{24} \right) = \frac{wL^4}{EI}\frac{3}{24} = \frac{wL^4}{8EI} \end{align}$$
+                            &= \frac{w}{EI} \int_0^L \left( -\frac{x^3}{2}+\frac{3Lx^2}{2}-\frac{3L^2x}{2}+\frac{L^3}{2} \right) dx \\
+                            &= \frac{w}{EI} \left[ -\frac{x^4}{8}+\frac{Lx^3}{2}-\frac{3L^2x^2}{4}+\frac{L^3x}{2} \right]_0^L \\
+                            &= \frac{w}{EI} \left( -\frac{L^4}{8}+\frac{L^4}{2}-\frac{3L^4}{4}+\frac{L^4}{2} \right) \\
+                            &= \frac{wL^4}{EI} \left( \frac{-1+4-6+4}{8} \right) = \frac{wL^4}{EI} \left( \frac{-7+8}{8} \right) = \frac{wL^4}{8EI} \end{align}$$
                         </li>
                     </ol>
                 </li>
@@ -267,7 +268,7 @@
             <h3><a name="example_3"></a>예제 3</h3>
             <ul>
                 <li>
-                    문제 : 다음에서 가상일법을 이용하여 가운데의 처짐를 계산하시오.
+                    문제 : 다음에서 가상일법을 이용하여 가운데의 처짐을 계산하시오.
                     <p><img src="images\05.02.13.png" onload="this.width/=2;"></p>
                 </li>
                 <li>
@@ -287,7 +288,7 @@
                             <p><img src="images\06.03.09.png" onload="this.width/=2;"></p>
                         </li>
                         <li>
-                            다음과 같이 구조물 전체를 대상으로 자유물체도를 그리고 평형조건식을 적용하여 다음 그림과 같이 지점반력을 계산한다.
+                            다음과 같이 구조물 전체를 대상으로 자유물체도를 그리고 평형조건식을 적용하여 지점반력을 계산한다.
                             <p><img src="images\06.03.10.png" onload="this.width/=2;"></p>
                         </li>
                         <li>
@@ -310,7 +311,7 @@
             <h3><a name="example_4"></a>예제 4</h3>
             <ul>
                 <li>
-                    문제 : 다음에서 가상일법을 이용하여 가운데의 처짐를 계산하시오.
+                    문제 : 다음에서 가상일법을 이용하여 가운데의 처짐을 계산하시오.
                     <p><img src="images\05.02.16.png" onload="this.width/=2;"></p>
                 </li>
                 <li>
@@ -350,7 +351,7 @@
             <h3><a name="example_5"></a>예제 5</h3>
             <ul>
                 <li>
-                    문제 : 다음에서 가상일법을 이용하여 하중점의 처짐를 계산하시오.
+                    문제 : 다음에서 가상일법을 이용하여 하중점의 처짐을 계산하시오.
                     <p><img src="images\05.02.19.png" onload="this.width/=2;"></p>
                 </li>
                 <li>
@@ -490,7 +491,7 @@
                             BE:\, 3\times2\times2=12, \, DE:\, -3/2\times-1\times2=3, \, BD:\, -1\times0\times2=0, \, BC:\, 0\times0\times0=0 $$
                         </li>
                         <li>
-                            위의 값들은 각 부재들에 대한 것이므로 모두 합하고 단위를 고려하여 \(EA\)를 적용하여 다음과 같이 \(\Delta_{AV}\)를 계산한다.
+                            위의 값들은 각 부재들에 대한 것이므로 모두 합하고 단위를 고려한 \(EA\)를 적용하여 다음과 같이 \(\Delta_{AV}\)를 계산한다.
                             $$ EA = 21kN/mm^2 \times 1,270mm^2 = 26,670kN $$
                             $$\begin{align}
                                 \Delta_{AV} &= \frac{AB + AC + CD + BE + DE + BD + BC}{EA} \\
@@ -529,7 +530,7 @@
                             BE:\, 3\times0\times2=0, \, DE:\, -3/2\times0\times2=0, \, BD:\, -1\times0\times2=0, \, BC:\, 0\times0\times0=0 $$
                         </li>
                         <li>
-                            위의 값들은 각 부재들에 대한 것이므로 모두 합하고 단위를 고려하여 \(EA\)를 적용하여 다음과 같이 \(\Delta_{AH}\)를 계산한다.
+                            위의 값들은 각 부재들에 대한 것이므로 모두 합하고 단위를 고려한 \(EA\)를 적용하여 다음과 같이 \(\Delta_{AH}\)를 계산한다.
                             $$ EA = 21kN/mm^2 \times 1,270mm^2 = 26,670kN $$
                             $$\begin{align}
                                 \Delta_{AH} &= \frac{AB + AC + CD + BE + DE + BD + BC}{EA} \\
