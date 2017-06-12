@@ -338,29 +338,29 @@
                             다음의 식과 같이 처짐각을 계산하되, 경계조건으로 수직축에 대해 대칭인 것을 적용하여 <em>\(\theta(L/2) = 0\)</em>을 적용한다.
                             $$ EI\theta(x) = -\int M(x)dx = \int \left( -\frac{Px}{2} \right)dx = -\frac{Px^2}{4} + C_1 \\
                              EI\theta(L/2) = -\frac{P \times (L/2)^2}{4} + C_1 = -\frac{PL^2}{16} + C_1 = 0; \quad C_1 = \frac{PL^2}{16} \\
-                            \therefore EI\theta(x) = -\frac{PLx^2}{4} + \frac{PL^2}{16} $$
+                            \therefore EI\theta(x) = -\frac{Px^2}{4} + \frac{PL^2}{16} $$
                         </li>
                         <li>
                             다음의 식과 같이 처짐을 계산하되, 경계조건으로 <em>\(y(0) = 0\)</em>을 적용한다.
-                            $$ EIy(x) = EI\int \theta(x)dx = \int \left( -\frac{PLx^2}{4} + \frac{PL^2}{16} \right)dx = -\frac{Px^3}{12} + \frac{PL^2x}{16} + C_2 $$
+                            $$ EIy(x) = EI\int \theta(x)dx = \int \left( -\frac{Px^2}{4} + \frac{PL^2}{16} \right)dx = -\frac{Px^3}{12} + \frac{PL^2x}{16} + C_2 $$
                             $$ EIy(0) = -\frac{P \times 0^3}{12} + \frac{PL^2 \times 0}{16} + C_2 = C_2 = 0; \quad C_2 = 0 \\
                             \therefore EIy(x) = -\frac{Px^3}{12} + \frac{PL^2x}{16} $$
                         </li>
                         <li>
                             위의 식들을 \(EI\)로 나누면 처짐각과 처짐은 다음과 같다.
-                            $$ \theta(x) = \frac{1}{EI} \left( -\frac{PLx^2}{4} + \frac{PL^2}{16} \right) \\
+                            $$ \theta(x) = \frac{1}{EI} \left( -\frac{Px^2}{4} + \frac{PL^2}{16} \right) \\
                             y(x) = \frac{1}{EI} \left( -\frac{Px^3}{12} + \frac{PL^2x}{16} \right) $$
                         </li>
                         <li>
                             왼쪽 끝단의 처짐각은 그 위치를 나타내는 \(x=0\)을 처짐각 식에 대입하여 다음과 같이 계산한다.
-                            $$ \theta(0) = \frac{1}{EI} \left( -\frac{PL\times 0^2}{4} + \frac{PL^2}{16} \right) = \frac{PL^2}{16EI} $$
+                            $$ \theta(0) = \frac{1}{EI} \left( -\frac{P\times 0^2}{4} + \frac{PL^2}{16} \right) = \frac{PL^2}{16EI} $$
                             여기에서 <em>\(\theta(0) > 0\)이므로 처짐각은 시계방향</em>인 것을 알 수 있다.
                             오른쪽 끝단의 처짐각은 수직축에 대칭이므로 왼쪽 끝단의 처짐각과 크기는 같으며, 방향은 반대인 반시계방향이다.
                         </li>
                         <li>
                             부재의 가운데에서 발생하는 처짐은 그 위치를 나타내는 \(x = L/2\)을 처짐 식에 대입하여 다음과 같이 계산한다.
                             $$\begin{align} y(L/2) &= \frac{1}{EI} \left( -\frac{P(L/2)^3}{12} + \frac{PL^2(L/2)}{16} \right) \\
-                            &= \frac{1}{EI} \left( -\frac{PL^2}{12\times8} + \frac{PL^3}{16\times2} \right) \\
+                            &= \frac{1}{EI} \left( -\frac{PL^3}{12\times8} + \frac{PL^3}{16\times2} \right) \\
                             &= \frac{1}{EI} \frac{PL^3}{16\times2} \left( -\frac{1}{3} + \frac{1}{1} \right) = \frac{1}{EI} \frac{PL^3}{16\times2} \left( \frac{2}{3} \right) = \frac{PL^3}{48EI} \end{align}$$
                             여기에서 \(y(L/2) > 0\)이므로 처짐은 아래쪽인 것을 알 수 있다.
                         </li>
