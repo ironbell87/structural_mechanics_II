@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../javascripts/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="../javascripts/login.js"></script>
+    <script type="text/javascript" src="../javascripts/quiz.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="../stylesheets/stylesheet.css">
+    <title>Structural mechanics?</title>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div class="header_wrapper">
+        <a class="header_octocat" href="https://pages.github.com" target="_blank"></a>
+        <h1 class="header_title">구조역학(structural mechanics)?</h1>
+        <span class="header_span_login"></span>
+        <a class="header_login"></a>
+        <a class="header_email" href="mailto:ironbell@kyungnam.ac.kr"></a>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="content_wrapper">
+
+        <!--########## PRE VIEW ##########-->
+        <div id="pre_view" hidden>
+            <h3><a name="pre_veiw"></a>교재 학습 범위</h3>
+            <ul>
+                <li>교재 1쪽~12쪽의 "1. 건축물과 구조역학"</li>
+            </ul>
+            <div class="separator"></div>
+        </div>
+
+        <!--########## MAIN VIEW ##########-->
+        <div id="main_view" hidden>
+            <h3><a name="chair"></a>의자의 설계</h3>
+            <ul>
+                <li>
+                    의자가 아래 그림과 같이 뒤집어지지 않도록 의자의 구성요소(부재)를 적절히 배치한다. 이는 의자의 <em>안정(stability)</em>을 고려한 설계이다.
+                    <p><img src="images\00.01.01.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    의자가 아래 그림과 같이 부서지거나 깨지지 않도록 의자의 구성요소(부재)의 재료와 두께를 적절히 결정한다. 이는 의자의 <em>강도(strength)</em>을 고려한 설계이다.
+                    <p><img src="images\00.01.02.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    의자가 아래 그림과 같이 과다하게 처지거나 휘어지지 않도록 의자의 구성요소(부재)의 재료와 두께를 적절히 결정한다. 이는 의자의 <em>강성(stiffness)</em>을 고려한 설계이다.
+                    <p><img src="images\00.01.03.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    이와 같이 안정, 강도, 강성을 고려하면 뒤집어지지 않고 부서지거나 깨지지도 않으며 과다하게 처지거나 휘어지지 않는, 즉, <em>안전(safety)</em>하고 편하게 <em>사용</em>할 수 있는 의자를 설계할 수 있다.
+                </li>
+            </ul>
+            <h3><a name="building"></a>건물에서의 안정, 강도, 강성</h3>
+            <ul>
+                <li>
+                    의자와 마찬가지로 <em>건물도 안정, 강도, 강성을 고려하여 설계하면 안전하고 편하게 사용</em>할 수 있다.
+                </li>
+                <li>
+                    건물의 <em>안정</em>은 다음 그림과 같은 건물의 <em>이동, 회전, 전도(overturning, 뒤집어짐)</em> 등을 의미하며, <em>밑면전단력(base shear) 전도모멘트(overturning moment)</em> 등으로 그 정도를 표현한다. 안정은 안전과 밀접한 관계를 가진다.
+                    <p><img src="images\00.01.04.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    건물의 <em>강도</em>는 다음 그림과 같이 부재가 <em>끊어지고 부러지는 항복(yield)과 파괴(fracture)</em> 등을 의미하며, <em>응력도(stress), 변형도(strain), 항복강도(yield strength), 인장강도(tensile strength)</em> 등으로 그 정도를 표현한다. 역시 안전과 밀접한 관계를 가진다.
+                    <p><img src="images\00.01.05.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    건물의 <em>강성</em>은 다음 그림과 같이 부재의 <em>휘어짐이나 처짐</em> 등을 의미하며, <em>변위(displacement), 변형(deformation)</em> 등으로 그 정도를 표현한다. 안전뿐 아니라 사용성(serviceability)과도 밀접한 관계를 가진다.
+                    <p><img src="images\00.01.06.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    <a href="" class="li_test">확인 질문</a>
+                    <div hidden>
+                        부재가 끊어지고 부러지는 항복과 파괴 등을 의미하는 것을 무엇이라 하는지 쓰시오.<br />
+                        <input type="text" class="input_quiz" placeholder="답을 입력하세요" ondrop="return false;" onpaste="return false;">
+                        <input type="submit" class="submit_quiz" value="확인" answer="강도">
+                        <span class="span_quiz"></span>
+                    </div>
+                </li>
+            </ul>
+            <h3><a name="force_flow"></a>힘의 흐름(flow of force)</h3>
+            <ul>
+                <li>
+                    아래 그림의 위쪽은 <em>지반(지점)</em>에 연결된 <em>구조물(부재)</em>에 <em>힘</em>이 가해지는 것을 나타낸 것이다.
+                    <p><img src="images\00.01.07.png" onload="this.width/=2;"></p>
+                </li>
+                <li>
+                    이와 같이 힘이 가해지면 위 그림의 중간과 같이 <em>힘이 구조물을 경로로 하여 지반으로 흘러</em>간다. <em>외부에서 가해진, 입력된 힘은 하중(load), 외력(external force)</em>이라 한다.
+                    이 하중이 구조물의 경로를 따라 지반으로 흘러가는데, 이를 <em>부재력(member force), 단면력(sectional force), 내력(internal force)</em>이라 한다.
+                    지반으로 흘러나간, <em>출력된 힘은 지반에 작용</em>하며, 작용-반작용 법칙에 의해서 <em>구조물에 작용하는 지점반력(support reaction)</em>이 발생한다.
+                </li>
+                <li>
+                    <em>하중은 가해진 위치에서만, 부재력은 하중이 지반까지 전달되는 경로의 전체 구간에, 지점반력은 지반에서만 작용</em>한다. 위 그림의 아래쪽은 이를 나타낸 것이다.
+                </li>
+                <li>
+                    구조물에는 힘의 흐름에 의해서 하중, 부재력, 지점반력이 작용하고, 그 결과로 <em>이동, 회전, 변형(길이변화 및 휨)</em>등의 변화가 발생한다.
+                </li>
+                <li>
+                    <a href="" class="li_test">확인 질문</a>
+                    <div hidden>
+                        지반(지점)에서만 발생하는 힘의 이름을 쓰하시오.<br />
+                        <input type="text" class="input_quiz" placeholder="답을 입력하세요" ondrop="return false;" onpaste="return false;">
+                        <input type="submit" class="submit_quiz" value="확인" answer="지점반력">
+                        <span class="span_quiz"></span>
+                    </div>
+                </li>
+            </ul>
+            <h3><a name="structural_mechanics"></a>구조역학(structural mechanics)</h3>
+            <ul>
+                <li>
+                    이상의 내용을 종합하면 구조역학에 대해서 다음과 같이 정리할 수 있다.
+                </li>
+                <li>
+                    구조역학은 구조물에서 <em>하중이 지반까지 흐르는 경로와 방식을 파악하고 하중과 부재력과 지점반력, 응력도와 변형도, 이동과 회전과 변형 등을 계산하여 안정, 강도, 강성 측면에서 구조물의 거동을 예측하기 기초적인 지식</em>이다.
+                </li>
+                <li>
+                    아래 그림의 구조역학의 전체적인 내용과 구성을 개략적으로 나타낸 것이다.
+                    <p><img src="images\00.01.08.png" onload="this.width/=2;"></p>
+                </li>
+            </ul>
+            <h3><a name="classification"></a>역학(mechanics)의 분류</h3>
+            <ul>
+                <li>
+                    역학은 대상 구조물의 변형 정도에 따라 강체역학(rigid body mechanics), 변형체역학(deformable body mechanics), 유체역학(fluid mechanics)으로 구분할 수 있다.
+                </li>
+                <li>
+                    역학은 시간에 따른 하중의 변화에 따라 정역학(statics)과 동역학(dynamics)으로 구분할 수 있다.
+                </li>
+                <li>
+                    여기에서는 정역학과 변형체역학의 일부를 학습한다.
+                </li>
+            </ul>
+            <h3><a name="history"></a>구조역학 및 구조해석의 개략적 발전 과정</h3>
+            <ul>
+                <li>
+                    17세기 이전에는 경험에 바탕을 둔 시행착오(trial and error) 방식을 적용하였다.
+                </li>
+                <li>
+                    17세기는 구조역학 이론의 태동기이며, 갈릴레이(G. Galilei)와 후크(R. Hooke) 등이 업적을 남겼다.
+                </li>
+                <li>
+                    18 ~ 19세기는 구조역학 이론이 발전기이며, 뉴톤(I. Newton), 쿨롱(C. A. Coulomb), 베르누이(J. Bernoulli), 오일러(L. Euler), 나비에(L. M. Navier) 등이 업적을 남겼다.
+                </li>
+                <li>
+                    19세기 후반 ~ 20세기 초반은 고전적 구조해석 방법이 개발된 시기이며, 맥스웰(J. C. Maxwell), 모어(O. Mohr), 카스틸리아노(A. Castigliano), 그린(C. E. Greene), 매니(G. A. Maney), 크로스(H. Cross), 티모셴코(S. P. Timoshenko) 등이 업적을 남겼다.
+                </li>
+                <li>
+                    20세기 중반 ~ 20세기 후반은 컴퓨터를 이용한 구조해석 방법으로 행렬해석(matrix analysis)과 유한요소해석(finite element analysis)이 개발된 시기이며, 결과물로는 ADINA, SAP, ETABS, ABAQUS, ANSYS 등이 있다.
+                </li>
+                <li>
+                    20세기 후반부터는 동적해석(dynamic analysis) 및 비선형해석(nonlinear analysis) 방법이 발전하고 있으며, 개인용 컴퓨터의 보급에 따라 사용의 편리성 개선, 구조설계 기능 추가 등이 이루어지고 있다.
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+</html>

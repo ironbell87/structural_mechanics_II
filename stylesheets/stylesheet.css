@@ -344,6 +344,7 @@ img.top_margin {
     margin-left: 0px;
     opacity: 0;
     transition: opacity 1s;
+    font-size: 14px;
 }
 
 .span_quiz .tooltiptext::after { /* topward arrow at bottom */

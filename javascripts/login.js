@@ -36,7 +36,7 @@ $(document).ready(function () {
         $('.header_login').trigger('click');
         return false; // stop propagation or double trigger
     });
-    $('.header_login').click(function () {
+    $('body').on('click', '.header_login', function (event) {
         // already logged in
         if (sessionStorage.login != undefined) {
             var yes_no = confirm("이미 로그인되어 있습니다. 로그아웃하겠습니까?");

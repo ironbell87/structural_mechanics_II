@@ -30,7 +30,7 @@ $(document).ready(function () {
 
         // get answer and input value
         var m_answer = m_submit.attr('answer');
-        var m_input_val = m_input.val(); // if 'tyoe = numberic, non-number can be input but m_input_val would be undefined
+        var m_input_val = m_input.val(); // if 'type = numberic, non-number can be input but m_input_val would be undefined
 
         // in case of no input
         if (m_input_val == "") {
