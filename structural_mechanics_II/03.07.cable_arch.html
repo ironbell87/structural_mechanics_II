@@ -55,7 +55,16 @@
                     </ol>
                 </li>
                 <li>
-                    예제 (집중하중을 받는 케이블) : 다음에서 케이블에 작용하는 인장력을 계산하시오.
+                    <a href="" class="li_test">확인 질문</a>
+                    <div hidden>
+                        케이블에 항상 작용하는 부재력을 쓰시오.<br />
+                        <input type="text" class="input_quiz" placeholder="답을 입력하세요" ondrop="return false;" onpaste="return false;">
+                        <input type="submit" class="submit_quiz" value="확인" answer="인장력">
+                        <span class="span_quiz"></span>
+                    </div>
+                </li>
+                <li>
+                    예제 (집중하중을 받는 케이블 1) : 다음에서 케이블에 작용하는 인장력을 계산하시오.
                     <p><img src="images\03.07.01.png" width="514" height="116"></p>
                     <ol>
                         <li>
@@ -108,12 +117,55 @@
                     </ol>
                 </li>
                 <li>
-                    <a href="" class="li_test">확인 질문</a>
-                    <div hidden>케이블에 항상 작용하는 부재력을 쓰시오.<br />
-                        <input type="text" class="input_quiz" placeholder="답을 입력하세요" ondrop="return false;" onpaste="return false;">
-                        <input type="submit" class="submit_quiz" value="확인" answer="인장력">
-                        <span class="span_quiz"></span>
-                    </div>
+                    예제 (집중하중을 받는 케이블 2) : 다음에서 케이블에 작용하는 인장력을 계산하시오.
+                    <p><img src="images\03.07.07.png" onload="this.width/=2;"></p>
+                    <ol>
+                        <li>
+                            케이블 전체를 대상으로 FBD를 작성하고 평형조건식을 적용한다. 지점의 높이가 다르므로 지점반력이 포함된 식만 얻을 수 있다.
+                            <p>
+                                <img src="images\03.07.08.png" onload="this.width/=2;"><br />
+                                \(\sum F_x = H_A + H_C = 0; \quad H_C = -H_A \\
+                                \sum F_y = V_A - 20 + V_C = 0; \quad V_A = -V_C + 20 \\
+                                \sum M_A = -20 \times 10 + V_C \times 30 - H_C \times 5 = 0; \quad H_C = 6V_C - 40 \)
+                            </p>
+                        </li>
+                        <li>
+                            높이가 주어진 점 B를 <font color="MediumVioletRed">구조물 내부의 회전절점</font>으로 설정하여 가상으로 절단한 후, 여기에 FBD를 작성하고 평형조건식을 적용한다.
+                            <p>
+                                <img src="images\03.07.09.png" onload="this.width/=2;"><br />
+                                \(\sum M_B=-V_A \times 10 - H_A \times 1 = 0; \quad -H_A = 10V_A \)
+                            </p>
+                        </li>
+                        <li>
+                            위의 4개로 이루어진 연립방정식을 다음과 같이 푼다.
+                            <p>
+                                \( H_C = -H_A, \, -H_A = 10V_A; \quad H_C = 10V_A \\
+                                   H_C = 10V_A, \, V_A = -V_C + 20; \quad H_C = -10V_C + 200 \\
+                                   H_C = -10V_C + 200, \, H_C = 6V_C - 40; \quad -10V_C + 200 = 6V_C - 40; \quad 16V_C = 240; \\
+                                   \therefore V_C = 15kN, \, V_A = -V_C + 20 = 5kN, \ H_C = 10V_A = 50kN, \, H_A = -H_C = -50kN \)
+                            </p>
+                        </li>
+                        <li>
+                            케이블 AB 부분을 가상으로 절단하고, <font color="MediumVioletRed">인장력만 작용하는 트러스 부재로 설정하여, FBD를 작성하고 평형조건식을 적용</font>한다. 단, 케이블 인장력의 수평방향 성분 \(AB_H\)는 지점반력의 수평방향 성분 \(H_A\)와 같으므로 그 크기는 \(50kN\)이다.
+                            <p>
+                                <img src="images\03.07.10.png" onload="this.width/=2;"><br />
+                                \(AB_H=H_A \quad \therefore AB_H=50 kN \\
+                                \sum F_y = 5 - AB_V = 0 \quad \therefore AB_V=5 kN \)
+                                케이블 AB의 인장력은 수평방향 성분 \(AB_H\)와 수직방향 성분 \(AB_V\)를 합성한 \(AB\)이므로
+                                \(AB = \sqrt{AB_H^2 + AB_V^2} = \sqrt{50^2 + 5^2} = \sqrt{2525} = 5\sqrt{101} kN\)
+                            </p>
+                        </li>
+                        <li>
+                            케이블 BC 부분을 가상으로 절단하고, 인장력만 작용하는 트러스 부재로 설정하여, FBD를 작성하고 평형조건식을 적용한다. 케이블 인장력의 수평방향 성분 \(BC_H\)는 지점반력의 수평방향 성분 \(H_C\)와 같으므로 그 크기는 \(50kN\)이다.
+                            <p>
+                                <img src="images\03.07.11.png" onload="this.width/=2;"><br />
+                                \(BC_H=H_C \quad \therefore BC_H=50 kN \\
+                                \sum F_y = 15 - BC_V = 0 \quad \therefore BC_V=15 kN \)
+                                케이블 BC의 인장력은 수평방향 성분 \(BC_H\)와 수직방향 성분 \(BC_V\)를 합성한 \(BC\)이므로
+                                \(BC = \sqrt{BC_H^2 + BC_V^2} = \sqrt{50^2 + 15^2} = \sqrt{2725} = 5\sqrt{109} kN\)
+                            </p>
+                        </li>
+                    </ol>
                 </li>
             </ul>
             <h3><a name="rigi_joint_reaction"></a>아치</h3>
@@ -133,13 +185,22 @@
                     </ol>
                 </li>
                 <li>
+                    <a href="" class="li_test">확인 질문</a>
+                    <div hidden>
+                        아치에 주로 작용하는 부재력을 쓰시오.<br />
+                        <input type="text" class="input_quiz" placeholder="답을 입력하세요" ondrop="return false;" onpaste="return false;">
+                        <input type="submit" class="submit_quiz" value="확인" answer="압축력">
+                        <span class="span_quiz"></span>
+                    </div>
+                </li>
+                <li>
                     예제 (단순보형 아치) : 다음에서 아치에 작용하는 부재력를 구하고 부재력도를 작성하시오.
-                    <p><img src="images\03.07.07.png" width="271" height="247"></p>
+                    <p><img src="images\03.07.12.png" onload="this.width/=2;"></p>
                     <ol>
                         <li>
                             케이블 전체를 대상으로 FBD를 작성하고 평형조건식을 적용하여 \(V_A, \ V_B\)를 계산한다.
                             <p>
-                                <img src="images\03.07.08.png" width="283" height="210"><br />
+                                <img src="images\03.07.13.png" onload="this.width/=2;"><br />
                                 \(\sum M=V_B \times 2r - P \times r = 0 \quad \therefore V_B=P/2 \\
                                 \sum F_y = V_A - P + V_B = 0 \quad \therefore V_A=P/2 \)
                             </p>
@@ -147,7 +208,7 @@
                         <li>
                             아치 내의 임의의 위치를 회전각 \(\theta\)로 설정한 후, 그 위치를 가상으로 절단하여 FBD를 작성하고 평형조건식을 적용하여 절점반력을 계산한다.
                             <p>
-                                <img src="images\03.07.09.png" width="150" height="172"><br />
+                                <img src="images\03.07.14.png" onload="this.width/=2;"><br />
                                 \(\sum F_y=P/2 + V_\theta = 0 \quad \therefore V_\theta = -P/2 \\
                                 \sum M_A=V_\theta \times (r-r\cos\theta) + M_B = 0 \quad \therefore M_\theta=P/2 \, (r-r\cos\theta)\)
                             </p>
@@ -155,7 +216,7 @@
                         <li>
                             \(V_\theta = P/2\)를 \(\theta\)에 따라 축방향과 그에 직각방향으로 분해한다.
                             <p>
-                                <img src="images\03.07.10.png" width="223" height="184"><br />
+                                <img src="images\03.07.15.png" onload="this.width/=2;"><br />
                                 축방향 분력의 크기 \(= P/2 \times \cos \theta = P/2 \, \cos \theta \)<br />
                                 직각방향 분력의 크기 \(= P/2 \times \sin \theta = P/2 \, \sin \theta \)
                             </p>
@@ -184,17 +245,9 @@
                         </li>
                         <li>
                             이상의 부재력의 식과 값을 바탕으로 다음과 같이 부재력도를 작성한다.
-                            <p><img src="images\03.07.11.png" width="714" height="163"></p>
+                            <p><img src="images\03.07.16.png" onload="this.width/=2;"></p>
                         </li>
                     </ol>
-                </li>
-                <li>
-                    <a href="" class="li_test">확인 질문</a>
-                    <div hidden>아치에 주로 작용하는 부재력을 쓰시오.<br />
-                        <input type="text" class="input_quiz" placeholder="답을 입력하세요" ondrop="return false;" onpaste="return false;">
-                        <input type="submit" class="submit_quiz" value="확인" answer="압축력">
-                        <span class="span_quiz"></span>
-                    </div>
                 </li>
             </ul>
             <div class="separator"></div>

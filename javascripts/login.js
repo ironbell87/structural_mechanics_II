@@ -57,6 +57,8 @@ $(document).ready(function () {
 
         // show login dialog
         append_login();
+        blur_background('.content_wrapper', 25);
+        blur_background('.header_wrapper', 25);
     });
 
     // for ENTER, click submit button
@@ -77,6 +79,8 @@ $(document).ready(function () {
                 $("#span_login").text(sessionStorage.login);
                 $(".header_span_login").text(sessionStorage.login);
                 $("#login_outer").fadeOut(time_out_duration / 3);
+                blur_background('.content_wrapper', 0);
+                blur_background('.header_wrapper', 0);
                 toggle_body(true);
                 return;
             }
@@ -119,4 +123,15 @@ function toggle_body(p_toggle) {
         $('#main_view').slideUp(time_out_duration);
         $('#re_view_quiz').slideUp(time_out_duration);
     }
+}
+
+function blur_background(p_target, p_degree) {
+    var filterVal = 'blur(' + p_degree + 'px)';
+    $(p_target)
+      .css('filter', filterVal)
+      .css('webkitFilter', filterVal)
+      .css('mozFilter', filterVal)
+      .css('oFilter', filterVal)
+      .css('msFilter', filterVal)
+      .css('transition', '-webkit-filter 1.5s');
 }
