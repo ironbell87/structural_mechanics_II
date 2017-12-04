@@ -201,50 +201,50 @@
                             케이블 전체를 대상으로 FBD를 작성하고 평형조건식을 적용하여 \(V_A, \ V_B\)를 계산한다.
                             <p>
                                 <img src="images\03.07.13.png" onload="this.width/=2;"><br />
-                                \(\sum M=V_B \times 2r - P \times r = 0 \quad \therefore V_B=P/2 \\
-                                \sum F_y = V_A - P + V_B = 0 \quad \therefore V_A=P/2 \)
+                                \( \sum M_A=V_B \times 2r - P \times r = 0 \quad \therefore \displaystyle V_B=\frac{P}{2} \\
+                                \sum F_y = V_A - P + V_B = 0 \quad \therefore \displaystyle V_A=\frac{P}{2} \)
                             </p>
                         </li>
                         <li>
                             아치 내의 임의의 위치를 회전각 \(\theta\)로 설정한 후, 그 위치를 가상으로 절단하여 FBD를 작성하고 평형조건식을 적용하여 절점반력을 계산한다.
                             <p>
                                 <img src="images\03.07.14.png" onload="this.width/=2;"><br />
-                                \(\sum F_y=P/2 + V_\theta = 0 \quad \therefore V_\theta = -P/2 \\
-                                \sum M_A=V_\theta \times (r-r\cos\theta) + M_\theta = 0 \quad \therefore M_\theta=P/2 \, (r-r\cos\theta)\)
+                                \(\sum F_y=\displaystyle \frac{P}{2} + V_\theta = 0 \quad \therefore \displaystyle V_\theta = -\frac{P}{2} \\
+                                \sum M_A=V_\theta \times (r-r\cos\theta) + M_\theta = 0 \quad \therefore \displaystyle M_\theta=\frac{P}{2}(r-r\cos\theta)\)
                             </p>
                         </li>
                         <li>
-                            \(V_\theta = P/2\)를 \(\theta\)에 따라 축방향과 그에 직각방향으로 분해한다.
+                            \(\displaystyle V_\theta = \frac P2\)를 \(\theta\)에 따라 축방향과 그에 직각방향으로 분해한다.
                             <p>
                                 <img src="images\03.07.15.png" onload="this.width/=2;"><br />
-                                축방향 분력의 크기 \(= P/2 \times \cos \theta = P/2 \, \cos \theta \)<br />
-                                직각방향 분력의 크기 \(= P/2 \times \sin \theta = P/2 \, \sin \theta \)
+                                축방향 분력의 크기 \(= \displaystyle \frac{P}{2} \times \cos \theta = {P \over 2} \cos \theta \)<br />
+                                직각방향 분력의 크기 \(= \displaystyle \frac{P}{2} \times \sin \theta = {P \over 2} \sin \theta \)
                             </p>
                         </li>
                         <li>
                             위 분력과 모멘트 \(M_\theta\)를 <font color="MediumVioletRed">부재력으로서의 부호</font>까지 고려하여 다음과 같이 축력 \(A(\theta)\), 전단력 \(V(\theta)\), 휨모멘트 \(M(\theta)\)를 계산한다.
                             <p>
-                                \(A(\theta) = -P/2 \, \cos \theta \qquad V(\theta) = P/2 \, \sin \theta \qquad M(\theta) = P/2 \, (r-r\cos\theta)\)
+                                \(\displaystyle A(\theta) = -\frac{P}{2}\cos \theta \qquad V(\theta) = \frac{P}{2}\sin \theta \qquad M(\theta) = \frac{P}{2}(r-r\cos\theta) \)
                             </p>
                         </li>
                         <li>
                             이 부재력에 대해서 <font color="MediumVioletRed">\(\theta = 0^\circ, \, 45^\circ, \, 90^\circ\)일 때의 값을 계산</font>한다.
                             <p>
-                                \(A(0^\circ) = -P/2, \quad A(45^\circ) = -P/\sqrt2, \quad A(90^\circ) = 0 \\
-                                V(0^\circ) = 0, \quad V(45^\circ) = P/\sqrt2, \quad V(90^\circ) = P/2 \\
-                                M(0^\circ) = 0, \quad M(45^\circ) = P/2 \, (r-r/\sqrt2), \quad M(90^\circ) = Pr/2 \)
+                                \(\displaystyle A(0^\circ) = -\frac{P}{2}, \quad A(45^\circ) = -\frac{P}{\sqrt2}, \quad A(90^\circ) = 0 \\
+                                \displaystyle V(0^\circ) = 0, \quad V(45^\circ) = \frac{P}{\sqrt2}, \quad V(90^\circ) = \frac{P}{2} \\
+                                \displaystyle M(0^\circ) = 0, \quad M(45^\circ) = \frac{P}{2}\left(r-\frac{r}{\sqrt2}\right), \quad M(90^\circ) = \frac{Pr}{2} \)
                             </p>
                         </li>
                         <li>
                             위 부재력과 구조물이 <font color="MediumVioletRed">대칭이라는 점을 고려하여 \(\theta = 135^\circ, \, 180^\circ\)일 때의 값을 결정</font>한다.
                             <p>
-                                \(A(135^\circ) = -P/\sqrt2, \quad A(180^\circ) = -P/2 \\
-                                V(135^\circ) = -P/\sqrt2, \quad V(180^\circ) = 0 \\
-                                M(135^\circ) = P/2 \, (r-r/\sqrt2), \quad M(180^\circ) = 0 \)
+                                \(\displaystyle A(135^\circ) = -\frac{P}{\sqrt2}, \quad A(180^\circ) = -\frac{P}{2} \\
+                                \displaystyle V(135^\circ) = -\frac{P}{\sqrt2}, \quad V(180^\circ) = 0 \\
+                                \displaystyle M(135^\circ) = \frac{P}{2}\left(r-\frac{r}{\sqrt2}\right), \quad M(180^\circ) = 0 \)
                             </p>
                         </li>
                         <li>
-                            이상의 부재력의 식과 값을 바탕으로 다음과 같이 부재력도를 작성한다.
+                            이상의 부재력의 식과 값을 바탕으로 다음과 같이 차례로 축력도, 전단력도, 휨모멘트도를 작성한다.
                             <p><img src="images\03.07.16.png" onload="this.width/=2;"></p>
                         </li>
                     </ol>
