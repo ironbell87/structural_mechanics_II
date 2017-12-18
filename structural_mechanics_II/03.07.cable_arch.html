@@ -198,7 +198,7 @@
                     <p><img src="images\03.07.12.png" onload="this.width/=2;"></p>
                     <ol>
                         <li>
-                            케이블 전체를 대상으로 FBD를 작성하고 평형조건식을 적용하여 \(V_A, \ V_B\)를 계산한다.
+                            아치 전체를 대상으로 FBD를 작성하고 평형조건식을 적용하여 \(V_A, \ V_B\)를 계산한다.
                             <p>
                                 <img src="images\03.07.13.png" onload="this.width/=2;"><br />
                                 \( \sum M_A=V_B \times 2r - P \times r = 0 \quad \therefore \displaystyle V_B=\frac{P}{2} \\
@@ -206,7 +206,10 @@
                             </p>
                         </li>
                         <li>
-                            아치 내의 임의의 위치를 회전각 \(\theta\)로 설정한 후, 그 위치를 가상으로 절단하여 FBD를 작성하고 평형조건식을 적용하여 절점반력을 계산한다.
+                            아치의 중앙에 집중하중이 작용하므로, 이 <em>집중하중의 왼쪽과 오른쪽을 각각의 구간으로 설정</em>한다. <em>왼쪽 구간은 점 \(A\)와 시계방향을 \(\theta\)의 기준점과 뱡의 방향</em>으로 설정한다.
+                        </li>
+                        <li>
+                            왼쪽 구간 내의 임의의 위치를 회전각 \(\theta\)로 설정한 후, 그 위치를 가상으로 절단하여 FBD를 작성하고 평형조건식을 적용하여 절점반력을 계산한다.
                             <p>
                                 <img src="images\03.07.14.png" onload="this.width/=2;"><br />
                                 \(\sum F_y=\displaystyle \frac{P}{2} + V_\theta = 0 \quad \therefore \displaystyle V_\theta = -\frac{P}{2} \\
@@ -236,11 +239,12 @@
                             </p>
                         </li>
                         <li>
-                            위 부재력과 구조물이 <font color="MediumVioletRed">대칭이라는 점을 고려하여 \(\theta = 135^\circ, \, 180^\circ\)일 때의 값을 결정</font>한다.
+                            구조물의 형상, 지점, 하중이 중앙의 수직선에 대해서 대칭이면, <em>축력도와 휨모멘트도는 대칭, 전단력도는 역대칭</em>이다. 따라서 
+                            위 구조물에서 \(\theta = 135^\circ, \, 180^\circ\)일 때의 값은 다음과 같이 결정한다.
                             <p>
-                                \(\displaystyle A(135^\circ) = -\frac{P}{\sqrt2}, \quad A(180^\circ) = -\frac{P}{2} \\
-                                \displaystyle V(135^\circ) = -\frac{P}{\sqrt2}, \quad V(180^\circ) = 0 \\
-                                \displaystyle M(135^\circ) = \frac{P}{2}\left(r-\frac{r}{\sqrt2}\right), \quad M(180^\circ) = 0 \)
+                                \(\displaystyle A(135^\circ) = A(45^\circ) = -\frac{P}{\sqrt2}, \quad A(180^\circ) = A(0^\circ) = -\frac{P}{2} \\
+                                \displaystyle V(135^\circ) = -V(45^\circ) = -\frac{P}{\sqrt2}, \quad V(180^\circ) = -V(0^\circ) = 0 \\
+                                \displaystyle M(135^\circ) = M(45^\circ) = \frac{P}{2}\left(r-\frac{r}{\sqrt2}\right), \quad M(180^\circ) = M(0^\circ) = 0 \)
                             </p>
                         </li>
                         <li>
