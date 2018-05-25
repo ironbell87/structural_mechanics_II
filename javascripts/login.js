@@ -12,8 +12,7 @@ $(document).ready(function () {
     ga('send', 'pageview');
 
     // favicon for all pages
-    $('head').append('<link id="ironbell_favicon" rel="icon" href="../images/ironbell_icon.png">');
-    if ($(location).attr('pathname').slice(-10) == 'index.html') { $("link[rel='icon']").attr("href", "images/ironbell_icon.png"); }
+    $('head').append('<link rel="icon" href="/images/ironbell_icon.png">'); // slash('/') at the first = website root
 
     // get login id from sesseionStorage
     if (sessionStorage.login != undefined) {
