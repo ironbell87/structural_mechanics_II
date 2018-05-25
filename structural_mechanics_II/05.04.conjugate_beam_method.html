@@ -201,7 +201,7 @@
                         <li>
                             공액보 전체를 대상으로 자유물체도를 그리고 평형조건식을 적용하여 지점반력 \(V'_A, \, V'_B\)을 다음과 같이 계산한다.
                             $$ \Sigma M_{V'_B} = \left( \frac{L}{2} \times \frac{wL^2}{8EI} \times \frac{2}{3} \times 2 \right) \times \frac{L}{2} - V'_A \times L = 0; \quad V'_A = \frac{wL^3}{24EI} \\
-                            \Sigma F_y = -\left( \frac{L}{2} \times \frac{wL^2}{8EI} \times \frac{2}{3} \times 2 \right) + V'_A \times + V'_B = 0; \quad V'_B = \frac{wL^3}{24EI} $$
+                            \Sigma F_y = -\left( \frac{L}{2} \times \frac{wL^2}{8EI} \times \frac{2}{3} \times 2 \right) + V'_A + V'_B = 0; \quad V'_B = \frac{wL^3}{24EI} $$
                         </li>
                         <li>
                             부재 가운데를 가상으로 절단한 후, 왼쪽 부분을 대상으로 자유물체도를 그리고 평형조건식을 적용하여 다음과 같이 부재 가운데의 휨모멘트를 계산한다.
@@ -241,7 +241,7 @@
                         <li>
                             공액보 전체를 대상으로 자유물체도를 그리고 평형조건식을 적용하여 지점반력 \(V'_A, \, V'_B\)을 다음과 같이 계산한다.
                             $$ \Sigma M_{V'_B} = \left( \frac{L}{2} \times \frac{PL}{4EI} \times \frac{1}{2} \times 2 \right) \times \frac{L}{2} - V'_A \times L = 0; \quad V'_A = \frac{PL^2}{16EI} \\
-                            \Sigma F_y = -\left( \frac{L}{2} \times \frac{PL}{4EI} \times \frac{1}{2} \times 2 \right) + V'_A \times + V'_B = 0; \quad V'_B = \frac{PL^2}{16EI} $$
+                            \Sigma F_y = -\left( \frac{L}{2} \times \frac{PL}{4EI} \times \frac{1}{2} \times 2 \right) + V'_A + V'_B = 0; \quad V'_B = \frac{PL^2}{16EI} $$
                         </li>
                         <li>
                             부재 가운데를 가상으로 절단한 후, 왼쪽 부분을 대상으로 자유물체도를 그리고 평형조건식을 적용하여 다음과 같이 부재 가운데의 휨모멘트를 계산한다.
@@ -323,7 +323,7 @@
                     <input type="submit" class="submit_quiz" value="확인" answer="고정단" hint="자유단 <=> 고정단, 회전단과 이동단은 동일, 내부 힌지 절점 <=> 내부 이동단">
                     <span class="span_quiz"></span>
                 </li>
-                <li>퀴즈 1에서 실재 보의 고정단은 공액보에서 무엇으로 치환되는지 쓰시오오.<br />
+                <li>퀴즈 1에서 실재 보의 고정단은 공액보에서 무엇으로 치환되는지 쓰시오.<br />
                     <input type="text" class="input_quiz" placeholder="답을 입력하세요" ondrop="return false;" onpaste="return false;">
                     <input type="submit" class="submit_quiz" value="확인" answer="자유단" hint="자유단 <=> 고정단, 회전단과 이동단은 동일, 내부 힌지 절점 <=> 내부 이동단">
                     <span class="span_quiz"></span>

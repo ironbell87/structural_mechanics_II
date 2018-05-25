@@ -5,7 +5,6 @@ $(document).ready(function () {
     if (sessionStorage.login == undefined) {
         alert('학습을 시작하려면 먼저 로그인하세요.'); return;
     }
-    toggle_body(true);
 
     // show / hide test
     $(".li_test").click(function () {
