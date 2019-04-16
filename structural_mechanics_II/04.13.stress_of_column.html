@@ -152,7 +152,7 @@
                     $$ e_{cr} = \frac{S}{A}$$
                 </li>
                 <li>
-                    다음은 직사각형과 원형 단면에서 위 식을 이용하여 구한 단면은 핵을 나타낸 것이다.
+                    다음은 직사각형과 원형 단면에서 위 식을 이용하여 구한 단면의 핵을 나타낸 것이다.
                     <p><img src="images\04.13.03.png" onload="this.width/=2;"></p>
                     <em>$$ e_v = \frac{S}{A} = \cfrac{\cfrac{b \times h^2}{6}}{bh} = \frac{h}{6}, \quad e_h = \frac{S}{A} = \cfrac{\cfrac{h \times b^2}{6}}{bh} = \frac{b}{6}, \quad e_r = \frac{S}{A} = \cfrac{\cfrac{\pi r^3}{4}}{\pi r^2} = \frac{r}{4} $$</em>
                 </li>
@@ -169,7 +169,7 @@
             <h3><a name="example_1"></a>예제 1</h3>
             <ul>
                 <li>
-                    문제 : 다음과 같이 편심축 하중이 작용하는 기둥에서 인장측과 압축측 최대 응력도 \(\sigma_t, \, \sigma_c\)를 계산하시오.
+                    문제 : 다음과 같이 편심축 하중이 작용하는 기둥에서 조합응력도 중 인장측과 압축측 최대 응력도 \(\sigma_t, \, \sigma_c\)를 계산하시오.
                     <p><img src="images\04.13.04.png" onload="this.width/=2;"></p>
                 </li>
                 <li>
@@ -177,15 +177,15 @@
                     <ol>
                         <li>
                             먼저 압축력에 의한 압축응력도 \(\sigma_a\)는 다음과 같이 계산한다.
-                            $$ A = 300 \times 200 = 60,0000mm^2, \quad P = 300,000N $$
+                            $$ A = bh = 300 \times 200 = 60,000mm^2, \quad P = 300,000N $$
                             $$ \sigma_a = -\frac{P}{A} = -\frac{300,000}{60,000} = -5MPa $$
                         </li>
                         <li>
                             편심모멘트 \(M\), 단면2차모멘트 \(I\), 인장측과 압축측 단면계수 \(S_t, \, S_c\), 도심에서 인장측과 압축측 최외단까지의 거리 \(y_t, \, y_c\)를 다음과 같이 계산한다.
                             여기에서 단면이 대칭인 점, <em>편심모멘트의 작용방향</em>에 주의한다.
                             $$ M = P \times e = 300,000 \times 100 = 30,000,000Nmm $$
-                            $$ I = \frac{bh^3}{12} = \frac{200 \times 300^3}{12} = 450,000,000mm^4 $$
-                            $$ S_t = \frac{bh^2}{6} = \frac{200 \times 300^3}{6} = 3,000,000mm^3 = S_c $$
+                            $$ I = \frac{hb^3}{12} = \frac{200 \times 300^3}{12} = 450,000,000mm^4 $$
+                            $$ S_t = \frac{hb^2}{6} = \frac{200 \times 300^2}{6} = 3,000,000mm^3 = S_c $$
                             $$ y_t = \frac{b}{2} = \frac{300}{2} = 150mm = y_c $$
                         </li>
                         <li>
@@ -197,7 +197,7 @@
                             $$ \sigma_{bc} = -\frac{M}{S_c} = -\frac{30,000,000}{3,000,000} = -10MPa $$
                         </li>
                         <li>
-                            인장측과 압축측 죄대 응력도 \(\sigma_t, \, \sigma_c\)를 다음과 같이 계산한다.
+                            인장측과 압축측 최대 응력도 \(\sigma_t, \, \sigma_c\)를 다음과 같이 계산한다.
                             $$ \sigma_t = \sigma_a + \sigma_{bt} = -5 + 10 = 5MPa $$
                             $$ \sigma_c = \sigma_a + \sigma_{bc} = -5 - 10 = -15MPa $$
                         </li>
@@ -211,7 +211,7 @@
             <h3><a name="example_2"></a>예제 2</h3>
             <ul>
                 <li>
-                    문제 : 다음과 같이 편심축 하중이 작용하는 기둥에서 인장측과 압축측 최대 응력도 \(\sigma_t, \, \sigma_c\)를 계산하시오.
+                    문제 : 다음과 같이 편심축 하중이 작용하는 기둥에서 조합응력도 중 인장측과 압축측 최대 응력도 \(\sigma_t, \, \sigma_c\)를 계산하시오.
                     <p><img src="images\04.13.05.png" onload="this.width/=2;"></p>
                 </li>
                 <li>
@@ -219,15 +219,15 @@
                     <ol>
                         <li>
                             먼저 압축력에 의한 압축응력도 \(\sigma_a\)는 다음과 같이 계산한다.
-                            $$ A = 500 \times 300 = 150,0000mm^2, \quad P = 3,253,600N $$
+                            $$ A = bh = 500 \times 300 = 150,000mm^2, \quad P = 3,253,600N $$
                             $$ \sigma_a = -\frac{P}{A} = -\frac{3,253,600}{150,000} = -21.69MPa $$
                         </li>
                         <li>
                             편심모멘트 \(M\), 단면2차모멘트 \(I\), 인장측과 압축측 단면계수 \(S_t, \, S_c\), 도심에서 인장측과 압축측 최외단까지의 거리 \(y_t, \, y_c\)를 다음과 같이 계산한다.
                             여기에서 단면이 대칭인 점, <em>편심모멘트의 작용방향</em>에 주의한다.
                             $$ M = P \times e = 3,253,600 \times 47 = 152,919,200Nmm $$
-                            $$ I = \frac{bh^3}{12} = \frac{300 \times 500^3}{12} = 3,125,000,000mm^4 $$
-                            $$ S_t = \frac{bh^2}{6} = \frac{300 \times 500^3}{6} = 12,500,000mm^3 = S_c $$
+                            $$ I = \frac{hb^3}{12} = \frac{300 \times 500^3}{12} = 3,125,000,000mm^4 $$
+                            $$ S_t = \frac{hb^2}{6} = \frac{300 \times 500^3}{6} = 12,500,000mm^3 = S_c $$
                             $$ y_t = \frac{b}{2} = \frac{500}{2} = 250mm = y_c $$
                         </li>
                         <li>
@@ -239,7 +239,7 @@
                             $$ \sigma_{bc} = -\frac{M}{S_c} = -\frac{152,919,200}{12,500,000} = -12.23MPa $$
                         </li>
                         <li>
-                            인장측과 압축측 죄대 응력도 \(\sigma_t, \, \sigma_c\)를 다음과 같이 계산한다.
+                            인장측과 압축측 최대 응력도 \(\sigma_t, \, \sigma_c\)를 다음과 같이 계산한다.
                             $$ \sigma_t = \sigma_a + \sigma_{bt} = -21.69 + 12.23 = -9.46MPa $$
                             $$ \sigma_c = \sigma_a + \sigma_{bc} = -21.69 - 12.23 = -33.92MPa $$
                         </li>
@@ -254,78 +254,134 @@
         </div>
 
         <!--########## RE VIEW ##########-->
-        <!--<div id="re_view_quiz" hidden>
-        <h3><a name="re_view_quiz"></a>복습 퀴즈</h3>
-        <ol class="ol_quiz">
-            <li>길이 \(4m\)이고 폭 \(200mm\), 높이 \(360mm\)인 직사각형 단면을 갖는 단순보 전체에 등분포하중 \(80kN/m\)가 작용한다. 전단응력도의 최대값을 계산하시오.<br />
-                <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
-                <input type="submit" class="submit_quiz" value="확인" answer="3.3333">
-                <span class="span_quiz"></span>
-            </li>
-            <li>퀴즈 1에서 휨응력도의 최대값을 계산하시오.<br />
-                <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
-                <input type="submit" class="submit_quiz" value="확인" answer="37.0370">
-                <span class="span_quiz"></span>
-            </li>
-            <li>길이 \(6m\)이고 폭 \(360mm\), 높이 \(600mm\)인 직사각형 단면을 갖는 캔틸레버보 전체에 등분포하중 \(350kN/m\)이 작용한다. 고정단의 전단력을 계산하시오.<br />
-                <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(kN\)
-                <input type="submit" class="submit_quiz" value="확인" answer="2100.00">
-                <span class="span_quiz"></span>
-            </li>
-            <li>퀴즈 3에서 고정단의 휨모멘트를 계산하시오.<br />
-                <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(kNm\)
-                <input type="submit" class="submit_quiz" value="확인" answer="6300.00">
-                <span class="span_quiz"></span>
-            </li>
-            <li>퀴즈 3에서 도심에 대한 단면 2차모멘트를 계산하시오.<br />
-                <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm^4\)
-                <input type="submit" class="submit_quiz" value="확인" answer="6.48e+9">
-                <span class="span_quiz"></span>
-            </li>
-            <li>퀴즈 3에서 고정단의 단면에서 도심으로부터 \(50mm\) 위치에 발생하는 휨모멘트에 의한 부재 축방향 수직응력도를 계산하시오.<br />
-                <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
-                <input type="submit" class="submit_quiz" value="확인" answer="48.6111">
-                <span class="span_quiz"></span>
-            </li>
-            <li>퀴즈 3에서 고정단의 단면에서 도심으로부터 \(50mm\) 위치의 전단응력도를 계산하시오.<br />
-                <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
-                <input type="submit" class="submit_quiz" value="확인" answer="14.1782">
-                <span class="span_quiz"></span>
-            </li>
-            <li>퀴즈 3에서 고정단의 단면에서 도심으로부터 \(50mm\) 위치의 부재축에 직각인 방향, 즉 단면 높이방향으로 작용하는 수직응력도를 계산하시오.<br>
-                <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
-                <input type="submit" class="submit_quiz" value="확인" answer="0.00">
-                <span class="span_quiz"></span>
-            </li>
-            <li>퀴즈 6, 7, 8에서 계산한 응력도를 이용하여, 주응력도 \(\sigma_1\)을 계산하시오.<br>
-                <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
-                <input type="submit" class="submit_quiz" value="확인" answer="52.4442">
-                <span class="span_quiz"></span>
-            </li>
-            <li>퀴즈 9에서 주응력도 \(\sigma_2\)를 계산하시오.<br>
-                <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
-                <input type="submit" class="submit_quiz" value="확인" answer="-3.8331">
-                <span class="span_quiz"></span>
-            </li>
-            <li>퀴즈 9에서 주응력도 방향 \(\theta_p\)를 계산하시오.<br>
-                <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(^\circ\)
-                <input type="submit" class="submit_quiz" value="확인" answer="-15.1282">
-                <span class="span_quiz"></span>
-            </li>
-            <li>퀴즈 9에서 최대 전단응력도를 계산하시오.<br>
-                <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
-                <input type="submit" class="submit_quiz" value="확인" answer="28.1386">
-                <span class="span_quiz"></span>
-            </li>
-            <li>퀴즈 9에서 \(\theta_s\)를 계산하시오. 단, \(\theta_s < 0^\circ\)이다.<br />
-                <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(^\circ\)
-                <input type="submit" class="submit_quiz" value="확인" answer="-60.1282" hint="\(\theta_s = \theta_p\ \pm 45^\circ\)">
-                <span class="span_quiz"></span>
-            </li>
-        </ol><br />
-        <input type="submit" class="submit_eval" value="복습 퀴즈 평가" /><br />
-        <span class="span_eval"></span>
-    </div>-->
+        <div id="re_view_quiz" hidden>
+            <h3><a name="re_view_quiz"></a>복습 퀴즈</h3>
+            <ol class="ol_quiz">
+                <li>
+                    단면적 \(4,678mm^2\)이고 단면계수 \(481,000mm^3\)인 단면의 중심(도심)에서 \(750.5mm\)만큼 떨어진 곳에 압축력 \(53.3kN\)이 작용할 때, 조합응력도 중 인장측 최대 응력도 \(\sigma_t\)를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="71.7698" tolerance="1.0e1">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>
+                    퀴즈 1에서 조합응력도 중 압축측 최대 응력도 \(\sigma_c\)를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="-94.5573" tolerance="1.0e1">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>
+                    다음과 같이 편심축 하중이 작용하는 기둥에서 조합응력도 중 인장측 최대 응력도 \(\sigma_t\)를 계산하시오.<br />
+                    <p><img src="images\quiz.04.13.03.png" onload="this.width/=2;"></p>
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="-2.4683" tolerance="1.0e1">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>
+                    퀴즈 3에서 조합응력도 중 압축측 최대 응력도 \(\sigma_c\)를 계산하시오.
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="-22.2144" tolerance="1.0e1">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>
+                    다음과 같이 편심축 하중이 작용하는 기둥에서 조합응력도 중 인장측 최대 응력도 \(\sigma_t\)를 계산하시오.<br />
+                    <p><img src="images\quiz.04.13.05.png" onload="this.width/=2;"></p>
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="40.4998" tolerance="1.0e1">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>
+                    퀴즈 5에서 조합응력도 중 압축측 최대 응력도 \(\sigma_c\)를 계산하시오.
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="-107.2698" tolerance="1.0e1">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>
+                    다음과 같이 편심축 하중이 작용하는 기둥에서 편심거리 \(e = 0mm\)인 경우, 조합응력도 중 인장측 최대 응력도 \(\sigma_t\)를 계산하시오.<br />
+                    <p><img src="images\quiz.04.13.07.png" onload="this.width/=2;"></p>
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="-34.7222" tolerance="1.0e1">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>
+                    퀴즈 7에서 조합응력도 중 압축측 최대 응력도 \(\sigma_c\)를 계산하시오.
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="-34.7222" tolerance="1.0e1">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>
+                    퀴즈 7에서 편심거리 \(e = 40mm\)인 경우 조합응력도 중 인장측 최대 응력도 \(\sigma_t\)를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="-17.3611" tolerance="1.0e1">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>
+                    퀴즈 9에서 조합응력도 중 압축측 최대 응력도 \(\sigma_c\)를 계산하시오.
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="-52.0833" tolerance="1.0e1">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>
+                    퀴즈 7에서 편심거리 \(e = 80mm\)인 경우 조합응력도 중 인장측 최대 응력도 \(\sigma_t\)를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="0.0000" tolerance="1.0e1">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>
+                    퀴즈 11에서 조합응력도 중 압축측 최대 응력도 \(\sigma_c\)를 계산하시오.
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="-69.4444" tolerance="1.0e1">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>
+                    퀴즈 7에서 편심거리 \(e = 120mm\)인 경우 조합응력도 중 인장측 최대 응력도 \(\sigma_t\)를 계산하시오.<br />
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="17.3611" tolerance="1.0e1">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>
+                    퀴즈 13에서 조합응력도 중 압축측 최대 응력도 \(\sigma_c\)를 계산하시오.
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(MPa\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="-86.8056" tolerance="1.0e1">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>
+                    다음에서 단면의 핵의 폭 방향 길이 \(a\)를 계산하시오.<br />
+                    <p><img src="images\quiz.04.13.15.png" onload="this.width/=2;"></p>
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="100.0000">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>
+                    퀴즈 15에서 단면의 핵의 높이 방향 길이 \(c\)를 계산하시오.<br>
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="166.6667" tolerance="1.0e1">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>
+                    다음에서 단면의 핵의 지름 \(a\)를 계산하시오.<br>
+                    <p><img src="images\quiz.04.13.17.png" onload="this.width/=2;"></p>
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="100.0000">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>
+                    다음에서 단면의 도심에서 단면의 핵을 나타내는 마름모의 오른쪽 상단 변의 중심 \(C\)까지의 거리를 계산하시오.<br>
+                    <p><img src="images\quiz.04.13.18.png" onload="this.width/=2;"></p>
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="25.0000">
+                    <span class="span_quiz"></span>
+                </li>
+                <li>
+                    다음과 같은 원통형 단면에서 단면의 핵의 반지름을 계산하시오.<br>
+                    <p><img src="images\quiz.04.13.19.png" onload="this.width/=2;"></p>
+                    <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(mm\)
+                    <input type="submit" class="submit_quiz" value="확인" answer="58.0000">
+                    <span class="span_quiz"></span>
+                </li>
+            </ol><br />
+            <input type="submit" class="submit_eval" value="복습 퀴즈 평가" /><br />
+            <span class="span_eval"></span>
+        </div>
 
     </div>
 
