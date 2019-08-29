@@ -71,10 +71,10 @@
             <h3><a name="conjugate_beam"></a>공액보(conjugate beam)</h3>
             <ul>
                 <li>
-                    \(M(x)/EI\)를 분포하중으로 취급하고 그로부터 전단력 \(V(x)\)와 휨모멘트 \(M(x)\)를 계산하기 위해서는 실재 보를 가상의 공액보로 변경해야 한다.
+                    \(M(x)/EI\)를 분포하중으로 취급하고 그로부터 전단력 \(V(x)\)와 휨모멘트 \(M(x)\)를 계산하기 위해서는 실제 보를 가상의 공액보로 변경해야 한다.
                 </li>
                 <li>
-                    공액보는 실재 보의 지점과 절점을 다음과 같이 치환한 것이다.
+                    공액보는 실제 보의 지점과 절점을 다음과 같이 치환한 것이다.
                     <ul>
                         <li><em>회전단과 이동단은 그대로 유지</em></li>
                         <li><em>고정단은 자유단으로, 자유단은 고정단으로 치환</em></li>
@@ -88,7 +88,7 @@
                     구조물 전체를 대상으로 자유물체도를 작성하고 평형조건식을 적용하여 지점반력을 계산한다. 이를 바탕으로 <em>M/EI 다이어그램</em>을 작성한다.
                 </li>
                 <li>
-                    실재 보의 지점과 절점을 치환하여 가상의 공액보로 변경한다.
+                    실제 보의 지점과 절점을 치환하여 가상의 공액보로 변경한다.
                 </li>
                 <li>
                     \(-\) 부호를 반영하여 <em>M/EI 다이어그램</em>을 \(x\)축에 대칭으로 변환하고 공액보에 하중으로 설정한다. 이때 하중은 항상 부재의 축을 향하도록 한다.
@@ -122,7 +122,7 @@
                             <p><img class="top_margin" src="images\05.04.03.png" onload="this.width/=2;"></p>
                         </li>
                         <li>
-                            실재 보의 고정단을 자유단으로, 자유단을 고정단으로 치환하여 다음과 같은 <em>공액보로 변경</em>한다.
+                            실제 보의 고정단을 자유단으로, 자유단을 고정단으로 치환하여 다음과 같은 <em>공액보로 변경</em>한다.
                             <p><img src="images\05.04.04.png" onload="this.width/=2;"></p>
                         </li>
                         <li>
@@ -131,7 +131,7 @@
                         </li>
                         <li>
                             이 문제에서는 자유단의 처짐각과 처짐을 계산해야 한다. 
-                            때문에, 다음과 같이 <em>자유물체도를 그리고 평형조건식을 적용</em>하여 실재 보의 자유단 위치인 공액보의 고정단에 작용하는 전단력 \(V'\)과 휨모멘트 \(M'\)을 계산한다. 
+                            때문에, 다음과 같이 <em>자유물체도를 그리고 평형조건식을 적용</em>하여 실제 보의 자유단 위치인 공액보의 고정단에 작용하는 전단력 \(V'\)과 휨모멘트 \(M'\)을 계산한다. 
                             <p><img src="images\05.04.06.png" onload="this.width/=2;"></p>
                             $$ \Sigma F_y = L \times \frac{PL}{EI} \times \frac{1}{2} - V' = 0; \quad V' = \frac{PL^2}{2EI} \\
                             \Sigma M_{V'} = -\left( L \times \frac{PL}{EI} \times \frac{1}{2} \right) \times \frac{2L}{3} + M' = 0; \quad M' = \frac{PL^3}{3EI} $$
@@ -157,7 +157,7 @@
                             <p><img class="top_margin" src="images\05.04.07.png" onload="this.width/=2;"></p>
                         </li>
                         <li>
-                            실재 보의 고정단을 자유단으로, 자유단을 고정단으로 치환하여 다음과 같은 <em>공액보로 변경</em>한다.
+                            실제 보의 고정단을 자유단으로, 자유단을 고정단으로 치환하여 다음과 같은 <em>공액보로 변경</em>한다.
                             <p><img class="top_margin" src="images\05.04.04.png" onload="this.width/=2;"></p>
                         </li>
                         <li>
@@ -166,7 +166,7 @@
                         </li>
                         <li>
                             이 문제에서는 자유단의 처짐각과 처짐을 계산해야 한다. 
-                            때문에, 다음과 같이 <em>자유물체도를 그리고 평형조건식을 적용</em>하여 실재 보의 자유단 위치인 공액보의 고정단에 작용하는 전단력 \(V'\)과 휨모멘트 \(M'\)을 계산한다. 
+                            때문에, 다음과 같이 <em>자유물체도를 그리고 평형조건식을 적용</em>하여 실제 보의 자유단 위치인 공액보의 고정단에 작용하는 전단력 \(V'\)과 휨모멘트 \(M'\)을 계산한다. 
                             <p><img src="images\05.04.09.png" onload="this.width/=2;"></p>
                             $$ \Sigma F_y = L \times \frac{wL^2}{2EI} \times \frac{1}{3} - V' = 0; \quad V' = \frac{wL^3}{6EI} \\
                             \Sigma M_{V'} = -\left( L \times \frac{wL^2}{2EI} \times \frac{1}{3} \right) \times \frac{3L}{4} + M' = 0; \quad M' = \frac{wL^4}{8EI} $$
@@ -192,7 +192,7 @@
                             <p><img src="images\05.04.10.png" onload="this.width/=2;"></p>
                         </li>
                         <li>
-                            실재 보가 단순보이므로, 양단의 회전단과 이동단을 그대로 유지한다. 따라서 공액보는 실재 보와 동일하다.
+                            실제 보가 단순보이므로, 양단의 회전단과 이동단을 그대로 유지한다. 따라서 공액보는 실제 보와 동일하다.
                         </li>
                         <li>
                             M/EI 다이어그램을 \(x\)축에 대칭으로 변환하고 부재의 축을 향하도록 하여 다음과 같이 공액보에 <em>하중으로 설정</em>한다.
@@ -232,7 +232,7 @@
                             <p><img src="images\05.04.13.png" onload="this.width/=2;"></p>
                         </li>
                         <li>
-                            실재 보가 단순보이므로, 양단의 회전단과 이동단을 그대로 유지한다. 따라서 공액보는 실재 보와 동일하다.
+                            실제 보가 단순보이므로, 양단의 회전단과 이동단을 그대로 유지한다. 따라서 공액보는 실제 보와 동일하다.
                         </li>
                         <li>
                             M/EI 다이어그램을 \(x\)축에 대칭으로 변환하고 부재의 축을 향하도록 하여 다음과 같이 공액보에 <em>하중으로 설정</em>한다.
@@ -272,7 +272,7 @@
                             <p><img class="top_margin" src="images\05.04.16.png" onload="this.width/=2;"></p>
                         </li>
                         <li>
-                            실재 보가 단순보이므로, 양단의 회전단과 이동단을 그대로 유지한다. 따라서 공액보는 실재 보와 동일하다.
+                            실제 보가 단순보이므로, 양단의 회전단과 이동단을 그대로 유지한다. 따라서 공액보는 실제 보와 동일하다.
                         </li>
                         <li>
                             M/EI 다이어그램을 \(x\)축에 대칭으로 변환하고 부재의 축을 향하도록 하여 다음과 같이 공액보에 <em>하중으로 설정</em>한다.
@@ -318,12 +318,12 @@
                     <input type="submit" class="submit_quiz" value="확인" answer="6.00" hint="집중하중에 의한 M/EI 다이어그램은 1차식이므로, M/EI의 최대값과 부재 길이의 곱">
                     <span class="span_quiz"></span>
                 </li>
-                <li>퀴즈 1에서 실재 보의 자유단은 공액보에서 무엇으로 치환되는지 쓰시오.<br />
+                <li>퀴즈 1에서 실제 보의 자유단은 공액보에서 무엇으로 치환되는지 쓰시오.<br />
                     <input type="text" class="input_quiz" placeholder="답을 입력하세요" ondrop="return false;" onpaste="return false;">
                     <input type="submit" class="submit_quiz" value="확인" answer="고정단" hint="자유단 <=> 고정단, 회전단과 이동단은 동일, 내부 힌지 절점 <=> 내부 이동단">
                     <span class="span_quiz"></span>
                 </li>
-                <li>퀴즈 1에서 실재 보의 고정단은 공액보에서 무엇으로 치환되는지 쓰시오.<br />
+                <li>퀴즈 1에서 실제 보의 고정단은 공액보에서 무엇으로 치환되는지 쓰시오.<br />
                     <input type="text" class="input_quiz" placeholder="답을 입력하세요" ondrop="return false;" onpaste="return false;">
                     <input type="submit" class="submit_quiz" value="확인" answer="자유단" hint="자유단 <=> 고정단, 회전단과 이동단은 동일, 내부 힌지 절점 <=> 내부 이동단">
                     <span class="span_quiz"></span>
@@ -344,7 +344,7 @@
                     <input type="submit" class="submit_quiz" value="확인" answer="2.25" hint="포물선(2차곡선)의 면적은 직사각형 면적의 2/3">
                     <span class="span_quiz"></span>
                 </li>
-                <li>퀴즈 6에서 실재 보의 왼쪽 끝단은 공액보에서 무엇으로 치환되는지 쓰시오.<br />
+                <li>퀴즈 6에서 실제 보의 왼쪽 끝단은 공액보에서 무엇으로 치환되는지 쓰시오.<br />
                     <input type="text" class="input_quiz" placeholder="답을 입력하세요" ondrop="return false;" onpaste="return false;">
                     <input type="submit" class="submit_quiz" value="확인" answer="회전단" hint="자유단 <=> 고정단, 회전단과 이동단은 동일, 내부 힌지 절점 <=> 내부 이동단">
                     <span class="span_quiz"></span>
@@ -375,7 +375,7 @@
                     <input type="submit" class="submit_quiz" value="확인" answer="2.00" hint="집중하중에 의한 M/EI 다이어그램은 1차식으므로, M/EI의 최대값과 부재 길이의 곱">
                     <span class="span_quiz"></span>
                 </li>
-                <li>퀴즈 11에서 실재 보의 오른쪽 끝단은 공액보에서 무엇으로 치환되는지 쓰시오.<br />
+                <li>퀴즈 11에서 실제 보의 오른쪽 끝단은 공액보에서 무엇으로 치환되는지 쓰시오.<br />
                     <input type="text" class="input_quiz" placeholder="답을 입력하세요" ondrop="return false;" onpaste="return false;">
                     <input type="submit" class="submit_quiz" value="확인" answer="이동단" hint="자유단 <=> 고정단, 회전단과 이동단은 동일, 내부 힌지 절점 <=> 내부 이동단">
                     <span class="span_quiz"></span>
