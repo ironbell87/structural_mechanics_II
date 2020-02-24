@@ -43,28 +43,29 @@
             <h3><a name="truss"></a>정의</h3>
             <ul>
                 <li>
-                    트러스는 <font color="MediumVioletRed">인장력 또는 압축력</font>을 지지하는 부재들이 <font color="MediumVioletRed">3각형</font>의 집합체를 이루면서 절점에서 <font color="MediumVioletRed">힌지</font>로 접합된 <em>춤(depth)이 깊은 보</em>이다.
+                    트러스는 양 끝이 <em>회전절점</em>이어서 <em>인장력 또는 압축력</em>만을 지지하는 부재들이 <em>3각형</em>의 집합체를 이룬 <em>춤(depth)이 깊은 보</em>이다.
                 </li>
             </ul>
             <h3><a name="assumption"></a>부재력 계산을 위한 가정</h3>
             <ul>
-                <li>부재는 직선이며 <font color="MediumVioletRed">축력</font>만을 전달한다.</li>
-                <li>부재의 양 끝은 마찰이 없는 <font color="MediumVioletRed">회전절점</font>이다.</li>
-                <li>하중은 <font color="MediumVioletRed">절점</font>에서만 작용한다.</li>
+                <li>부재는 직선이며 <em>축력</em>만을 전달한다.</li>
+                <li>부재의 양 끝은 마찰이 없는 <em>회전절점</em>이다.</li>
+                <li>하중은 <em>절점</em>에서만 작용한다.</li>
             </ul>
             <h3><a name="procedure"></a>부재력 계산 절차</h3>
             <ol>
                 <li>전체를 대상으로 자유물체도를 작성한다.</li>
                 <li>전체의 자유물체도에서 평형조건식을 이용하여 지점반력을 계산한다.</li>
-                <li><font color="MediumVioletRed">부재력이 \(0\)인 \(0\)부재와 부재력의 크기가 같은 부재</font>를 찾는다.<p><img src="images\03.06.01.png" width="564" height="84"></p></li>
-                <li><font color="MediumVioletRed">필요한 부분을 절단</font>하여 부분의 자유물체도를 작성한다. 이때 <font color="MediumVioletRed">부재력은 축력만 포함</font>한다.</li>
+                <li><em>부재력이 \(0\)인 \(0\)부재와 부재력의 크기가 같은 부재</em>를 찾는다.<p><img src="images\03.06.01.png" width="564" height="84"></p></li>
+                <li><em>필요한 부분을 절단</em>하여 부분의 자유물체도를 작성한다. 이때 <em>부재력은 축력만 포함</em>한다.</li>
                 <li>부분의 자유물체도에서 평형조건식을 적용하여 축력을 계산한다.</li>
-                <li>축을 <font color="MediumVioletRed">인장력으로 가정</font>하고 계산 결과가 음수면 압축력, 양수이면 인장력으로 한다.</li>
+                <li>축을 <em>인장력으로 가정</em>하고 계산 결과가 음수면 압축력, 양수이면 인장력으로 한다.</li>
             </ol>
             <ul>
                 <li>
                     <a href="" class="li_test">확인 질문</a>
-                    <div hidden>다음에서 \(0\)부재의 수를 계산하시오.<br /><img src="images\test.03.06.01.png" width="224" height="129"><br />
+                    <div hidden>
+                        다음에서 \(0\)부재의 수를 계산하시오.<br /><img src="images\test.03.06.01.png" width="224" height="129"><br />
                         <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> 개
                         <input type="submit" class="submit_quiz" value="확인" answer="1">
                         <span class="span_quiz"></span>
@@ -77,7 +78,7 @@
                     하나의 절점을 선택한다. 처음의 절점은 부재 수가 2개 이하이어야 한다.
                 </li>
                 <li>
-                    <font color="MediumVioletRed">선택한 절점에 연결된 모든 부재</font>들을 절단하여 자유물체도를 작성한다.
+                    <em>선택한 절점에 연결된 모든 부재</em>들을 절단하여 자유물체도를 작성한다.
                 </li>
                 <li>
                     자유물체도에 평형조건식을 적용하여 축력을 계산한다.
@@ -122,7 +123,7 @@
             <h3><a name="sectional_method"></a>절단법</h3>
             <ul>
                 <li>
-                    <font color="MediumVioletRed">부재력을 구하고 싶은 부재</font>들을 절단하여 자유물체도를 작성한다.
+                    <em>부재력을 구하고 싶은 부재</em>들을 절단하여 자유물체도를 작성한다.
                 </li>
                 <li>
                     자유물체도에 평형조건식을 적용하여 축력을 계산한다.
@@ -166,52 +167,62 @@
         <div id="re_view_quiz" hidden>
             <h3><a name="re_view_quiz"></a>복습 퀴즈</h3>
             <ol class="ol_quiz">
-                <li>다음에서 \(0\)부재의 수를 계산하시오.<br><img src="images\quiz.03.06.01.png" width="290" height="311"><br />
+                <li>
+                    다음에서 \(0\)부재의 수를 계산하시오.<br><img src="images\quiz.03.06.01.png" width="290" height="311"><br />
                     <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> 개
                     <input type="submit" class="submit_quiz" value="확인" answer="5">
                     <span class="span_quiz"></span>
                 </li>
-                <li>다음에서 축력 AC를 계산하시오.<br><img src="images\quiz.03.06.02.png" width="349" height="204"><br />
+                <li>
+                    다음에서 축력 AC를 계산하시오.<br><img src="images\quiz.03.06.02.png" width="349" height="204"><br />
                     <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(kN\)
                     <input type="submit" class="submit_quiz" value="확인" answer="5">
                     <span class="span_quiz"></span>
                 </li>
-                <li>퀴즈 2에서 축력 AB를 계산하시오.<br />
+                <li>
+                    퀴즈 2에서 축력 AB를 계산하시오.<br />
                     <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(kN\)
                     <input type="submit" class="submit_quiz" value="확인" answer="20">
                     <span class="span_quiz"></span>
                 </li>
-                <li>퀴즈 2에서 축력 BC를 계산하시오.<br />
+                <li>
+                    퀴즈 2에서 축력 BC를 계산하시오.<br />
                     <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(kN\)
                     <input type="submit" class="submit_quiz" value="확인" answer="-25">
                     <span class="span_quiz"></span>
                 </li>
-                <li>다음에서 축력 DF를 계산하시오.<br><img src="images\quiz.03.06.05.png" width="278" height="202"><br />
+                <li>
+                    다음에서 축력 DF를 계산하시오.<br><img src="images\quiz.03.06.05.png" width="278" height="202"><br />
                     <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(kN\)
                     <input type="submit" class="submit_quiz" value="확인" answer="15">
                     <span class="span_quiz"></span>
                 </li>
-                <li>퀴즈 5에서 축력 BC를 계산하시오.<br />
+                <li>
+                    퀴즈 5에서 축력 BC를 계산하시오.<br />
                     <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(kN\)
                     <input type="submit" class="submit_quiz" value="확인" answer="-5">
                     <span class="span_quiz"></span>
                 </li>
-                <li>퀴즈 5에서 축력 DC를 계산하시오.<br />
+                <li>
+                    퀴즈 5에서 축력 DC를 계산하시오.<br />
                     <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(kN\)
                     <input type="submit" class="submit_quiz" value="확인" answer="-14.1421">
                     <span class="span_quiz"></span>
                 </li>
-                <li>다음에서 \(0\)부재의 수를 계산하시오.<br><img src="images\quiz.03.06.08.png" width="249" height="302"><br />
+                <li>
+                    다음에서 \(0\)부재의 수를 계산하시오.<br><img src="images\quiz.03.06.08.png" width="249" height="302"><br />
                     <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> 개
                     <input type="submit" class="submit_quiz" value="확인" answer="1">
                     <span class="span_quiz"></span>
                 </li>
-                <li>퀴즈 8에서 축력 EF를 계산하시오.<br />
+                <li>
+                    퀴즈 8에서 축력 EF를 계산하시오.<br />
                     <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(kN\)
                     <input type="submit" class="submit_quiz" value="확인" answer="0">
                     <span class="span_quiz"></span>
                 </li>
-                <li>퀴즈 8에서 축력 FD를 계산하시오.<br />
+                <li>
+                    퀴즈 8에서 축력 FD를 계산하시오.<br />
                     <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(kN\)
                     <input type="submit" class="submit_quiz" value="확인" answer="-3">
                     <span class="span_quiz"></span>
@@ -279,6 +290,110 @@
             </ol><br />
             <input type="submit" class="submit_eval" value="복습 퀴즈 평가" /><br />
             <span class="span_eval"></span>
+        </div>
+
+        <!--########## PROBLEM ##########-->
+        <div id="problem">
+            <div class="separator"></div>
+            <h3><a name="problem"></a>연습 문제</h3>
+            <ol>
+                <li>
+                    문제 : 다음 트러스에서 모든 부재력을 구하시오.<br />
+                    <img src="images\prob.03.06.01.q.png" onload="this.width/=2;"><br />
+                    정답 : \(AB = -5\sqrt2kN, \, BC = 5kN, \, AC = 0kN\)
+                </li>
+                <li>
+                    문제 : 다음 트러스에서 모든 부재력을 구하시오.<br />
+                    <img src="images\prob.03.06.02.q.png" onload="this.width/=2;"><br />
+                    정답 : \(AF = 9\sqrt3kN = BF, \, AC = -18kN = BE, \, CD = -12kN = DE, \, CF = -6kN = EF, \, DF = 6kN\)
+                </li>
+                <li>
+                    문제 : 다음 트러스에서 부재력 CD, DF, FG를 구하시오.<br />
+                    <img src="images\prob.03.06.03.q.png" onload="this.width/=2;"><br />
+                    정답 : \(CD = 27/4kN, \, DF = 5/4kN, \, FG = -15/2kN\)
+                </li>
+                <li>
+                    문제 : 다음 트러스에서 부재력 AC, CD, DE를 구하시오.<br />
+                    <img src="images\prob.03.06.04.q.png" onload="this.width/=2;"><br />
+                    정답 : \(AC = 6\sqrt3kN, \, CD = -4kN, \, DE = -8kN\)
+                </li>
+                <li>
+                    문제 : 다음 트러스에서 0부재를 구하시오.<br />
+                    <img src="images\prob.03.06.05.q.png" onload="this.width/=2;"><br />
+                    정답 : \(CD, DE, EF, BH, AG\)
+                </li>
+                <li>
+                    문제 : 다음 트러스에서 모든 부재력을 구하시오.<br />
+                    <img src="images\prob.03.06.06.q.png" onload="this.width/=2;"><br />
+                    정답 : \(AF = 9\sqrt3kN = BF, \, AC = -18kN = BE, \, CD = -12kN = DE, \, CF = -6kN = EF, \, DF = 6kN\)
+                </li>
+                <li>
+                    문제 : 다음 트러스에서 모든 부재력을 구하시오.<br />
+                    <img src="images\prob.03.06.07.q.png" onload="this.width/=2;"><br />
+                    정답 : \(AC = 20kN = CD, \, AE = -20\sqrt{13}/3kN, \, CE = 10kN, \, BD = 25kN\)
+                    \(BF = -25\sqrt{13}/3kN, \, EF = -25kN, \, DF = 50/3kN, \, DE = 5\sqrt{13}/3kN\)
+                </li>
+                <li>
+                    문제 : 다음 트러스에서 모든 부재력을 구하시오.<br />
+                    <img src="images\prob.03.06.08.q.png" onload="this.width/=2;"><br />
+                    정답 : \(AC = 6kN = CB, \, AD = 15/4kN, \, CD = 0kN\)
+                    \(BD = -15/2kN, \, BE = -27/4kN, \, DE = 45/4kN\)
+                </li>
+                <li>
+                    문제 : 다음 트러스에서 모든 부재력을 구하시오.<br />
+                    <img src="images\prob.03.06.09.q.png" onload="this.width/=2;"><br />
+                    정답 : \(AB = 7kN = DE, \, AF = -7\sqrt2kN = EH, \, BF = 3kN = DH, \, BC = 10kN = CD\)
+                    \(BG = -3\sqrt2kN = DG, \, FG = -7kN = GH, \, CG = 0kN\)
+                </li>
+                <li>
+                    문제 : 다음 트러스에서 모든 부재력을 구하시오.<br />
+                    <img src="images\prob.03.06.10.q.png" onload="this.width/=2;"><br />
+                    정답 : \(AB = 0kN = DE, \, AF = -24kN = EJ, \, FG = -36kN = IJ, \, BF = 18\sqrt5kN = DJ, \, BG = -18kN = DI\)
+                    \(BC = 36kN = CD, \, CG = 6\sqrt5kN = CI, \, GH = -48kN = HI, \, CH = -12kN\)
+                </li>
+                <li>
+                    문제 : 다음 트러스에서 부재력 AB, AC, BC를 구하시오.<br />
+                    <img src="images\prob.03.06.11.q.png" onload="this.width/=2;"><br />
+                    정답 : \(AB = -32kN, \, AC = 40kN, \, BC = 10\sqrt{10}kN\)
+                </li>
+                <li>
+                    문제 : 다음 트러스에서 부재력 BC, FG, BG, CG를 구하시오.<br />
+                    <img src="images\prob.03.06.12.q.png" onload="this.width/=2;"><br />
+                    정답 : \(BC = 18kN, \, FG = -13kN, \, BG = -5\sqrt2kN, \, CG = 10kN\)
+                </li>
+                <li>
+                    문제 : 다음 트러스에서 부재력 BC, FC, FG, BF를 구하시오.<br />
+                    <img src="images\prob.03.06.13.q.png" onload="this.width/=2;"><br />
+                    정답 : \(BC = 18kN, \, FC = -2\sqrt{13}kN, \, FG = -4\sqrt{13}kN, \, BF = 0kN\)
+                </li>
+                <li>
+                    문제 : 다음 트러스에서 부재력 BC, CD, DE, BD를 구하시오.<br />
+                    <img src="images\prob.03.06.14.q.png" onload="this.width/=2;"><br />
+                    정답 : \(BC = -25/3kN, \, CD = -5\sqrt{34}kN, \, DE = 100/3kN, \, BD = 10kN\)
+                </li>
+                <li>
+                    문제 : 다음 트러스에서 부재력 CE, CF, DF를 구하시오.<br />
+                    <img src="images\prob.03.06.15.q.png" onload="this.width/=2;"><br />
+                    정답 : \(CE = 8kN, \, CF = 20kN, \, DF = -6\sqrt{17}kN\)
+                </li>
+                <li>
+                    문제 : 다음 트러스에서 부재력 HB, CD, IJ, DI, DJ를 구하시오.<br />
+                    <img src="images\prob.03.06.16.q.png" onload="this.width/=2;"><br />
+                    정답 : \(HB = 5kN, \, CD = 155/3kN, \, IJ = -20kN, \, ID = 5\sqrt{34}/3kN, \, DJ = -10kN\)
+                </li>
+                <li>
+                    문제 : 다음 트러스에서 모든 부재력을 구하시오.<br />
+                    <img src="images\prob.03.06.17.q.png" onload="this.width/=2;"><br />
+                    정답 : \(AB = -40kN = CD, \, AE = 40\sqrt2kN = GD, \, BE = -40\sqrt2kN = CG\)
+                    \(EF = 80kN = FG, \, BF = 0kN = CF, \, BC = -80kN\)
+                </li>
+                <li>
+                    문제 : 다음 트러스에서 모든 부재력을 구하시오.<br />
+                    <img src="images\prob.03.06.18.q.png" onload="this.width/=2;"><br />
+                    정답 : \(AB = 0kN = BC, \, AD = -100kN = CF, \, DE = -200/3kN = EF\)
+                    \(BD = 250/3kN = BF, \, BE = -100kN\)
+                </li>
+            </ol>
         </div>
 
     </div>

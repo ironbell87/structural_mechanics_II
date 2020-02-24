@@ -85,13 +85,14 @@ $(document).ready(function () {
             // get string
             var m_prefix = "평가결과는 " + m_score.toFixed(1) + "점으로 ";
             if (m_score >= 60) {
-                m_response = "기준(60/100) 이상입니다. 100점에 도전해 보세요."
+                m_response = "기준(60/100) 이상입니다. 100점에 도전해 보세요. 연습문제에도 도전해 보세요."
                 if (m_score == 100) {
-                    m_response = "매우 우수합니다. 다음 학습에 도전해 보세요."
+                    m_response = "매우 우수합니다. 연습문제에도 꼭 도전해 보세요."
                     $(".submit_eval").val("학습목차로 가기");
                     $(".submit_eval").css("background-color", "#ff6f6f"); // change the bg-color
                 }
                 $(".span_eval").css("color", "#ff6f6f"); // change the color
+                $('#problem').slideDown(1500 / 3); // show problems within 0.5s (1500/3)
             }
             else {
                 m_response = "기준(60/100) 이하입니다. 충실하게 다시 학습해 보세요.";

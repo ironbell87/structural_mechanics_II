@@ -12,7 +12,7 @@ $(document).ready(function () {
     ga('send', 'pageview');
 
     // favicon for all pages
-    $('head').append('<link rel="icon" href="/images/ironbell_icon.png">'); // slash('/') at the first = website root
+    $('head').append('<link rel="icon" href="https://ironbell87.github.io/structural_mechanics_II/images/ironbell_icon.png">');
 
     // get login id from sesseionStorage
     if (sessionStorage.login != undefined) {

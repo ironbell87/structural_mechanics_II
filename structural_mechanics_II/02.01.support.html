@@ -40,10 +40,10 @@
             <h3><a name="support"></a>지지/지점(support)</h3>
             <ul>
                 <li>
-                    구조물이 이동 또는 회전하지 않도록 하는 것을 "구조물을 지지한다"라고 하며, 구조물을 지지하기 위해서 구조물이 <font color="MediumVioletRed">외부</font>와 <font color="MediumVioletRed">물리적</font>으로 연결되는 <font color="MediumVioletRed">부분 또는 점</font>을 지점이라 한다.
+                    구조물이 이동 또는 회전하지 않도록 하는 것을 "구조물을 지지한다"라고 하며, 구조물을 지지하기 위해서 구조물이 <em>외부</em>와 <em>물리적</em>으로 연결되는 <em>부분 또는 점</em>을 지점이라 한다.
                 </li>
                 <li>
-                    따라서 지지된 구조물은 지점이 있고, <font color="MediumVioletRed">지점에 의해서 이동과 회전이 발생하지 않</font>는다. 그리고 이동과 회전이 없다는 것은 <font color="MediumVioletRed">평형조건식\( \left( \sum F_x=0, \, \sum F_y=0, \, \sum M_z=0 \right) \)을 모두 만족</font>시킨다는 것을 의미한다.
+                    따라서 지지된 구조물은 지점이 있고, <em>지점에 의해서 이동과 회전이 발생하지 않</em>는다. 그리고 이동과 회전이 없다는 것은 <em>평형조건식\( \left( \sum F_x=0, \, \sum F_y=0, \, \sum M_z=0 \right) \)을 모두 만족</em>시킨다는 것을 의미한다.
                 </li>
                 <li>
                     만약 구조물이 적절히 지지되지 못하면 평형조건식의 일부 또는 전부를 만족시키지 못하게 된다.
@@ -60,27 +60,27 @@
             <h3><a name="support_reaction_definition"></a>반력(reaction)/지점반력(support reaction)</h3>
             <ul>
                 <li>
-                    구조물이 지지되었다는 것은 구조물에 작용하는 외부의(external) 하중(load), 즉 <font color="MediumVioletRed">외부의 힘(external force, 외력)이 지점을 통해서 구조물의 외부로 전달</font>되는 것을 의미한다.
+                    구조물이 지지되었다는 것은 구조물에 작용하는 외부의(external) 하중(load), 즉 <em>외부의 힘(external force, 외력)이 지점을 통해서 구조물의 외부로 전달</em>되는 것을 의미한다.
                 </li>
                 <li>
-                    아래 그림 왼쪽과 같이 외력 \(P\)가 작용하면 <font color="MediumVioletRed">구조물을 물리적인 통로로 하여 지점까지 전달</font>되어 \(P'\)이 작용하고, 지점에서 작용-반작용 법칙에 의해서 반작용(reaction, 반력) \(P''\)이 발생한다. 이때 <font color="MediumVioletRed">\(P'\)은 지점에 작용하고 반력 \(P''\)은 구조물에 작용</font>한다.
+                    아래 그림 왼쪽과 같이 외력 \(P\)가 작용하면 <em>구조물을 물리적인 통로로 하여 지점까지 전달</em>되어 \(P'\)이 작용하고, 지점에서 작용-반작용 법칙에 의해서 반작용(reaction, 반력) \(P''\)이 발생한다. 이때 <em>\(P'\)은 지점에 작용하고 반력 \(P''\)은 구조물에 작용</em>한다.
                     <p><img src="images\02.01.01.png" width="407" height="50"></p>
                 </li>
                 <li>
-                    위 그림 중앙은 <font color="MediumVioletRed">구조물과 그에 작용하는 힘만을 표시한 자유물체도(free body diagram)</font>이다. 왼쪽의 힘 \(P\)는 외력이고, 오른쪽의 힘 \(P''\)은 반력으로서 지점에서 발생한 반력이므로 <font color="MediumVioletRed">지점반력</font>이라고도 한다.
+                    위 그림 중앙은 <em>구조물과 그에 작용하는 힘만을 표시한 자유물체도(free body diagram)</em>이다. 왼쪽의 힘 \(P\)는 외력이고, 오른쪽의 힘 \(P''\)은 반력으로서 지점에서 발생한 반력이므로 <em>지점반력</em>이라고도 한다.
                 </li>
                 <li>
-                    왼쪽의 외력 \(P\)와 오른쪽의 지점반력 \(P''\)은 크기가 같고 방향이 반대이므로, 구조물에 작용한 \(x\)방향의 모든 힘을 합성한 합력의 크기가 0, 즉 \(x\)방향 <font color="MediumVioletRed">평형조건식을 만족</font>시킨다\(\left( \sum F_x = P - P'' = 0 \right)\). 따라서 구조물은 \(x\)방향으로 <font color="MediumVioletRed">이동하지 않</font>는다.
+                    왼쪽의 외력 \(P\)와 오른쪽의 지점반력 \(P''\)은 크기가 같고 방향이 반대이므로, 구조물에 작용한 \(x\)방향의 모든 힘을 합성한 합력의 크기가 0, 즉 \(x\)방향 <em>평형조건식을 만족</em>시킨다\(\left( \sum F_x = P - P'' = 0 \right)\). 따라서 구조물은 \(x\)방향으로 <em>이동하지 않</em>는다.
                 </li>
                 <li>
-                    이로부터, <font color="MediumVioletRed">지점반력이 발생하면 평형조건식을 만족시켜 구조물의 이동과 회전이 없</font>으며, 역으로 <font color="MediumVioletRed">구조물의 이동과 회전이 없다면 평형조건식이 만족되고 지점반력이 발생</font>한다는 것을 알 수 있다. 간단히 기술하면 다음과 같다.
-                    <font color="MediumVioletRed">
+                    이로부터, <em>지점반력이 발생하면 평형조건식을 만족시켜 구조물의 이동과 회전이 없</em>으며, 역으로 <em>구조물의 이동과 회전이 없다면 평형조건식이 만족되고 지점반력이 발생</em>한다는 것을 알 수 있다. 간단히 기술하면 다음과 같다.
+                    <em>
                         <p>지점 ➜ 지점반력 ➜ 평형조건식 만족 ➜ 이동 및 회전 불가</p>
                         <p>지점 ➜ 이동 및 회전 불가 ➜ 평형조건식 만족 ➜ 지점반력</p>
-                    </font>
+                    </em>
                 </li>
                 <li>
-                    이와 같이 <font color="MediumVioletRed">외력과 지점반력은 발생한 원인은 다르지만, 모두 구조물에 작용</font>하는 힘으로서 구조물의 거동, 즉 <font color="MediumVioletRed">평형조건식과 이동 및 회전에 영향</font>을 미친다.
+                    이와 같이 <em>외력과 지점반력은 발생한 원인은 다르지만, 모두 구조물에 작용</em>하는 힘으로서 구조물의 거동, 즉 <em>평형조건식과 이동 및 회전에 영향</em>을 미친다.
                 </li>
             </ul>
             <h3><a name="support_point"></a>지점의 종류</h3>
@@ -112,7 +112,7 @@
             <h3><a name="support_reaction"></a>지점반력의 종류와 역할</h3>
             <ul>
                 <li>
-                    지점반력은 오로지 <font color="MediumVioletRed">지점에만 작용</font>하며, 종류로는 \(xy\)평면(\(z\)평면)의 경우, 지점반력에는 \(x\)방향의 힘, \(y\)방향의 힘, \(z\)방향의 모멘트가 있다.
+                    지점반력은 오로지 <em>지점에만 작용</em>하며, 종류로는 \(xy\)평면(\(z\)평면)의 경우, 지점반력에는 \(x\)방향의 힘, \(y\)방향의 힘, \(z\)방향의 모멘트가 있다.
                 </li>
                 <li>
                     \(x\)방향의 힘은 \(x\)축 방향으로 작용하며 구조물이 \(x\)방향으로 이동하는 것을 방지한다.

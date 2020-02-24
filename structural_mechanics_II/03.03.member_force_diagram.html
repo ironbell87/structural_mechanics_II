@@ -40,13 +40,13 @@
             <h3><a name="member_force_diagram"></a>부재력도(member force diagram)</h3>
             <ul>
                 <li>
-                    부재 내의 모든 위치에서 부재력이 발생하고 각 위치마다 그 크기가 서로 다를 수 있으므로, 부재력의 <font color="MediumVioletRed">최대값과 최소값의 위치와 그 크기</font>를 파악하는 것이 중요하다.
+                    부재 내의 모든 위치에서 부재력이 발생하고 각 위치마다 그 크기가 서로 다를 수 있으므로, 부재력의 <em>최대값과 최소값의 위치와 그 크기</em>를 파악하는 것이 중요하다.
                 </li>
                 <li>
-                    따라서 부재력의 최대값과 최소값을 보다 편리하게 파악할 수 있도록 <font color="MediumVioletRed">부재의 위치를 \(x\)축으로 설정하고 그래프를 작성</font>하는데, 이를 부재력도(member force diagram)라 한다.
+                    따라서 부재력의 최대값과 최소값을 보다 편리하게 파악할 수 있도록 <em>부재의 위치를 \(x\)축으로 설정하고 그래프를 작성</em>하는데, 이를 부재력도(member force diagram)라 한다.
                 </li>
                 <li>
-                    부재력도는 부재력의 종류에 따라 <font color="MediumVioletRed">축력도(axial force diagram, AFD), 전단력도(shear force diagram, SFD), 휨모멘트도(bending moment diagram, BMD)</font>가 있다. 아래 그림과 같이 AFD와 SFD는 위쪽이 양의 축이지만 <font color="MediumVioletRed">BMD는 반대로 아래쪽이 양의 축</font>이다.
+                    부재력도는 부재력의 종류에 따라 <em>축력도(axial force diagram, AFD), 전단력도(shear force diagram, SFD), 휨모멘트도(bending moment diagram, BMD)</em>가 있다. 아래 그림과 같이 AFD와 SFD는 위쪽이 양의 축이지만 <em>BMD는 반대로 아래쪽이 양의 축</em>이다.
                     <p><img src="images\03.03.01.png" width="563" height="129"></p>
                 </li>
                 <li>
@@ -69,14 +69,14 @@
             <h3><a name="relation_equation"></a>하중 \(w(x)\), 전단력 \(V(x)\), 휨모멘트 \(M(x)\)의 관계식</h3>
             <ul>
                 <li>
-                    아래 그림 왼쪽과 같이 <font color="MediumVioletRed">임의의 분포하중을 받는 구조물</font>에서 <font color="MediumVioletRed">기준점으로부터 양의 방향(오른쪽 방향)으로 \(x\)만큼 떨어진 위치</font>의 <font color="MediumVioletRed">미소구간 \(dx\) 부분</font>을 가상으로 절단하여 자유물체도를 그리면 아래 그림 오른쪽과 같다.
+                    아래 그림 왼쪽과 같이 <em>임의의 분포하중을 받는 구조물</em>에서 <em>기준점으로부터 양의 방향(오른쪽 방향)으로 \(x\)만큼 떨어진 위치</em>의 <em>미소구간 \(dx\) 부분</em>을 가상으로 절단하여 자유물체도를 그리면 아래 그림 오른쪽과 같다.
                     <img src="images\03.03.02.png" width="520" height="164">
                 </li>
                 <li>
                     자유물체도에는 미소구간 \(dx\)의 구조물, 외력인 분포하중 \(w(x)\), 절점인 왼쪽 단면과 오른쪽 단면에는 각각 전단력 \(V(x), \, V(x)+dV(x)\)와 휨모멘트 \(M(x), \, M(x)+dM(x)\)가 표시되어 있다. 왼쪽 단면과 오른쪽 단면의 부재력의 차이는 \(dV(x), \, dM(x)\)로 표시되었으며, 방향은 부재력으로서의 양의 방향으로 표시되어 있다.
                 </li>
                 <li>
-                    여기에서 <font color="MediumVioletRed">\(V(x)\)와 \(M(x)\)는 구조물의 기준점으로부터 \(x\)만큼 떨어진 위치의 전단력과 휨모멘트</font>라는 것을 유의해야 한다.
+                    여기에서 <em>\(V(x)\)와 \(M(x)\)는 구조물의 기준점으로부터 \(x\)만큼 떨어진 위치의 전단력과 휨모멘트</em>라는 것을 유의해야 한다.
                 </li>
                 <li>
                     이 자유물체도에 \(x\)방향에 대한 평형조건식을 적용하면 아래와 같다.
@@ -89,8 +89,8 @@
                 </li>
                 <li>
                     이로부터 분포하중, 전단력, 휨모멘트의 관계를 나타내는 식을 정리하면 다음과 같다.
-                    <font color="MediumVioletRed">$$ -w(x)= \frac{dV(x)}{dx} = \frac{d^2M(x)}{dx^2} $$</font>
-                    <!--<font color="MediumVioletRed">$$ -w(x)= \frac{dV(x)}{dx} = \frac{d^2M(x)}{dx^2} \\ V(x)=-\int w(x)dx \quad M(x) = -\iint w(x)dx= \int V(x)dx$$</font>-->
+                    <em>$$ -w(x)= \frac{dV(x)}{dx} = \frac{d^2M(x)}{dx^2} $$</em>
+                    <!--<em>$$ -w(x)= \frac{dV(x)}{dx} = \frac{d^2M(x)}{dx^2} \\ V(x)=-\int w(x)dx \quad M(x) = -\iint w(x)dx= \int V(x)dx$$</em>-->
                 </li>
             </ul>
             <h3><a name="relation"></a>전단력 \(V(x)\)와 휨모멘트 \(M(x)\)의 관계</h3>
@@ -102,7 +102,7 @@
                     휨모멘트를 부재 내에서의 위치 \(x\)에 대해 미분하면 전단력이 되고, 전단력을 또 \(x\)에 대해 미분하면, 즉 휨모멘트를 \(x\)에 대해서 두번 미분하면 하중이 된다.
                 </li>
                 <li>
-                    <font color="MediumVioletRed">전단력은 하중보다 차수가 1 크고, 휨모멘트는 전단력보다 차수가 1 크다.</font> 반대로, 전단력은 휨모멘트보다 차수가 1 적고, 하중은 전단력보다 차수가 1 적다.
+                    <em>전단력은 하중보다 차수가 1 크고, 휨모멘트는 전단력보다 차수가 1 크다.</em> 반대로, 전단력은 휨모멘트보다 차수가 1 적고, 하중은 전단력보다 차수가 1 적다.
                 </li>
                 <li>
                     하중은 전단력을 미분한 값이므로, 특정 위치에서 하중의 값은 SFD의 기울기이다.
@@ -111,10 +111,10 @@
                     전단력은 하중을 적분한 값이므로, 특정 위치에서 전단력은 기준점부터 특정 위치까지 하중의 면적에 초기값을 더한 것과 같다.
                 </li>
                 <li>
-                    전단력은 휨모멘트를 미분한 값이므로, 특정 위치에서 전단력의 값은 BMD의 기울기이다. 따라서, <font color="MediumVioletRed">전단력이 \(0\)일때 휨모멘트가 최대 또는 최소</font>이다.
+                    전단력은 휨모멘트를 미분한 값이므로, 특정 위치에서 전단력의 값은 BMD의 기울기이다. 따라서, <em>전단력이 \(0\)일때 휨모멘트가 최대 또는 최소</em>이다.
                 </li>
                 <li>
-                    휨모멘트는 전단력을 적분한 값이므로, <font color="MediumVioletRed">특정 위치에서 휨모멘트는 기준점부터 특정 위치까지 SFD의 면적에 초기값을 더한 것</font>과 같다.
+                    휨모멘트는 전단력을 적분한 값이므로, <em>특정 위치에서 휨모멘트는 기준점부터 특정 위치까지 SFD의 면적에 초기값을 더한 것</em>과 같다.
                 </li>
                 <li>
                     <a href="" class="li_test">확인 질문</a>
@@ -131,13 +131,13 @@
                     부재의 중심축을 따라 \(x\)축을 긋고 그에 수직으로 \(V(x)\)축을 설정한다.
                 </li>
                 <li>
-                    다음에는 각 구간별로 <font color="MediumVioletRed">해당 구간의 시작점과 끝점 등의 \(x\)를 \(V(x)\)에 대입</font>하여 전단력의 값을 계산하고 이를 바탕으로 식 \(V(x)\)의 그래프를 그린다.
+                    다음에는 각 구간별로 <em>해당 구간의 시작점과 끝점 등의 \(x\)를 \(V(x)\)에 대입</em>하여 전단력의 값을 계산하고 이를 바탕으로 식 \(V(x)\)의 그래프를 그린다.
                 </li>
                 <li>
                     그래프는 해당 구간 내에 작용하는 하중이 없으면 상수(\(x\)축과 평행한 선), 등분포이면 1차식, 등변분포이면 2차식이다.
                 </li>
                 <li>
-                    <font color="MediumVioletRed">지점반력이나 집중하중이 작용하는 위치에서 SFD에 수직선</font>이 있다.
+                    <em>지점반력이나 집중하중이 작용하는 위치에서 SFD에 수직선</em>이 있다.
                 </li>
                 <li>
                     <a href="" class="li_test">확인 질문</a>
@@ -154,19 +154,19 @@
                     부재의 중심축을 따라 \(x\)축을 긋고 그에 수직으로 \(M(x)\)축을 설정한다.
                 </li>
                 <li>
-                    다음에는 각 구간별로 <font color="MediumVioletRed">해당 구간의 시작점과 끝점 등의 \(x\)를 \(M(x)\)에 대입</font>하여 휨모멘트의 값을 계산하고 이를 바탕으로 식 \(M(x)\)의 그래프를 그린다.
+                    다음에는 각 구간별로 <em>해당 구간의 시작점과 끝점 등의 \(x\)를 \(M(x)\)에 대입</em>하여 휨모멘트의 값을 계산하고 이를 바탕으로 식 \(M(x)\)의 그래프를 그린다.
                 </li>
                 <li>
                     그래프는 해당 구간 내의 SFD가 상수(\(x\)축과 평행한 선)이면 1차식, 1차식이면 2차식, 2차식이면 3차식이다.
                 </li>
                 <li>
-                    <font color="MediumVioletRed">모멘트 지점반력이나 모멘트 집중하중이 작용하는 위치에서 BMD에 수직선</font>이 있다.
+                    <em>모멘트 지점반력이나 모멘트 집중하중이 작용하는 위치에서 BMD에 수직선</em>이 있다.
                 </li>
                 <li>
-                    <font color="MediumVioletRed">특정 위치에서 BMD의 값은 기준점부터 특정 위치까지 SFD의 면적에 초기값을 더한 것</font>이다.
+                    <em>특정 위치에서 BMD의 값은 기준점부터 특정 위치까지 SFD의 면적에 초기값을 더한 것</em>이다.
                 </li>
                 <li>
-                    <font color="MediumVioletRed">특정 위치에서 BMD의 기울기는 SFD의 값</font>이다.
+                    <em>특정 위치에서 BMD의 기울기는 SFD의 값</em>이다.
                 </li>
                 <li>
                     <a href="" class="li_test">확인 질문</a>
