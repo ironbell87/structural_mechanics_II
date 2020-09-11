@@ -75,7 +75,7 @@
                     풀이
                     <ol>
                         <li>
-                            위 문제에서 자유물체도를 그리고 평형조건식을 적용하여 지점반력을 계산한다. 
+                            위 문제에서 자유물체도를 그리고 평형조건식을 적용하여 지점반력을 계산한다.
                             그리고 ①번 위치에서 단면을 가상으로 절단하여 다음 그림과 같이 자유물체도를 작성한다. 여기에서 다음과 같이 평형조건식을 적용하여 \(V, \, M\)을 계산한다.
                             <p><img src="images\04.12.03.png" onload="this.width/=2;"></p>
                             $$ \Sigma F_y = 1,000 - 500 \times 1 - V = 0; \quad V = 500kN = 500,000 N $$
@@ -96,6 +96,11 @@
                             $$ \sigma_{\max} = \frac{M}{I}y_{\max} = \frac{7.5 \times 10^8}{7.2 \times 10^9} \times 300 = 31.25 N/mm^2 = 31.25 MPa $$
                             $$ \tau_{\max} = \frac{VG_{\max}}{Ib} = \frac{5.0 \times 10^5 \times 1.8 \times 10^7}{7.2 \times 10^9 \times 400} = 3.125 N/mm^2 = 3.125 MPa $$
                         </li>
+                        <li>
+                            휨응력도의 최대값 \(\sigma_{\max}\)는 단면계수를 이용하여 다음과 같이 계산할 수도 있다.
+                            $$ S = \frac{I}{y_{\max}} = \frac{bh^2}{6} = \frac{400 \times 600^2}{6} = 2.4 \times 10^7 mm^3 $$
+                            $$ \sigma_{\max} = \frac{M}{S} = \frac{7.5 \times 10^8}{2.4 \times 10^7} = 31.25 N/mm^2 = 31.25 MPa $$
+                        </li>
                     </ol>
                 </li>
             </ul>
@@ -109,7 +114,7 @@
                     풀이
                     <ol>
                         <li>
-                            위 문제에서 자유물체도를 그리고 평형조건식을 적용하여 지점반력을 계산한다. 
+                            위 문제에서 자유물체도를 그리고 평형조건식을 적용하여 지점반력을 계산한다.
                             그리고 다음 그림과 같이 SFD, BMD를 작성하고 이로부터 전단력과 휨모멘트의 최대값 \(M_{\max}, \, V_{\max}\)를 구한다.
                             <p><img src="images\04.12.06.png" onload="this.width/=2;"></p>
                             $$ V_{\max} = 2,000kN = 2.0 \times 10^6 N, \quad M_{\max} = 6,000 kNm = 6.0 \times 10^9 Nmm $$
@@ -128,6 +133,11 @@
                             휨응력도와 전단응력도의 최대값 \(\sigma_{\max}, \, \tau_{\max}\)를 다음과 같이 계산한다.
                             $$ \sigma_{\max} = \frac{M_{\max}}{I}y_{\max} = \frac{6.0 \times 10^9}{3.125 \times 10^9} \times 250 = 480.00 N/mm^2 = 480.00 MPa $$
                             $$ \tau_{\max} = \frac{V_{\max}G_{\max}}{Ib} = \frac{2.0 \times 10^6 \times 9.375 \times 10^6}{3.125 \times 10^9 \times 300} = 20.00 N/mm^2 = 20.00 MPa $$
+                        </li>
+                        <li>
+                            휨응력도의 최대값 \(\sigma_{\max}\)는 단면계수를 이용하여 다음과 같이 계산할 수도 있다.
+                            $$ S = \frac{I}{y_{\max}} = \frac{bh^2}{6} = \frac{300 \times 500^2}{6} = 1.25 \times 10^7 mm^3 $$
+                            $$ \sigma_{\max} = \frac{M}{S} = \frac{6.0 \times 10^9}{1.25 \times 10^7} = 480 N/mm^2 = 480 MPa $$
                         </li>
                     </ol>
                 </li>

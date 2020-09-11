@@ -114,7 +114,7 @@
                             <p><img src="images\06.02.04.png" onload="this.width/=2;"></p>
                         </li>
                         <li>
-                            부재가 보이므로 축력과 전단력을 무시하고 다음 그림의 자유물체도로부터 휨모멘트 \(M(x)\), \(P_k\)에 대한 편미분을 다음과 같이 계산한다.
+                            부재가 보이므로 축력과 전단력을 무시하고 다음 그림의 자유물체도로부터 휨모멘트 \(M(x)\), \(\partial M(x)/\partial P_k\)를 다음과 같이 계산한다.
                             <p><img src="images\06.02.05.png" onload="this.width/=2;"></p>
                             \( \Sigma M_x = P_kx + M(x) = 0; \quad M(x) = -P_kx \quad \partial M(x)/\partial P_k = -x \)
                         </li>
@@ -143,8 +143,8 @@
                             <p><img src="images\06.02.07.png" onload="this.width/=2;"></p>
                         </li>
                         <li>
-                            부재가 보이므로 축력과 전단력을 무시하고 다음 그림의 자유물체도로부터 휨모멘트 \(M(x)\), \(P_k\)에 대한 편미분을 다음과 같이 계산한다.
-                            여기에서 가상의 힘 \(P_k\)이 가해진 것을 고려하고, 이로 인해 \(0 \le x \le L/2\)에 대해서만 휨모멘트를 계산한다.
+                            부재가 보이므로 축력과 전단력을 무시하고 다음 그림의 자유물체도로부터 휨모멘트 \(M(x)\), \(\partial M(x)/\partial P_k\)를 다음과 같이 계산한다.
+                            여기에서 가상의 힘 \(P_k\)가 가해진 것을 고려하고, 이로 인해 \(0 \le x \le L/2\)에 대해서만 휨모멘트를 계산한다.
                             <p><img src="images\06.02.08.png" onload="this.width/=2;"></p>
                             \( \Sigma M_x = -(wL+P_k)x/2 + wx^2/2 + M(x) = 0; \\ M(x) = -wx^2/2 + (wL+P_k)x/2 \quad \partial M(x)/\partial P_k = x/2 \)
                         </li>
@@ -152,7 +152,7 @@
                             \(\Delta_k = y, \, P_k = 0\)를 고려하여 다음과 같이 처짐 \(y\)를 계산한다. \(M(x)\)가 \(0 \le x \le L/2\)에서만 유효하므로 \(0 \le x \le L/2\)구간에 대해서 적분하고 2를 곱해준다.
                             $$\begin{align}
                             y = \Delta_k &= \int_0^L \frac{M(x)}{EI} \frac{\partial M(x)}{\partial P_k} dx = 2\int_0^{L/2} \frac{-wx^2/2 + (wL+P_k)x/2}{EI} (x/2) dx \\
-                            &= \int_0^{L/2} \frac{-wx^3 + (wL+P_k)x^2}{2EI} dx = \int_0^{L/2} \frac{-wx^3 + (wL)x^2}{2EI} dx \\
+                            &= \int_0^{L/2} \frac{-wx^3 + (wL+P_k)x^2}{2EI} dx = \int_0^{L/2} \frac{-wx^3 + wLx^2}{2EI} dx \\
                             &= \frac{w}{2EI} \int_0^{L/2} (-x^3 + Lx^2) dx = \frac{w}{2EI} \left[ -\frac{x^4}{4} + L\frac{x^3}{3} \right]_0^{L/2} \\
                             &= \frac{w}{2EI} \left( -\frac{1}{4}\frac{L^4}{16} + \frac{L}{3}\frac{L^3}{8} \right) = \frac{w}{2EI} \left( -\frac{3L^4}{12\times16} + \frac{8L^4}{12 \times 16} \right) \\
                             &= \frac{w}{2EI} \frac{5L^4}{12\times16} = \frac{5wL^4}{384EI}
@@ -179,7 +179,7 @@
                     <p><img src="images\06.02.10.png" onload="this.width/=2;"></p>
                 </li>
                 <li>
-                    부재가 보이므로 축력과 전단력을 무시하고 다음 그림의 자유물체도로부터 휨모멘트 \(M(x)\), \(P_k\)에 대한 편미분을 다음과 같이 계산한다.
+                    부재가 보이므로 축력과 전단력을 무시하고 다음 그림의 자유물체도로부터 휨모멘트 \(M(x)\), \(\partial M(x)/\partial P_k\)를 다음과 같이 계산한다.
                     <p><img src="images\06.02.11.png" onload="this.width/=2;"></p>
                     \( \Sigma M_x = -P_kx + wx^2/2 + M(x) = 0; \\ M(x) = -wx^2/2 + P_kx \quad \partial M(x)/\partial P_k = x \)
                 </li>

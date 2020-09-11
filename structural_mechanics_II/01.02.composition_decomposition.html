@@ -155,15 +155,13 @@
                 <li>
                     바리뇽의 정리에 따라, 여러 점에 작용하는 힘의 \(x\)방향 분력과 그 합력의 임의의 점에 대한 모멘트는 같다. 또한, \(y\)방향 분력에서도 마찬가지이다.
                 </li>
-                <li>아래 그림의 경우, \(x\)방향 분력\(\left(F_{1x}, \, F_{2x}\right)\)의 점 \(O\)에 대한 모멘트의 합 \(F_{1x}\cdot y_1\ + F_{2x}\cdot y_2\)는 \(x\)방향 분력의 합력\(\left(R_x\right)\)의 점 \(O\)에 대한 모멘트 \(R_x \cdot y_r\)과 같다. 
-                    즉, <em>\(F_{1x}\cdot y_1\ + F_{2x}\cdot y_2 = R_x \cdot y_r\)</em>이다.
-                    이 식에서 합력\(\left(R\right)\)의 작용점의 \(y\)방향 위치\(\left(y_r\right)\)를 계산할 수 있다.
-                    참고로, 이 식에서 부호를 따져보면 \(y_2\)만 음수이다.
+                <li>아래 그림의 경우, \(x\)방향 분력\(\left(F_{1x}, \, F_{2x}\right)\)의 점 \(O\)에 대한 모멘트의 합 \(-F_{1x}\cdot y_1\ + F_{2x}\cdot y_2\)는 \(x\)방향 분력의 합력\(\left(R_x\right)\)의 점 \(O\)에 대한 모멘트 \(-R_x \cdot y_R\)과 같다. 
+                    즉, <em>\(-F_{1x}\cdot y_1\ + F_{2x}\cdot y_2 = -R_x \cdot y_R\)</em>이다.
+                    이 식에서 합력\(\left(R\right)\)의 작용점의 \(y\)방향 위치\(\left(y_R\right)\)를 계산할 수 있다.
                     <p><img src="images\01.02.06.png" width="325" height="220"></p>
                 </li>
                 <li>
-                    여러 점에 작용하는 힘의 \(y\)방향 분력\(\left(F_{1y}, \, F_{2y}\right)\)과 그 합력\(\left(R_x\right)\)에 적용하면 <em>\(F_{1y}\cdot x_1\ + F_{2y}\cdot x_2 = R_y \cdot x_r\)</em>이다.
-                    이 식에서 합력\(\left(R\right)\)의 작용점의 \(x\)방향 위치\(\left(y_x\right)\)를 계산할 수 있다.
+                    여러 점에 작용하는 힘의 \(y\)방향 분력\(\left(F_{1y}, \, F_{2y}\right)\)과 그 합력\(\left(R_x\right)\)에도 동일하게 적용하면 합력\(\left(R\right)\)의 작용점의 \(x\)방향 위치\(\left(x_R\right)\)를 계산할 수 있다.
                 </li>
             </ul>
             <div class="separator"></div>
@@ -173,82 +171,98 @@
         <div id="re_view_quiz" hidden>
             <h3><a name="re_view_quiz"></a>복습 퀴즈</h3>
             <ol class="ol_quiz">
-                <li>힘 \(F_1\)의 작용점, 크기, 방향은 \((2m, \, 1m), \, 4kN, \, 300^\circ\)이고 힘 \(F_2\)의 작용점, 크기, 방향은 \((-1m, \, -1m), \, 1kN, \, 210^\circ\)이다. 두 힘의 합력의 \(x\)방향 분력을 계산하시오.<br />
+                <li>
+                    힘 \(F_1\)의 작용점, 크기, 방향은 \((2m, \, 1m), \, 4kN, \, 300^\circ\)이고 힘 \(F_2\)의 작용점, 크기, 방향은 \((-1m, \, -1m), \, 1kN, \, 210^\circ\)이다. 두 힘의 합력의 \(x\)방향 분력을 계산하시오.<br />
                     <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(kN\)
                     <input type="submit" class="submit_quiz" value="확인" answer="1.1340">
                     <span class="span_quiz"></span>
                 </li>
-                <li>퀴즈 1에서 합력의 \(y\)방향 분력을 계산하시오.<br />
+                <li>
+                    퀴즈 1에서 합력의 \(y\)방향 분력을 계산하시오.<br />
                     <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(kN\)
                     <input type="submit" class="submit_quiz" value="확인" answer="-3.9641">
                     <span class="span_quiz"></span>
                 </li>
-                <li>퀴즈 1에서 합력의 크기를 계산하시오.<br />
+                <li>
+                    퀴즈 1에서 합력의 크기를 계산하시오.<br />
                     <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(kN\)
                     <input type="submit" class="submit_quiz" value="확인" answer="4.1231">
                     <span class="span_quiz"></span>
                 </li>
-                <li>퀴즈 1에서 합력의 방향(\(+x\)축으로부터 반시계방향의 각도)을 계산하시오.<br />
+                <li>
+                    퀴즈 1에서 합력의 방향(\(+x\)축으로부터 반시계방향의 각도)을 계산하시오.<br />
                     <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(^\circ\)
                     <input type="submit" class="submit_quiz" value="확인" answer="-74.0362">
                     <span class="span_quiz"></span>
                 </li>
-                <li>퀴즈 1에서 합력의 작용점의 \(x\)좌표를 계산하시오.<br />
+                <li>
+                    퀴즈 1에서 합력의 작용점의 \(x\)좌표를 계산하시오.<br />
                     <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(m\)
                     <input type="submit" class="submit_quiz" value="확인" answer="1.6216">
                     <span class="span_quiz"></span>
                 </li>
-                <li>퀴즈 1에서 합력의 작용점의 \(y\)좌표를 계산하시오.<br />
+                <li>
+                    퀴즈 1에서 합력의 작용점의 \(y\)좌표를 계산하시오.<br />
                     <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(m\)
                     <input type="submit" class="submit_quiz" value="확인" answer="2.5274">
                     <span class="span_quiz"></span>
                 </li>
-                <li>힘 \(F_1\)의 작용점, 크기, 방향은 \((-2m, \, -3m), \, 8kN, \, -45^\circ\)이고 힘 \(F_2\)의 작용점, 크기, 방향은 \((1m, \, 2m), \, 4kN, \, 110^\circ\)이다. 두 힘의 합력의 \(x\)방향 분력을 계산하시오.<br />
+                <li>
+                    힘 \(F_1\)의 작용점, 크기, 방향은 \((-2m, \, -3m), \, 8kN, \, -45^\circ\)이고 힘 \(F_2\)의 작용점, 크기, 방향은 \((1m, \, 2m), \, 4kN, \, 110^\circ\)이다. 두 힘의 합력의 \(x\)방향 분력을 계산하시오.<br />
                     <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(kN\)
                     <input type="submit" class="submit_quiz" value="확인" answer="4.2888">
                     <span class="span_quiz"></span>
                 </li>
-                <li>퀴즈 7에서 합력의 \(y\)방향 분력을 계산하시오.<br />
+                <li>
+                    퀴즈 7에서 합력의 \(y\)방향 분력을 계산하시오.<br />
                     <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(kN\)
                     <input type="submit" class="submit_quiz" value="확인" answer="-1.8981">
                     <span class="span_quiz"></span>
                 </li>
-                <li>퀴즈 7에서 합력의 크기를 계산하시오.<br />
+                <li>
+                    퀴즈 7에서 합력의 크기를 계산하시오.<br />
                     <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(kN\)
                     <input type="submit" class="submit_quiz" value="확인" answer="4.6900">
                     <span class="span_quiz"></span>
                 </li>
-                <li>퀴즈 7에서 합력의 방향(\(+x\)축으로부터 반시계방향의 각도)을 계산하시오.<br />
+                <li>
+                    퀴즈 7에서 합력의 방향(\(+x\)축으로부터 반시계방향의 각도)을 계산하시오.<br />
                     <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(^\circ\)
                     <input type="submit" class="submit_quiz" value="확인" answer="-23.8728">
                     <span class="span_quiz"></span>
                 </li>
-                <li>퀴즈 7에서 합력의 작용점의 \(x\) 좌표를 계산하시오.<br />
+                <li>
+                    퀴즈 7에서 합력의 작용점의 \(x\) 좌표를 계산하시오.<br />
                     <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(m\)
                     <input type="submit" class="submit_quiz" value="확인" answer="-7.9409">
                     <span class="span_quiz"></span>
                 </li>
-                <li>퀴즈 7에서 합력의 작용점의 \(y\) 좌표를 계산하시오.<br />
+                <li>
+                    퀴즈 7에서 합력의 작용점의 \(y\) 좌표를 계산하시오.<br />
                     <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(m\)
                     <input type="submit" class="submit_quiz" value="확인" answer="-4.5950">
                     <span class="span_quiz"></span>
                 </li>
-                <li>힘 \(F_1\)의 작용점과 끝점의 좌표는 \((-2, \, -3), \, (-1, \, -1)\)이고 힘 \(F_2\)의 작용점과 끝점의 좌표는 \((3, \, -2), \, (5, -4)\)이다. 합력의 \(x\)방향 분력을 계산하시오.<br />
+                <li>
+                    힘 \(F_1\)의 작용점과 끝점의 좌표는 \((-2, \, -3), \, (-1, \, -1)\)이고 힘 \(F_2\)의 작용점과 끝점의 좌표는 \((3, \, -2), \, (5, -4)\)이다. 합력의 \(x\)방향 분력을 계산하시오.<br />
                     <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;">
                     <input type="submit" class="submit_quiz" value="확인" answer="3">
                     <span class="span_quiz"></span>
                 </li>
-                <li>퀴즈 13에서 합력의 \(y\)방향 분력을 계산하시오.<br />
+                <li>
+                    퀴즈 13에서 합력의 \(y\)방향 분력을 계산하시오.<br />
                     <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;">
                     <input type="submit" class="submit_quiz" value="확인" answer="0">
                     <span class="span_quiz"></span>
                 </li>
-                <li>퀴즈 13에서 두 힘의 합력의 크기를 계산하시오.<br />
+                <li>
+                    퀴즈 13에서 두 힘의 합력의 크기를 계산하시오.<br />
                     <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;">
                     <input type="submit" class="submit_quiz" value="확인" answer="3">
                     <span class="span_quiz"></span>
                 </li>
-                <li>퀴즈 13에서 합력의 방향(\(+x\)축로부터 반시계방향의 각도)을 계산하시오.<br />
+                <li>
+                    퀴즈 13에서 합력의 방향(\(+x\)축로부터 반시계방향의 각도)을 계산하시오.<br />
                     <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(^\circ\)
                     <input type="submit" class="submit_quiz" value="확인" answer="0">
                     <span class="span_quiz"></span>
