@@ -120,12 +120,14 @@ function toggle_body(p_toggle) {
         $('#pre_view').slideDown(time_out_duration / 3);
         $('#main_view').slideDown(time_out_duration);
         $('#re_view_quiz').slideDown(time_out_duration);
+        $('#problem').slideDown(time_out_duration);
     }
     else { // hide
         $(".study_list_wrapper").slideUp(time_out_duration / 3);
         $('#pre_view').slideUp(time_out_duration / 3);
         $('#main_view').slideUp(time_out_duration);
         $('#re_view_quiz').slideUp(time_out_duration);
+        $('#problem').slideUp(time_out_duration);
     }
 }
 

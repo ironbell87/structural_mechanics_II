@@ -92,7 +92,6 @@ $(document).ready(function () {
                     $(".submit_eval").css("background-color", "#ff6f6f"); // change the bg-color
                 }
                 $(".span_eval").css("color", "#ff6f6f"); // change the color
-                $('#problem').slideDown(1500 / 3); // show problems within 0.5s (1500/3)
             }
             else {
                 m_response = "기준(60/100) 이하입니다. 충실하게 다시 학습해 보세요.";
