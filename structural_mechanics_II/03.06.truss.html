@@ -56,16 +56,16 @@
             <ol>
                 <li>전체를 대상으로 자유물체도를 작성한다.</li>
                 <li>전체의 자유물체도에서 평형조건식을 이용하여 지점반력을 계산한다.</li>
-                <li><em>부재력이 \(0\)인 \(0\)부재와 부재력의 크기가 같은 부재</em>를 찾는다.<p><img src="images\03.06.01.png" width="564" height="84"></p></li>
+                <li><em>부재력이 \(0\)인 \(0\)부재와 부재력의 크기가 같은 부재</em>를 찾는다.<p><img src="images\03.06.01.png" onload="this.width/=2;"></p></li>
                 <li><em>필요한 부분을 절단</em>하여 부분의 자유물체도를 작성한다. 이때 <em>부재력은 축력만 포함</em>한다.</li>
                 <li>부분의 자유물체도에서 평형조건식을 적용하여 축력을 계산한다.</li>
-                <li>축을 <em>인장력으로 가정</em>하고 계산 결과가 음수면 압축력, 양수이면 인장력으로 한다.</li>
+                <li>축력을 <em>인장력으로 가정</em>하고 계산 결과가 양수면 인장력, 음수면 압축력으로 한다.</li>
             </ol>
             <ul>
                 <li>
                     <a href="" class="li_test">확인 질문</a>
                     <div hidden>
-                        다음에서 \(0\)부재의 수를 계산하시오.<br /><img src="images\test.03.06.01.png" width="224" height="129"><br />
+                        다음에서 \(0\)부재의 수를 계산하시오.<br /><img src="images\test.03.06.01.png" onload="this.width/=2;"><br />
                         <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> 개
                         <input type="submit" class="submit_quiz" value="확인" answer="1">
                         <span class="span_quiz"></span>
@@ -85,19 +85,19 @@
                 </li>
                 <li>
                     예 : 아래 트러스의 부재력을 계산하시오.
-                    <p><img src="images\03.06.02.png" width="232" height="202"></p>
+                    <p><img src="images\03.06.02.png" onload="this.width/=2;"></p>
                     <ol>
                         <li>
                             구조물 전체를 대상으로 FBD를 작성하고 평형조건식을 적용하여 지점반력을 계산한다.
                             <p>
-                                <img src="images\03.06.03.png" width="281" height="185"><br />
+                                <img src="images\03.06.03.png" onload="this.width/=2;"><br />
                                 \(H_A=4 kN \quad V_A=11/3 kN \quad V_C=-5/3 kN \)
                             </p>
                         </li>
                         <li>
                             부재 수가 2개 이하인 절점 A를 선택하여 그에 연결된 부재 AB, AD를 절단하여 자유물체도를 작성한다. 여기에서 미지의 축력 AB, AD를 인장력으로 가정한다. 평형조건식을 적용하여 AB, AD를 계산한다.
                             <p>
-                                <img src="images\03.06.04.png" width="165" height="151"><br />
+                                <img src="images\03.06.04.png" onload="this.width/=2;"><br />
                                 \(\sum F_y=11/3 + (4/5)AD=0 \quad \therefore AD=-55/12 kN \\
                                 \sum F_x=4 + AB + (3/5)AD=0 \quad \therefore AB=-5/4 kN\)
                             </p>
@@ -105,7 +105,7 @@
                         <li>
                             절점 B를 선택하여 그에 연결된 부재 AB, BC, BD를 절단하여 자유물체도를 작성한다. 앞에서 구한 AB는 압축력이므로, 여기에도 압축력으로 표시한다. 미지의 축력 BC, BD는 인장력으로 가정한다. 평형조건식을 적용하여 BC, BD를 계산한다.
                             <p>
-                                <img src="images\03.06.05.png" width="183" height="131"><br />
+                                <img src="images\03.06.05.png" onload="this.width/=2;"><br />
                                 \(\sum F_y=BD-2=0 \quad \therefore BD=2 kN \\
                                 \sum F_x=-AB + BC=0 \quad \therefore BC=AB=-5/4 kN\)
                             </p>
@@ -113,7 +113,7 @@
                         <li>
                             마지막으로 절점 C를 선택하여 그에 연결된 부재를 절단하여 자유물체도를 작성한다. 앞에서 구한 BC는 압축력이므로, 여기에도 압축력으로 표시한다. 미지의 축력 CD는 인장력으로 가정한다. 평형조건식을 적용하여 CD를 계산한다.
                             <p>
-                                <img src="images\03.06.06.png" width="139" height="148"><br />
+                                <img src="images\03.06.06.png" onload="this.width/=2;"><br />
                                 \(\sum F_y=-5/3 + (4/5)CD=0 \quad \therefore CD=25/12 kN \)
                             </p>
                         </li>
@@ -130,19 +130,19 @@
                 </li>
                 <li>
                     예 : 아래 트러스에서 부재 CE, DF, DE, EG, FH, EH의 부재력을 계산하시오.
-                    <p><img src="images\03.06.07.png" width="753" height="255"></p>
+                    <p><img src="images\03.06.07.png" onload="this.width/=2;"></p>
                     <ol>
                         <li>
                             구조물 전체를 대상으로 FBD를 작성하고 평형조건식을 적용하여 지점반력을 계산한다.
                             <p>
-                                <img src="images\03.06.08.png" width="748" height="240"><br />
+                                <img src="images\03.06.08.png" onload="this.width/=2;"><br />
                                 \(V_A=17/4 kN \quad V_B=19/4 kN \)
                             </p>
                         </li>
                         <li>
                             부재 CE, DF, DE를 동시에 절단하여 왼쪽 부분에 대한 자유물체도를 작성한다. 미지의 축력을 인장력으로 가정한다. 평형조건식을 적용한다.
                             <p>
-                                <img src="images\03.06.09.png" width="335" height="235"><br />
+                                <img src="images\03.06.09.png" onload="this.width/=2;"><br />
                                 \(\sum M_D=-17/4 \times 3 + CE \times 3=0 \quad \therefore CE=17/4 kN \\
                                 \sum M_E=-17/4 \times 6 + 2 \times 3 - DF \times 3=0 \quad \therefore DF=-13/2 kN \\
                                 \sum M_C=-17/4 \times 3 - DF \times 3 - DE \times 3/ \sqrt 2=0 \quad \therefore DE=9 \sqrt 2/4 kN\)
@@ -151,7 +151,7 @@
                         <li>
                             부재 EG, FH, EH를 동시에 절단하여 오른쪽 부분에 대한 자유물체도를 작성한다. 미지의 축력은 인장력으로 가정한다. 평형조건식을 적용한다.
                             <p>
-                                <img src="images\03.06.10.png" width="338" height="235"><br />
+                                <img src="images\03.06.10.png" onload="this.width/=2;"><br />
                                 \(\sum M_H=19/4 \times 3 - EG \times 3=0 \quad \therefore EG=19/4 kN \\
                                 \sum M_E=19/4 \times 6 - 3 \times 3 +FH \times 3=0 \quad \therefore FH=-13/2 kN \\
                                 \sum M_G=19/4 \times 3 + FH \times 3 + EH \times 3/ \sqrt 2=0 \quad \therefore EH=7 \sqrt 2 /4kN\)
@@ -168,13 +168,13 @@
             <h3><a name="re_view_quiz"></a>복습 퀴즈</h3>
             <ol class="ol_quiz">
                 <li>
-                    다음에서 \(0\)부재의 수를 계산하시오.<br><img src="images\quiz.03.06.01.png" width="290" height="311"><br />
+                    다음에서 \(0\)부재의 수를 계산하시오.<br><img src="images\quiz.03.06.01.png" onload="this.width/=2;"><br />
                     <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> 개
                     <input type="submit" class="submit_quiz" value="확인" answer="5">
                     <span class="span_quiz"></span>
                 </li>
                 <li>
-                    다음에서 축력 AC를 계산하시오.<br><img src="images\quiz.03.06.02.png" width="349" height="204"><br />
+                    다음에서 축력 AC를 계산하시오.<br><img src="images\quiz.03.06.02.png" onload="this.width/=2;"><br />
                     <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(kN\)
                     <input type="submit" class="submit_quiz" value="확인" answer="5">
                     <span class="span_quiz"></span>
@@ -192,7 +192,7 @@
                     <span class="span_quiz"></span>
                 </li>
                 <li>
-                    다음에서 축력 DF를 계산하시오.<br><img src="images\quiz.03.06.05.png" width="278" height="202"><br />
+                    다음에서 축력 DF를 계산하시오.<br><img src="images\quiz.03.06.05.png" onload="this.width/=2;"><br />
                     <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(kN\)
                     <input type="submit" class="submit_quiz" value="확인" answer="15">
                     <span class="span_quiz"></span>
@@ -204,13 +204,13 @@
                     <span class="span_quiz"></span>
                 </li>
                 <li>
-                    퀴즈 5에서 축력 DC를 계산하시오.<br />
+                    퀴즈 5에서 축력 CD를 계산하시오.<br />
                     <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(kN\)
                     <input type="submit" class="submit_quiz" value="확인" answer="-14.1421">
                     <span class="span_quiz"></span>
                 </li>
                 <li>
-                    다음에서 \(0\)부재의 수를 계산하시오.<br><img src="images\quiz.03.06.08.png" width="249" height="302"><br />
+                    다음에서 \(0\)부재의 수를 계산하시오.<br><img src="images\quiz.03.06.08.png" onload="this.width/=2;"><br />
                     <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> 개
                     <input type="submit" class="submit_quiz" value="확인" answer="1">
                     <span class="span_quiz"></span>
@@ -222,7 +222,7 @@
                     <span class="span_quiz"></span>
                 </li>
                 <li>
-                    퀴즈 8에서 축력 FD를 계산하시오.<br />
+                    퀴즈 8에서 축력 DF를 계산하시오.<br />
                     <input type="number" class="input_quiz" placeholder="답을 숫자로 입력하세요" ondrop="return false;" onpaste="return false;"> \(kN\)
                     <input type="submit" class="submit_quiz" value="확인" answer="-3">
                     <span class="span_quiz"></span>
@@ -305,7 +305,8 @@
                 <li>
                     문제 : 다음 트러스에서 모든 부재력을 구하시오.<br />
                     <img src="images\prob.03.06.02.q.png" onload="this.width/=2;"><br />
-                    정답 : \(AF = 9\sqrt3kN = BF, \, AC = -18kN = BE, \, CD = -12kN = DE, \, CF = -6kN = EF, \, DF = 6kN\)
+                    정답 : \(AF = 9\sqrt3kN = BF, \, AC = -18kN = BE\)
+                    \(CD = -12kN = DE, \, CF = -6kN = EF, \, DF = 6kN\)
                 </li>
                 <li>
                     문제 : 다음 트러스에서 부재력 CD, DF, FG를 구하시오.<br />
@@ -313,9 +314,9 @@
                     정답 : \(CD = 27/4kN, \, DF = 5/4kN, \, FG = -15/2kN\)
                 </li>
                 <li>
-                    문제 : 다음 트러스에서 부재력 AC, CD, DE를 구하시오.<br />
+                    문제 : 다음 트러스에서 부재력 AF, CF, CD를 구하시오.<br />
                     <img src="images\prob.03.06.04.q.png" onload="this.width/=2;"><br />
-                    정답 : \(AC = 6\sqrt3kN, \, CD = -4kN, \, DE = -8kN\)
+                    정답 : \(AF = 6\sqrt3kN, \, CF = -4kN, \, CD = -8kN\)
                 </li>
                 <li>
                     문제 : 다음 트러스에서 0부재를 구하시오.<br />
@@ -325,7 +326,8 @@
                 <li>
                     문제 : 다음 트러스에서 모든 부재력을 구하시오.<br />
                     <img src="images\prob.03.06.06.q.png" onload="this.width/=2;"><br />
-                    정답 : \(AF = 9\sqrt3kN = BF, \, AC = -18kN = BE, \, CD = -12kN = DE, \, CF = -6kN = EF, \, DF = 6kN\)
+                    정답 : \(AC = 18\sqrt3kN = BD, \, AE = -36kN = BG, \, CE = -6\sqrt3kN = DG\)
+                    \(EF = -30kN = FG, \, CF = 6\sqrt3kN = DF, \, CD = 12\sqrt3kN\)
                 </li>
                 <li>
                     문제 : 다음 트러스에서 모든 부재력을 구하시오.<br />
@@ -336,20 +338,21 @@
                 <li>
                     문제 : 다음 트러스에서 모든 부재력을 구하시오.<br />
                     <img src="images\prob.03.06.08.q.png" onload="this.width/=2;"><br />
-                    정답 : \(AC = 6kN = CB, \, AD = 15/4kN, \, CD = 0kN\)
+                    정답 : \(AC = 6kN = BC, \, AD = 15/4kN, \, CD = 0kN\)
                     \(BD = -15/2kN, \, BE = -27/4kN, \, DE = 45/4kN\)
                 </li>
                 <li>
                     문제 : 다음 트러스에서 모든 부재력을 구하시오.<br />
                     <img src="images\prob.03.06.09.q.png" onload="this.width/=2;"><br />
-                    정답 : \(AB = 7kN = DE, \, AF = -7\sqrt2kN = EH, \, BF = 3kN = DH, \, BC = 10kN = CD\)
-                    \(BG = -3\sqrt2kN = DG, \, FG = -7kN = GH, \, CG = 0kN\)
+                    정답 : \(AB = 7kN = DE, \, AF = -7\sqrt2kN = EH, \, BF = 3kN = DH\)
+                    \(BC = 10kN = CD, \, BG = -3\sqrt2kN = DG, \, FG = -7kN = GH, \, CG = 0kN\)
                 </li>
                 <li>
                     문제 : 다음 트러스에서 모든 부재력을 구하시오.<br />
                     <img src="images\prob.03.06.10.q.png" onload="this.width/=2;"><br />
-                    정답 : \(AB = 0kN = DE, \, AF = -24kN = EJ, \, FG = -36kN = IJ, \, BF = 18\sqrt5kN = DJ, \, BG = -18kN = DI\)
-                    \(BC = 36kN = CD, \, CG = 6\sqrt5kN = CI, \, GH = -48kN = HI, \, CH = -12kN\)
+                    정답 : \(AB = 0kN = DE, \, AF = -24kN = EJ, \, FG = -36kN = IJ\)
+                    \(BF = 18\sqrt5kN = DJ, \, BG = -18kN = DI, \, BC = 36kN = CD\)
+                    \(CG = 6\sqrt5kN = CI, \, GH = -48kN = HI, \, CH = -12kN\)
                 </li>
                 <li>
                     문제 : 다음 트러스에서 부재력 AB, AC, BC를 구하시오.<br />
@@ -362,9 +365,9 @@
                     정답 : \(BC = 18kN, \, FG = -13kN, \, BG = -5\sqrt2kN, \, CG = 10kN\)
                 </li>
                 <li>
-                    문제 : 다음 트러스에서 부재력 BC, FC, FG, BF를 구하시오.<br />
+                    문제 : 다음 트러스에서 부재력 BC, CF, FG, BF를 구하시오.<br />
                     <img src="images\prob.03.06.13.q.png" onload="this.width/=2;"><br />
-                    정답 : \(BC = 18kN, \, FC = -2\sqrt{13}kN, \, FG = -4\sqrt{13}kN, \, BF = 0kN\)
+                    정답 : \(BC = 18kN, \, CF = -2\sqrt{13}kN, \, FG = -4\sqrt{13}kN, \, BF = 0kN\)
                 </li>
                 <li>
                     문제 : 다음 트러스에서 부재력 BC, CD, DE, BD를 구하시오.<br />
@@ -377,15 +380,15 @@
                     정답 : \(CE = 8kN, \, CF = 20kN, \, DF = -6\sqrt{17}kN\)
                 </li>
                 <li>
-                    문제 : 다음 트러스에서 부재력 HB, CD, IJ, DI, DJ를 구하시오.<br />
+                    문제 : 다음 트러스에서 부재력 BH, CD, IJ, DI, DJ를 구하시오.<br />
                     <img src="images\prob.03.06.16.q.png" onload="this.width/=2;"><br />
-                    정답 : \(HB = 5kN, \, CD = 155/3kN, \, IJ = -20kN, \, ID = 5\sqrt{34}/3kN, \, DJ = -10kN\)
+                    정답 : \(BH = 5kN, \, CD = 155/3kN, \, IJ = -60kN, \, DI = 5\sqrt{34}/3kN, \, DJ = -10kN\)
                 </li>
                 <li>
                     문제 : 다음 트러스에서 모든 부재력을 구하시오.<br />
                     <img src="images\prob.03.06.17.q.png" onload="this.width/=2;"><br />
-                    정답 : \(AB = -40kN = CD, \, AE = 40\sqrt2kN = GD, \, BE = -40\sqrt2kN = CG\)
-                    \(EF = 80kN = FG, \, BF = 0kN = CF, \, BC = -80kN\)
+                    정답 : \(AB = -40kN = CD, \, AE = 40\sqrt2kN = DG\)
+                    \(BE = -40\sqrt2kN = CG, \, EF = 80kN = FG, \, BF = 0kN = CF, \, BC = -80kN\)
                 </li>
                 <li>
                     문제 : 다음 트러스에서 모든 부재력을 구하시오.<br />
