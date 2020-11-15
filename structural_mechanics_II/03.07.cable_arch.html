@@ -49,9 +49,9 @@
                     <ol>
                         <li>케이블 전체를 대상으로 FBD를 작성하고 평형조건식을 적용하여 지점반력의 일부를 계산한다.</li>
                         <li>집중하중이 작용하고 높이가 주어진 점을 <em>구조물 내부의 회전절점</em>으로 설정하여 가상으로 절단한다.</li>
-                        <li>절단된 한 부분을 대상으로 FBD를 작성하고 평형조건식을 적용하여 나머지 지점반력을 계산한다.</li>
+                        <li>절단한 부분을 대상으로 FBD를 작성하고 평형조건식을 적용하여 나머지 지점반력을 계산한다.</li>
                         <li>집중하중이 작용하는 점 사이의 케이블 부분을 <em>인장력만 작용하는 트러스 부재로 취급하고 그 사이를 가상으로 절단</em>한다.</li>
-                        <li>절단된 한 부분을 대상으로 FBD를 작성하고 평형조건식을 적용하여 부재력(인장력)을 계산한다.</li>
+                        <li>절단한 부분을 대상으로 FBD를 작성하고 평형조건식을 적용하여 부재력(인장력)을 계산한다.</li>
                     </ol>
                 </li>
                 <li>
@@ -65,31 +65,31 @@
                 </li>
                 <li>
                     예제 (집중하중을 받는 케이블 1) : 다음에서 케이블에 작용하는 인장력을 계산하시오.
-                    <p><img src="images\03.07.01.png" width="514" height="116"></p>
+                    <p><img src="images\03.07.01.png" onload="this.width/=2;"></p>
                     <ol>
                         <li>
                             케이블 전체를 대상으로 FBD를 작성하고 평형조건식을 적용하여 \(V_A, \ V_D\)를 계산한다.
                             <p>
-                                <img src="images\03.07.02.png" width="562" height="80"><br />
-                                \(\sum M_A=-6 \times 3 - 3 \times 6 + V_D \times 9 = 0 \quad \therefore V_D=4 kN \\
-                                \sum F_y = V_A - 6 - 3 + V_D = 0 \quad \therefore V_A=5 kN \\
-                                \sum F_x = H_A + H_D = 0 \quad \therefore H_D = - H_A\)
+                                <img src="images\03.07.02.png" onload="this.width/=2;"><br />
+                                \(\sum M_A=-6 \times 3 - 3 \times 6 + V_D \times 9 = 0 \quad \therefore V_D=4 kN \)<br />
+                                \(\sum F_y = V_A - 6 - 3 + V_D = 0 \quad \therefore V_A=5 kN \)<br />
+                                \(\sum F_x = H_A + H_D = 0 \quad \therefore H_D = - H_A\)
                             </p>
                         </li>
                         <li>
                             집중하중이 작용하고 높이가 주어진 점 B를 <em>구조물 내부의 회전절점</em>으로 설정하여 가상으로 절단한 후, 여기에 FBD를 작성하고 평형조건식을 적용하여 \(H_A, \, H_D\)를 계산한다.
                             <p>
-                                <img src="images\03.07.03.png" width="290" height="111"><br />
-                                \(\sum M_B=-5 \times 3 - H_A \times 1 = 0 \quad \therefore H_A=-15 kN \\
-                                H_D = - H_A \quad \therefore H_D = 15 kN\)
+                                <img src="images\03.07.03.png" onload="this.width/=2;"><br />
+                                \(\sum M_B=-5 \times 3 - H_A \times 1 = 0 \quad \therefore H_A=-15 kN \)<br />
+                                \(H_D = - H_A \quad \therefore H_D = 15 kN\)
                             </p>
                         </li>
                         <li>
                             케이블 AB 부분을 가상으로 절단하고, <em>인장력만 작용하는 트러스 부재로 설정하여, FBD를 작성하고 평형조건식을 적용</em>한다. 단, 케이블 인장력의 수평방향 성분 \(AB_H\)는 지점반력의 수평방향 성분 \(H_A\)와 같으므로 그 크기는 \(15kN\)이다.
                             <p>
-                                <img src="images\03.07.04.png" width="227" height="90"><br />
-                                \(AB_H=H_A \quad \therefore AB_H=15 kN \\
-                                \sum F_y = 5 - AB_V = 0 \quad \therefore AB_V=5 kN \)<br />
+                                <img src="images\03.07.04.png" onload="this.width/=2;"><br />
+                                \(AB_H=H_A \quad \therefore AB_H=15 kN \)<br />
+                                \(\sum F_y = 5 - AB_V = 0 \quad \therefore AB_V=5 kN \)<br />
                                 케이블 AB의 인장력은 수평방향 성분 \(AB_H\)와 수직방향 성분 \(AB_V\)를 합성한 \(AB\)이므로
                                 \(AB = \sqrt{AB_H^2 + AB_V^2} = 5\sqrt{10} kN\)
                             </p>
@@ -97,9 +97,9 @@
                         <li>
                             케이블 BC 부분을 가상으로 절단하고, 인장력만 작용하는 트러스 부재로 설정하여, FBD를 작성하고 평형조건식을 적용한다. 케이블 인장력의 수평방향 성분 \(BC_H\)는 지점반력의 수평방향 성분 \(H_A\)와 같으므로 그 크기는 \(15kN\)이다.
                             <p>
-                                <img src="images\03.07.05.png" width="381" height="93"><br />
-                                \(BC_H=H_A \quad \therefore BC_H=15 kN \\
-                                \sum F_y = 5 - 6 + BC_V = 0 \quad \therefore BC_V=1 kN \)<br />
+                                <img src="images\03.07.05.png" onload="this.width/=2;"><br />
+                                \(BC_H=H_A \quad \therefore BC_H=15 kN \)<br />
+                                \(\sum F_y = 5 - 6 + BC_V = 0 \quad \therefore BC_V=1 kN \)<br />
                                 케이블 BC의 인장력은 수평방향 성분 \(BC_H\)와 수직방향 성분 \(BC_V\)를 합성한 \(BC\)이므로
                                 \(BC = \sqrt{BC_H^2 + BC_V^2} = \sqrt{226} kN\)
                             </p>
@@ -107,9 +107,9 @@
                         <li>
                             케이블 CD 부분을 가상으로 절단하고, 인장력만 작용하는 트러스 부재로 설정하여, FBD를 작성하고 평형조건식을 적용한다. 케이블 인장력의 수평방향 성분 \(CD_H\)는 지점반력의 수평방향 성분 \(H_D\)와 같으므로 그 크기는 \(15kN\)이다.
                             <p>
-                                <img src="images\03.07.06.png" width="249" height="89"><br />
-                                \(CD_H=H_D \quad \therefore CD_H=15 kN \\
-                                \sum F_y = 4 - CD_V = 0 \quad \therefore CD_V=4 kN \)<br />
+                                <img src="images\03.07.06.png" onload="this.width/=2;"><br />
+                                \(CD_H=H_D \quad \therefore CD_H=15 kN \)<br />
+                                \(\sum F_y = 4 - CD_V = 0 \quad \therefore CD_V=4 kN \)<br />
                                 케이블 CD의 인장력은 수평방향 성분 \(CD_H\)와 수직방향 성분 \(CD_V\)를 합성한 \(CD\)이므로
                                 \(CD = \sqrt{CD_H^2 + CD_V^2} = \sqrt{241} kN\)
                             </p>
@@ -124,9 +124,9 @@
                             케이블 전체를 대상으로 FBD를 작성하고 평형조건식을 적용한다. 지점의 높이가 다르므로 지점반력이 포함된 식만 얻을 수 있다.
                             <p>
                                 <img src="images\03.07.08.png" onload="this.width/=2;"><br />
-                                \(\sum F_x = H_A + H_C = 0; \quad H_C = -H_A \\
-                                \sum F_y = V_A - 20 + V_C = 0; \quad V_A = -V_C + 20 \\
-                                \sum M_A = -20 \times 10 + V_C \times 30 - H_C \times 5 = 0; \quad H_C = 6V_C - 40 \)
+                                \(\sum F_x = H_A + H_C = 0; \quad H_C = -H_A \)<br />
+                                \(\sum F_y = V_A - 20 + V_C = 0; \quad V_A = -V_C + 20 \)<br />
+                                \(\sum M_A = -20 \times 10 + V_C \times 30 - H_C \times 5 = 0; \quad H_C = 6V_C - 40 \)
                             </p>
                         </li>
                         <li>
@@ -139,18 +139,18 @@
                         <li>
                             위의 4개로 이루어진 연립방정식을 다음과 같이 푼다.
                             <p>
-                                \( H_C = -H_A, \, -H_A = 10V_A; \quad H_C = 10V_A \\
-                                   H_C = 10V_A, \, V_A = -V_C + 20; \quad H_C = -10V_C + 200 \\
-                                   H_C = -10V_C + 200, \, H_C = 6V_C - 40; \quad -10V_C + 200 = 6V_C - 40; \quad 16V_C = 240; \\
-                                   \therefore V_C = 15kN, \, V_A = -V_C + 20 = 5kN, \ H_C = 10V_A = 50kN, \, H_A = -H_C = -50kN \)
+                                \( H_C = -H_A, \, -H_A = 10V_A; \quad H_C = 10V_A \)<br />
+                                \(H_C = 10V_A, \, V_A = -V_C + 20; \quad H_C = -10V_C + 200 \)<br />
+                                \(H_C = -10V_C + 200, \, H_C = 6V_C - 40; \quad -10V_C + 200 = 6V_C - 40; \quad 16V_C = 240; \)<br />
+                                \(\therefore V_C = 15kN, \, V_A = -V_C + 20 = 5kN, \ H_C = 10V_A = 50kN, \, H_A = -H_C = -50kN \)
                             </p>
                         </li>
                         <li>
                             케이블 AB 부분을 가상으로 절단하고, <em>인장력만 작용하는 트러스 부재로 설정하여, FBD를 작성하고 평형조건식을 적용</em>한다. 단, 케이블 인장력의 수평방향 성분 \(AB_H\)는 지점반력의 수평방향 성분 \(H_A\)와 같으므로 그 크기는 \(50kN\)이다.
                             <p>
                                 <img src="images\03.07.10.png" onload="this.width/=2;"><br />
-                                \(AB_H=H_A \quad \therefore AB_H=50 kN \\
-                                \sum F_y = 5 - AB_V = 0 \quad \therefore AB_V=5 kN \)
+                                \(AB_H=H_A \quad \therefore AB_H=50 kN \)<br />
+                                \(\sum F_y = 5 - AB_V = 0 \quad \therefore AB_V=5 kN \)<br />
                                 케이블 AB의 인장력은 수평방향 성분 \(AB_H\)와 수직방향 성분 \(AB_V\)를 합성한 \(AB\)이므로
                                 \(AB = \sqrt{AB_H^2 + AB_V^2} = \sqrt{50^2 + 5^2} = \sqrt{2525} = 5\sqrt{101} kN\)
                             </p>
@@ -159,8 +159,8 @@
                             케이블 BC 부분을 가상으로 절단하고, 인장력만 작용하는 트러스 부재로 설정하여, FBD를 작성하고 평형조건식을 적용한다. 케이블 인장력의 수평방향 성분 \(BC_H\)는 지점반력의 수평방향 성분 \(H_C\)와 같으므로 그 크기는 \(50kN\)이다.
                             <p>
                                 <img src="images\03.07.11.png" onload="this.width/=2;"><br />
-                                \(BC_H=H_C \quad \therefore BC_H=50 kN \\
-                                \sum F_y = 15 - BC_V = 0 \quad \therefore BC_V=15 kN \)
+                                \(BC_H=H_C \quad \therefore BC_H=50 kN \)<br />
+                                \(\sum F_y = 15 - BC_V = 0 \quad \therefore BC_V=15 kN \)<br />
                                 케이블 BC의 인장력은 수평방향 성분 \(BC_H\)와 수직방향 성분 \(BC_V\)를 합성한 \(BC\)이므로
                                 \(BC = \sqrt{BC_H^2 + BC_V^2} = \sqrt{50^2 + 15^2} = \sqrt{2725} = 5\sqrt{109} kN\)
                             </p>
@@ -173,13 +173,13 @@
                 <li>아치는 부재축이 곡선으로 이루어진 <em>보</em>로서, 형태에 따라 반원아치, 포물선아치로 구분한다.</li>
                 <li>또한 지지조건에 따라 켄틸레버형 아치(cantilever arch), 고정단 아치(fixed arch), 단순보형 아치(two-hinged arch), 3회전단 아치(three-hinged arch), 타이드 아치(tied arch)로 구분한다.</li>
                 <li>아치에는 축력, 전단력, 휨모멘트가 작용하지만, 전단력과 휨모멘트는 매우 작아, <em>압축력</em>을 주로 받는다.</li>
-                <li>부재력 계산에서, 반원형 아치 내부의 임의의 위치는 직교좌표계의 \(x\)가 아니라 <em>극좌표계(polar coordinates)의 회전각 \(\theta\)</em>로 표현한다.</li>
+                <li>부재력 계산에서, 반원형 아치 내부의 임의의 위치는 직교좌표계의 \(x\)가 아니라 <em>극좌표계(polar coordinate system)의 각도 \(\theta\)</em>로 표현한다.</li>
                 <li>
                     반원아치의 부재력 계산 및 부재력도 작성은 다음의 절차에 따른다.
                     <ol>
                         <li>아치 전체를 대상으로 FBD를 작성하고 평형조건식을 적용하여 지점반력을 계산한다.</li>
-                        <li>3회전단 아치는, 게르버보처럼, 내부의 회전절점을 가상으로 절단하고, 절단된 일부분을 대상으로 FBD 작성 및 평형조건식 적용을 추가로 수행한다.</li>
-                        <li>아치 내의 임의의 위치를 회전각 \(\theta\)로 설정한 후, 그 위치를 가상으로 절단하여 FBD를 작성하고 평형조건식을 적용하여 절점반력을 계산한다.</li>
+                        <li>3회전단 아치는, 게르버보처럼, 내부의 회전절점을 가상으로 절단하고, 절단한 부분을 대상으로 FBD 작성 및 평형조건식 적용을 추가로 수행한다.</li>
+                        <li>아치 내의 임의의 위치를 각도 \(\theta\)로 설정한 후, 그 위치를 가상으로 절단하여 FBD를 작성하고 평형조건식을 적용하여 절점반력을 계산한다.</li>
                         <li><em>아치는 각 위치마다 축방향이 변화</em>하므로, 임의의 위치 \(\theta\)에서 계산한 수평방향과 수직방향의 절점반력을 \(\theta\)에 따라 분해하고 축력과 전단력으로 합성한다.</li>
                         <li>부재력을 바탕으로 축력도, 전단력도, 휨모멘트도를 작성한다.</li>
                     </ol>
@@ -206,22 +206,22 @@
                             </p>
                         </li>
                         <li>
-                            아치의 중앙에 집중하중이 작용하므로, 이 <em>집중하중의 왼쪽과 오른쪽을 각각의 구간으로 설정</em>한다. <em>왼쪽 구간은 점 \(A\)와 시계방향을 \(\theta\)의 기준점과 뱡의 방향</em>으로 설정한다.
+                            아치의 중앙에 집중하중이 작용하므로, 이 <em>집중하중의 왼쪽과 오른쪽을 각각의 구간으로 설정</em>한다. <em>왼쪽 구간은 점 \(A\)와 시계방향을 \(\theta\)의 기준점과 +방향</em>으로 설정한다.
                         </li>
                         <li>
-                            왼쪽 구간 내의 임의의 위치를 회전각 \(\theta\)로 설정한 후, 그 위치를 가상으로 절단하여 FBD를 작성하고 평형조건식을 적용하여 절점반력을 계산한다.
+                            왼쪽 구간 내의 임의의 위치를 각도 \(\theta\)로 설정한 후, 그 위치를 가상으로 절단하여 FBD를 작성하고 평형조건식을 적용하여 절점반력을 계산한다.
                             <p>
                                 <img src="images\03.07.14.png" onload="this.width/=2;"><br />
                                 \(\sum F_y=\displaystyle \frac{P}{2} + V_\theta = 0 \quad \therefore \displaystyle V_\theta = -\frac{P}{2} \\
-                                \sum M_A=V_\theta \times (r-r\cos\theta) + M_\theta = 0 \quad \therefore \displaystyle M_\theta=\frac{P}{2}(r-r\cos\theta)\)
+                                \sum M_\theta=\displaystyle -\frac{P}{2} \times (r-r\cos\theta) + M_\theta = 0 \quad \therefore \displaystyle M_\theta=\frac{P}{2}(r-r\cos\theta)\)
                             </p>
                         </li>
                         <li>
-                            \(\displaystyle V_\theta = \frac P2\)를 \(\theta\)에 따라 축방향과 그에 직각방향으로 분해한다.
+                            \(V_\theta\)를 \(\theta\)에 따라 축력방향과 그에 직각인 전단력방향으로 분해한다.
                             <p>
                                 <img src="images\03.07.15.png" onload="this.width/=2;"><br />
-                                축방향 분력의 크기 \(= \displaystyle \frac{P}{2} \times \cos \theta = {P \over 2} \cos \theta \)<br />
-                                직각방향 분력의 크기 \(= \displaystyle \frac{P}{2} \times \sin \theta = {P \over 2} \sin \theta \)
+                                \(V_\theta\)의 축력방향 분력의 크기 \(= \displaystyle {P \over 2} \cos \theta \)<br />
+                                \(V_\theta\)의 전단력방향 분력의 크기 \(= \displaystyle {P \over 2} \sin \theta \)
                             </p>
                         </li>
                         <li>
@@ -239,7 +239,7 @@
                             </p>
                         </li>
                         <li>
-                            구조물의 형상, 지점, 하중이 중앙의 수직선에 대해서 대칭이면, <em>축력도와 휨모멘트도는 대칭, 전단력도는 역대칭</em>이다. 따라서 
+                            구조물의 형상, 지점, 하중이 중앙의 수직선에 대해서 대칭이면, <em>축력도와 휨모멘트도는 대칭, 전단력도는 역대칭</em>이다. 따라서
                             위 구조물에서 \(\theta = 135^\circ, \, 180^\circ\)일 때의 값은 다음과 같이 결정한다.
                             <p>
                                 \(\displaystyle A(135^\circ) = A(45^\circ) = -\frac{P}{2\sqrt2}, \quad A(180^\circ) = A(0^\circ) = -\frac{P}{2} \\
@@ -250,6 +250,79 @@
                         <li>
                             이상의 부재력의 식과 값을 바탕으로 다음과 같이 차례로 축력도, 전단력도, 휨모멘트도를 작성한다.
                             <p><img src="images\03.07.16.png" onload="this.width/=2;"></p>
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    예제 (3회전단 아치) : 다음에서 아치에 작용하는 부재력를 구하고 부재력도를 작성하시오.
+                    <p><img src="images\03.07.17.png" onload="this.width/=2;"></p>
+                    <ol>
+                        <li>
+                            아치 전체를 대상으로 FBD를 작성하고 평형조건식을 적용하여 \(V_A, \, V_B\)를 계산하고 \(H_A, \, H_B\)가 포함된 식을 얻는다.
+                            <p>
+                                <img src="images\03.07.18.png" onload="this.width/=2;"><br />
+                                \( \sum M_A=V_B \times 2r - P \times r = 0 \quad \therefore \displaystyle V_B=\frac{P}{2} \\
+                                \sum F_y = V_A - P + V_B = 0 \quad \therefore \displaystyle V_A=\frac{P}{2} \)
+                                \( \sum F_x = H_A + H_B = 0 \quad \therefore \displaystyle H_A=-H_B \)
+                            </p>
+                        </li>
+                        <li>
+                            구조물 내부의 회전절점 C를 가상으로 절단한 후 FBD를 작성하고 평형조건식을 적용한다.
+                            <p>
+                                <img src="images\03.07.19.png" onload="this.width/=2;"><br />
+                                \(\sum M_C=-V_A \times r + H_A \times r = 0 \quad \therefore H_A = V_A = \displaystyle \frac{P}{2} = -H_B \)
+                            </p>
+                        </li>
+                        <li>
+                            아치의 중앙에 집중하중이 작용하므로, 이 <em>집중하중의 왼쪽과 오른쪽을 각각의 구간으로 설정</em>한다. <em>왼쪽 구간은 점 \(A\)와 시계방향을 \(\theta\)의 기준점과 +방향</em>으로 설정한다.
+                        </li>
+                        <li>
+                            왼쪽 구간 내의 임의의 위치를 각도 \(\theta\)로 설정한 후, 그 위치를 가상으로 절단하여 FBD를 작성하고 평형조건식을 적용하여 절점반력을 계산한다.
+                            <p>
+                                <img src="images\03.07.20.png" onload="this.width/=2;"><br />
+                                \(\sum F_x=\displaystyle \frac{P}{2} + H_\theta = 0 \quad \therefore \displaystyle H_\theta = -\frac{P}{2} \\
+                                \sum F_y=\displaystyle \frac{P}{2} + V_\theta = 0 \quad \therefore \displaystyle V_\theta = -\frac{P}{2} \\
+                                \sum M_\theta=\displaystyle -\frac{P}{2} (r-r\cos\theta) + \frac{P}{2} r\sin\theta + M_\theta = 0 \quad \therefore \displaystyle M_\theta=\frac{P}{2}(r-r\sin\theta-r\cos\theta)\)
+                            </p>
+                        </li>
+                        <li>
+                            \(V_\theta, \, H_\theta\)를 \(\theta\)에 따라 축력방향과 그에 직각인 전단력방향으로 분해한다.
+                            <p>
+                                <img src="images\03.07.21.png" onload="this.width/=2;"><br />
+                                \(V_\theta\)의 축력방향 분력의 크기 \(= \displaystyle {P \over 2} \cos \theta \)<br />
+                                \(V_\theta\)의 전단력방향 분력의 크기 \(= \displaystyle {P \over 2} \sin \theta \)<br />
+                                \(H_\theta\)의 축력방향 분력의 크기 \(= \displaystyle {P \over 2} \sin \theta \)<br />
+                                \(H_\theta\)의 전단력방향 분력의 크기 \(= \displaystyle {P \over 2} \cos \theta \)
+                            </p>
+                        </li>
+                        <li>
+                            위 분력과 모멘트 \(M_\theta\)를 <em>부재력으로서의 부호</em>까지 고려하여 다음과 같이 축력 \(A(\theta)\), 전단력 \(V(\theta)\), 휨모멘트 \(M(\theta)\)를 계산한다.
+                            <p>
+                                \(\displaystyle A(\theta) = -\frac{P}{2}\sin \theta -\frac{P}{2}\cos \theta \\
+                                V(\displaystyle \theta) = \frac{P}{2}\sin \theta - \frac{P}{2}\cos \theta \\
+                                M(\displaystyle \theta) =\frac{P}{2}(r-r\sin\theta-r\cos\theta) \)
+                            </p>
+                        </li>
+                        <li>
+                            이 부재력에 대해서 <em>\(\theta = 0^\circ, \, 45^\circ, \, 90^\circ\)일 때의 값을 계산</em>한다.
+                            <p>
+                                \(\displaystyle A(0^\circ) = -\frac{P}{2}, \quad A(45^\circ) = -\frac{P}{\sqrt2}, \quad A(90^\circ) = -\frac{P}{2} \\
+                                \displaystyle V(0^\circ) = -\frac{P}{2}, \quad V(45^\circ) = 0, \quad V(90^\circ) = \frac{P}{2} \\
+                                \displaystyle M(0^\circ) = 0, \quad M(45^\circ) = \frac{P}{2}\left(r-r\sqrt2\right), \quad M(90^\circ) = 0 \)
+                            </p>
+                        </li>
+                        <li>
+                            구조물의 형상, 지점, 하중이 중앙의 수직선에 대해서 대칭이면, <em>축력도와 휨모멘트도는 대칭, 전단력도는 역대칭</em>이다. 따라서
+                            위 구조물에서 \(\theta = 135^\circ, \, 180^\circ\)일 때의 값은 다음과 같이 결정한다.
+                            <p>
+                                \(\displaystyle A(135^\circ) = A(45^\circ) = -\frac{P}{\sqrt2}, \quad A(180^\circ) = A(0^\circ) = -\frac{P}{2} \\
+                                \displaystyle V(135^\circ) = -V(45^\circ) = 0, \quad V(180^\circ) = -V(0^\circ) = \frac{P}{2} \\
+                                \displaystyle M(135^\circ) = M(45^\circ) = \frac{P}{2}\left(r-r\sqrt2\right), \quad M(180^\circ) = M(0^\circ) = 0 \)
+                            </p>
+                        </li>
+                        <li>
+                            이상의 부재력의 식과 값을 바탕으로 다음과 같이 차례로 축력도, 전단력도, 휨모멘트도를 작성한다.
+                            <p><img src="images\03.07.22.png" onload="this.width/=2;"></p>
                         </li>
                     </ol>
                 </li>
