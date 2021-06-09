@@ -117,14 +117,14 @@ function append_login() {
 function toggle_body(p_toggle) {
     if (p_toggle == true) { // show
         $(".study_list_wrapper").slideDown(time_out_duration / 3);
-        $('#pre_view').slideDown(time_out_duration / 3);
+        //$('#pre_view').slideDown(time_out_duration / 3); // hide "교재 학습 범위"
         $('#main_view').slideDown(time_out_duration);
         $('#re_view_quiz').slideDown(time_out_duration);
         $('#problem').slideDown(time_out_duration);
     }
     else { // hide
         $(".study_list_wrapper").slideUp(time_out_duration / 3);
-        $('#pre_view').slideUp(time_out_duration / 3);
+        //$('#pre_view').slideUp(time_out_duration / 3);
         $('#main_view').slideUp(time_out_duration);
         $('#re_view_quiz').slideUp(time_out_duration);
         $('#problem').slideUp(time_out_duration);

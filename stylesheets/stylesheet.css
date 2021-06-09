@@ -1,14 +1,13 @@
 ﻿/*******************************************************************************
 * Basic style
 *******************************************************************************/
-@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
-@import url(http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic|Nanum+Myeongjo&display=swap&subset=korean');
 
 * {
     margin: 0px;
     padding: 0px;
     border: 0px;
-    font-family: /*NanumGothic,*/ 'Myriad Pro', Calibri, Helvetica, Arial, sans-serif;
+    font-family: /*'Nanum Gothic'*/, 'Myriad Pro', Calibri, Helvetica, Arial, sans-serif;
     text-align: left;
     vertical-align: baseline;
     -webkit-font-smoothing: antialiased;
@@ -26,7 +25,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     margin: 0px 0px;
-    font-family: /*'Nanum Myeongjo',*/ 'Lucida Grande', Calibri, Helvetica, Arial, sans-serif;
+    font-family: /*'Nanum Myeongjo'*/, 'Lucida Grande', Calibri, Helvetica, Arial, sans-serif;
     font-weight: normal; /* normal = 400; bolt = 700 */
     letter-spacing: -1px;
 }
